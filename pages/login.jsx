@@ -24,16 +24,19 @@ const Login = () => {
   const router = useRouter()
 
   const onSubmit = async (data) => {
-    const response = await fetch(`http://localhost:3002/user/login`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        Email: data.email,
-        Password: data.password
-      })
-    })
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_GUAPOAPP_URI}user/login`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          Email: data.email,
+          Password: data.password
+        })
+      }
+    )
 
     const json = await response.json()
 
