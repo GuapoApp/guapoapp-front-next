@@ -1,6 +1,8 @@
 export default function Footer() {
   return (
-    <footer className='flex flex-cols-6 gap-8  justify-center items-center p-4 bg-orange-600 text-gray-600'>
+    <footer className='flex flex-cols-6 gap-8 text-slate-50
+                       justify-center items-center 
+                       p-4 bg-orange-600 text-gray-600'>
       <div>
         <ul>Logo</ul>
         <ul>Consultoria y Asesoria de Imagen</ul>
@@ -16,7 +18,7 @@ export default function Footer() {
         <ul>Consultoria y Asesoria</ul>
         <ul>Quienes Somos</ul>
         <ul>Nuestros Servicios</ul>
-        <ul>Testimonios</ul>
+        
       </div>
       <div>
         <ul>Beneficios</ul>
@@ -29,7 +31,7 @@ export default function Footer() {
         <ul>Inicio</ul>
         <ul>Acerca</ul>
         <ul>Inicio de Sesión</ul>
-        <ul>Registrarse</ul>
+        
       </div>
       <div>
         <ul>Direccion</ul>
