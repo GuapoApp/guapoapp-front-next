@@ -1,15 +1,15 @@
-import Background from './components/background'
+
 import Footer from './components/Footer'
 import Navbar from './components/NavBar'
 import Sections from './components/sections'
-
+import Background from './components/background'
 export default function Page() {
   return (
     <>
       <div>
-        <Navbar />
+        <Background />
+        <Navbar />       
         <Sections />
-
         <Footer />
       </div>
     </>
