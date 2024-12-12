@@ -2,7 +2,7 @@ export default function Footer() {
   return (
     <footer className='flex flex-cols-6 gap-8 text-slate-50
                        justify-center items-center 
-                       p-4 bg-orange-600 text-gray-600'>
+                       p-4 bg-[#3E1800] rounded-t-full w-full h-42 text-orange-400'>
       <div>
         <ul>Logo</ul>
         <ul>Consultoria y Asesoria de Imagen</ul>

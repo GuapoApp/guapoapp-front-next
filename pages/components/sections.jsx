@@ -1,82 +1,55 @@
 import Image from 'next/image'
 import Carrousel from './Carrousel'
 import Link from 'next/link'
+import Navbar from './NavBar'
+import Header1 from '@/components/Header1'
+import Header2 from '@/components/Header2'
+import Header3 from '@/components/Header3'
+import Header5 from '@/components/Header5'
+import Header6 from '@/components/Header6'
 export default function Sections() {
  
   return (
-    <><div>
-      <section className='flex flex-rows-1 justify-center items-center'>      
-      <div className='smallText'>Consultoria Especializada</div>      
-      <div className='topText bt-8'>
-            <p>¿ Cual es tu situacion antes </p>
-            <p> de la asesoria?</p></div>
-         <div className='buttonPosition'>
-         <Link href=''>
-              <button
-                className='bg-orange-700 
-               rounded-md w-40 h-8 text-gray-100'
-              >
-                ¡Unete ahora!
-              </button>
-              </Link>
-         </div>
-        <Image src='/Fondolanding.jpg' width={1440} height={438} alt='Logo' />
-      </section>
-      <div className='mt-8 mb-8'>
-      <Carrousel />
+    <>
+    {/*First section of the landing page */}
+    <div className='flex flex-row items-center justify-center gap-8'>
+      <div>
+        <p> <Header1 text="GuapoApp"/></p>
+        <p> <Header6 text="Consultoria de imagen"/></p>
+       <article className='text-balance'>
+          <p> 
+              <p>Sabemos que a imagen habla bien por ti. Somos una</p>
+              <p>consultoria de imagen dedicada exclusivamente a </p>
+              <p>hombre que desean proyectar seguridad, estio y</p>
+              <p>elegancia en cada aspecto de su vida</p>
+          </p>
+        </article>
       </div>
-    
-    <div className='flex flex-cols-2 items-center justify-center mt-12'>
-      <div className='items-center justify-center'>
-          <Image src='/wall.jpg' width={250} height={384} alt='Logo' />
-      </div>
-      <div className='bg-orange-600 w-96'>
-        hola mundo
+      <div>
+          <Header2 text="Imagen 1 " />
+          <Header3 text="Imagen 2 " />
       </div>
     </div>
-
-    
-      <div className='flex flex-cols-2 bg-slate-200 items-center justify-center mb-2 h-auto'>
-        <div><Image className='pt-5 pb-2' src='/wall.jpg' width={250} height={438} alt='Logo' /></div>
-        <div className='bg-orange-600 w-auto mb-8 h-96 '>
-          <div className='pl-8 text-2xl text-white '>
-              <p >¿Estas listo para que le demos un vuelco de 180°</p>
-              <p >a tu vida? no estas solo te acompañamos?</p>
-           </div>
-              <div className='text-ml text-white pt-6'>
-                <div className=' pl-8 mb-8'>
-                <ul>
-                  <p> ¿Estas pasando por una etapa importante en </p>
-                  <p> tu vida y sientes que es momento de </p>
-                  <p> dedicarte a tu imagen personal?</p>
-                </ul>
-                </div>
-                <div className='pl-8 mb-8'>
-                <ul>
-                  <p> ¿Estas pasando por una etapa importante en </p>
-                  <p> tu vida y sientes que es momento de </p>
-                  <p> dedicarte a tu imagen personal?</p>
-                </ul>
-                </div>
-                <div className='pl-8 mb-8'>
-                  <ul>
-                  <p> ¿Estas pasando por una etapa importante en </p>
-                  <p> tu vida y sientes que es momento de </p>
-                  <p> dedicarte a tu imagen personal?</p>
-                  </ul>
-                </div>
-                
-              </div>
-
-
-        </div>
+  {/* second section of landing page*/}
+  <div className='flex flex-row items-center 
+                  
+                  justify-center gap-8'>
+    <div>
+      <p>Nuestro equipo de expertos esta aqui para </p>
+      <p>asesorarte en el arte de vestir, ayudandote a definir</p>
+      <p>un eilo que refleje tu personalidad y objetivos. Ya</p>
+      <p>sea para destacar en el ámbito profesional, social o</p>
+      <p>personal, te guiamos paso a paso a construir una</p>
+      <p>una imagen que te haga sentir seguro y listo para</p>
+      <p>conquistar cualquier reto</p>
+    </div>
+    <div>
+    <Header2 text="Imagen 1 " />
 
     </div>
+  </div>
 
-
-
-
-</div>  
+    
     </>
   )
 }
