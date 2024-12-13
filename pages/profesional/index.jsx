@@ -1,12 +1,31 @@
 import Header1 from '@/components/Header1'
+import Header2 from '@/components/Header2'
+import Header3 from '@/components/Header3'
+import Header4 from '@/components/Header4'
+import Header5 from '@/components/Header5'
+import Header6 from '@/components/Header6'
+import Paragraph from '@/components/Paragraph'
+
+import { jwtDecode } from 'jwt-decode'
+
 import Image from 'next/image'
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 
 const ProfessionalDashboard = () => {
+  const decoded = jwtDecode(localStorage.token)
+  const [userName, setUserName] = useState('')
+
+  useEffect(() => {
+    if (localStorage.token) {
+      setUserName(decoded.Name)
+    }
+  }, [])
+
   return (
     <main className='box-content bg-[#F8FAFC] min-h-screen w-full flex flex-col'>
       {/* Navbar */}
-      <div className='bg-[#984508] w-full border-black flex flex-row justify-center'>
+      <div className='bg-[#984508] w-full flex flex-row justify-center'>
         <Image
           className='p-3'
           src='/logo-elegance-mix.svg'
@@ -17,24 +36,26 @@ const ProfessionalDashboard = () => {
         />
       </div>
       {/* Principal */}
-      <div className='border-black'>
+      <div className=''>
         {/* Menu y sección izquierda */}
-        <section className='flex flex-col align-middle justify-start'>
+        <section className='flex flex-col align-middle justify-start absolute'>
           {/* Sección superior */}
-          <div className='border border-black flex flex-row p-5 flex flex-row'>
+          <div className='flex flex-row p-5 flex flex-row'>
             {/* Menú */}
-            <div className='flex flex-col bg-[#BC5901] h-2/3 gap-3 pt-5 pl-5 mt-auto mb-auto'>
+            <div className='flex flex-col bg-[#BC5901] h-2/3 gap-3 p-5 mt-auto mb-auto z-50 relative -top-4 text-[#FEAA00] font-semibold'>
               <Link href='/'>MI PERFIL</Link>
               <Link href='/'>MIS ASESORES</Link>
               <Link href='/'>MI EXPEDIENTE</Link>
               <Link href='/'>AGENDA</Link>
               <Link href='/'>METODOS DE PAGO</Link>
-              <Link href='/'>Cerrar Sesión</Link>
+              <Link href='/' className='text-right'>
+                Cerrar Sesión
+              </Link>
             </div>
             {/* Foto de Perfil */}
             <div>
               {/* Foto */}
-              <div className='border border-[#BC5901] rounded-tr-[70px]'>
+              <div className='border-2 border-[#BC5901] rounded-tr-[70px] relative -left-4 z-40 h-'>
                 <Image
                   className='p-2 rounded-tr-[70px]'
                   src='/assets/images/stock-image-1.jpeg'
@@ -43,17 +64,20 @@ const ProfessionalDashboard = () => {
                 />
               </div>
               {/* Rectangulo superpuesto */}
-              <div></div>
+              <div className='bg-[#BC5901] w-20 h-10 relative left-[114px] -top-5'></div>
             </div>
           </div>
           {/* Sección inferior, Bienvenida y nombre */}
-          <div></div>
+          <div className='m-auto flex flex-col '>
+            <Header4 text='BIENVENIDO' textColor='#974508' />
+            <Header5 text={userName} textColor='#974508' />
+          </div>
         </section>
         {/* Agenda y proximas citas sección izquierda */}
         <section></section>
       </div>
       {/* Footer, lleva la curvatura */}
-      <div className='border-black'></div>
+      <div className='h-[25%]'></div>
     </main>
   )
 }
