@@ -1,15 +1,24 @@
+import classNames from 'classnames'
+
 import { Ubuntu } from 'next/font/google'
 
 const ubuntu = Ubuntu({ subsets: ['latin'], weight: '500' })
 
-/**
- * TODO: Add variable for text color from props
- */
 /** 
+ * PROPS:
  @param: text ==> The text to be printed 
+ @param: textColor ==> The color of the text
 */
 const Header1 = (props) => {
-  return <p className={`${ubuntu.className} text-6xl`}>{props.text}</p>
+  const headerClasses = classNames({
+    [`text-[${props.textColor}]`]: props.textColor
+  })
+
+  return (
+    <h1 className={`${ubuntu.className} text-6xl ${headerClasses}`}>
+      {props.text}
+    </h1>
+  )
 }
 
 export default Header1

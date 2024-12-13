@@ -1,15 +1,24 @@
+import classNames from 'classnames'
+
 import { Cabin } from 'next/font/google'
 
 const cabin = Cabin({ subsets: ['latin'] })
 
-/**
- * TODO: Add variable for text color from props
- */
 /** 
+ * PROPS:
+ @param: textColor ==> The color of the text
  @param: text ==> The text to be printed 
 */
 const Paragraph = (props) => {
-  return <p className={`${cabin.className} text-base`}>{props.text}</p>
+  const paragraphClasses = classNames({
+    [`text-[${props.textColor}]`]: props.textColor
+  })
+
+  return (
+    <p className={`${cabin.className} text-base ${paragraphClasses}`}>
+      {props.text}
+    </p>
+  )
 }
 
 export default Paragraph
