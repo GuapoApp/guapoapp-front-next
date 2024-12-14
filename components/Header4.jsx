@@ -1,6 +1,7 @@
 import classNames from 'classnames'
 
 import { Ubuntu } from 'next/font/google'
+// import { useEffect, useState } from 'react'
 
 const ubuntu = Ubuntu({ subsets: ['latin'], weight: '500' })
 
@@ -10,13 +11,23 @@ const ubuntu = Ubuntu({ subsets: ['latin'], weight: '500' })
  @param: text ==> The text to be printed 
 */
 const Header4 = (props) => {
+  // const [headerClasses, setHeaderClasses] = useState(null)
+
+  // useEffect(() => {
+  //   setHeaderClasses(
+  //     classNames({
+  //       [`text-[${props.textColor}]`]: props.textColor,
+  //       'text-3xl': true
+  //     })
+  //   )
+  // }, [])
+
   const headerClasses = classNames({
-    [`text-[${props.textColor}]`]: props.textColor
+    [`text-[${props.textColor}]`]: props.textColor,
+    'text-3xl': true
   })
   return (
-    <p className={`${ubuntu.className} text-3xl ${headerClasses}`}>
-      {props.text}
-    </p>
+    <h4 className={`${ubuntu.className} ${headerClasses}`}>{props.text}</h4>
   )
 }
 

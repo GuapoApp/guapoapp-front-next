@@ -5,6 +5,7 @@ import Header4 from '@/components/Header4'
 import Header5 from '@/components/Header5'
 import Header6 from '@/components/Header6'
 import Paragraph from '@/components/Paragraph'
+import CurvedBackground from '@/components/CurvedBackground'
 
 import { jwtDecode } from 'jwt-decode'
 
@@ -13,19 +14,19 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 const ProfessionalDashboard = () => {
-  const decoded = jwtDecode(localStorage.token)
   const [userName, setUserName] = useState('')
 
   useEffect(() => {
-    if (localStorage.token) {
+    const decoded = jwtDecode(localStorage.token)
+    if (decoded) {
       setUserName(decoded.Name)
     }
   }, [])
 
   return (
-    <main className='box-content bg-[#F8FAFC] min-h-screen w-full flex flex-col'>
+    <main className='box-content bg-contrast-slateGray50 min-h-screen w-full flex flex-col'>
       {/* Navbar */}
-      <div className='bg-[#984508] w-full flex flex-row justify-center'>
+      <div className='bg-primary-brownPod800 w-full flex flex-row justify-center'>
         <Image
           className='p-3'
           src='/logo-elegance-mix.svg'
@@ -55,14 +56,12 @@ const ProfessionalDashboard = () => {
             {/* Foto de Perfil */}
             <div>
               {/* Foto */}
-              <div className='border-2 border-[#BC5901] rounded-tr-[70px] relative -left-4 z-40 h-'>
-                <Image
-                  className='p-2 rounded-tr-[70px]'
-                  src='/assets/images/stock-image-1.jpeg'
-                  width={200}
-                  height={400}
-                />
-              </div>
+              <Image
+                className='p-2 rounded-tr-[70px] border-2 border-[#BC5901]'
+                src='/assets/images/stock-image-1.jpeg'
+                width={200}
+                height={400}
+              />
               {/* Rectangulo superpuesto */}
               <div className='bg-[#BC5901] w-20 h-10 relative left-[114px] -top-5'></div>
             </div>
@@ -70,14 +69,16 @@ const ProfessionalDashboard = () => {
           {/* Sección inferior, Bienvenida y nombre */}
           <div className='m-auto flex flex-col '>
             <Header4 text='BIENVENIDO' textColor='#974508' />
-            <Header5 text={userName} textColor='#974508' />
+            <Header5 text={`${userName},`} textColor='#974508' />
           </div>
         </section>
         {/* Agenda y proximas citas sección izquierda */}
         <section></section>
       </div>
       {/* Footer, lleva la curvatura */}
-      <div className='h-[25%]'></div>
+      <div className='h-24 absolute -bottom-0 w-full h-7'>
+        <CurvedBackground />
+      </div>
     </main>
   )
 }
