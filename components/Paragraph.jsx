@@ -11,7 +11,7 @@ const cabin = Cabin({ subsets: ['latin'] })
 */
 const Paragraph = (props) => {
   const paragraphClasses = classNames({
-    [`text-[${props.textColor}]`]: props.textColor
+    [`text-${props.textColor}`]: props.textColor
   })
 
   return (
