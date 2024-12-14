@@ -85,7 +85,7 @@ export default function Test(){
 
 
 <div className="overflow-x-hidden">
-  <div className="absolute bottom-0 mt-[100px] ml-[-50%] h-[500px] w-[200%] rounded-t-[100%] bg-gradient-to-b from-blue-400 via-blue-500 to-blue-600">
+  <div className="absolute bottom-0 mt-[100px] ml-[-50%] h-[200px] w-[200%] rounded-t-[100%] bg-gradient-to-b from-orange-400 via-orange-500 to-orange-600">
     <div className="mt-5 text-center text-2xl text-white">Footer</div>
   </div>
 </div>

@@ -70,7 +70,7 @@ export default function Sections() {
     </div>
     </div>
     <div className='bg-orange-700 border-orange-700 
-     w-[55.8%] ml-60 justify-items-center '>. </div>
+     w-[55.8%] ml-60  justify-items-center '>. </div>
   </div>
 
 {/*third section of landing page  */}
@@ -81,7 +81,7 @@ export default function Sections() {
    <div className='flex flex-row items-center justify-center mt-3 gap-20 '>
       <div className='items-center justify-center
                      border-4 border-orange-700'>
-           <Header5 text="PROYECCION "/>
+           <Header5 text="PROYECCION " textColor ="text-orange-500"/>
            <Header5 text="DE TU IMAGEN "/>      
       </div>
       <div className='items-center justify-center
