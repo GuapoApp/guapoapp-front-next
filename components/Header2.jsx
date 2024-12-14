@@ -11,13 +11,12 @@ const ubuntu = Ubuntu({ subsets: ['latin'], weight: '500' })
 */
 const Header2 = (props) => {
   const headerClasses = classNames({
-    [`text-[${props.textColor}]`]: props.textColor
+    [`text-[${props.textColor}]`]: props.textColor,
+    'text-5xl': true
   })
 
   return (
-    <h2 className={`${ubuntu.className} text-5xl ${headerClasses}`}>
-      {props.text}
-    </h2>
+    <h2 className={`${ubuntu.className} ${headerClasses}`}>{props.text}</h2>
   )
 }
 
