@@ -15,8 +15,6 @@ const Header4 = (props) => {
     'text-3xl': true
   })
 
-  console.log(headerClasses)
-
   return (
     <h4 className={`${ubuntu.className} ${headerClasses}`}>{props.text}</h4>
   )

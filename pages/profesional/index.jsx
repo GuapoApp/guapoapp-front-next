@@ -8,6 +8,8 @@ import Paragraph from '@/components/Paragraph'
 import CurvedBackground from '@/components/CurvedBackground'
 import Welcome from '@/components/dashboards/Welcome'
 import ProfilePicture from '@/components/dashboards/ProfilePicture'
+import Calendar from '@/components/dashboards/Calendar'
+import HourPicker from '@/components/dashboards/HourPicker'
 
 import { jwtDecode } from 'jwt-decode'
 
@@ -15,6 +17,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { useEffect, useState } from 'react'
+
+import { Cabin } from 'next/font/google'
+
+const cabin = Cabin({ subsets: ['latin'] })
 
 const ProfessionalDashboard = () => {
   const [userName, setUserName] = useState('')
@@ -42,7 +48,7 @@ const ProfessionalDashboard = () => {
         />
       </div>
       {/* Principal */}
-      <div className='flex flex-row w-full h-full gap-10'>
+      <div className='flex flex-row w-full h-full gap-10 justify-center'>
         {/* Menu y sección izquierda */}
         <section className='flex flex-col align-middle justify-start'>
           {/**
@@ -58,13 +64,22 @@ const ProfessionalDashboard = () => {
         {/* Agenda y proximas citas sección izquierda */}
         <section className='flex flex-col p-5'>
           {/*Header Agenda tu cita*/}
-          <Header4 text='AGENDA TU CITA' textColor='primary-brownPod950' />
+          <Header4 text='AGENDA TU CITA' textColor='primary-brownPod900' />
           {/*Agenda*/}
-          <div>
+          <div className='flex flex-row gap-5'>
             {/*Calendar*/}
-            <div className=''></div>
+            <div className=''>
+              <Calendar></Calendar>
+            </div>
             {/*Schedule*/}
-            <div></div>
+            <div className='flex flex-col gap-5'>
+              <HourPicker />
+              <div
+                className={`${cabin.className} bg-primary-brownPod600 text-contrast-slateGray50 font-bold rounded-full text-center p-2 text-xl`}
+              >
+                <Link href='/'>Agendar</Link>
+              </div>
+            </div>
           </div>
           {/*Proximas citas*/}
           <div></div>
