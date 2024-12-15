@@ -5,7 +5,7 @@ export default function Navbar() {
     <>
          
             <div className='flex flex-row bg-[#3E1800] h-2/3 justify-between 
-                  pr-6  pl-6  pt-5 pl-5 text-orange-500 mt-auto mb-auto'>
+                  pr-6  pl-6  pt-5 text-orange-500 mt-auto mb-auto'>
               
               <Link className='' href='/'>INICIO</Link>
               <Link href='/'>BENEFICIOS</Link>

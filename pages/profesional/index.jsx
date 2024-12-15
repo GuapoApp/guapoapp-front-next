@@ -41,7 +41,7 @@ const ProfessionalDashboard = () => {
         {/* Menu y sección izquierda */}
         <section className='flex flex-col align-middle justify-start absolute'>
           {/* Sección superior */}
-          <div className='flex flex-row p-5 flex flex-row'>
+          <div className='flex flex-row p-5 '>
             {/* Menú */}
             <div className='flex flex-col bg-[#BC5901] h-2/3 gap-3 p-5 mt-auto mb-auto z-50 relative -top-4 text-[#FEAA00] font-semibold'>
               <Link href='/'>MI PERFIL</Link>
