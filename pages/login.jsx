@@ -40,8 +40,6 @@ const Login = () => {
 
     const json = await response.json()
 
-    console.log(response.status)
-
     if (json.data?.token) {
       localStorage.setItem('token', json.data.token)
 

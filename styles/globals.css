@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  color: #060a17;
+}
+
 ul,
 li {
   list-style: none;
@@ -27,7 +31,7 @@ img {
 /* Slider container */
 .slider-container {
   position: relative;
-  height: 100%
+  height: 100%;
 }
 
 /* dots carrusel */
@@ -92,10 +96,6 @@ div.active {
   z-index: 1;
   cursor: pointer;
 }
-
-
-
-
 
 /*position text  on image*/
 .buttonPosition {
