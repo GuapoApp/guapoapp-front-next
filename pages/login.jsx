@@ -1,20 +1,14 @@
-import CurvedBackground from '@/components/CurvedBackground'
-import Header1 from '@/components/Header1'
-import Header2 from '@/components/Header2'
-import Header3 from '@/components/Header3'
-import Header4 from '@/components/Header4'
-import Header5 from '@/components/Header5'
-import Header6 from '@/components/Header6'
-import Paragraph from '@/components/Paragraph'
-
 import { useForm } from 'react-hook-form'
 import { jwtDecode } from 'jwt-decode'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
-import Link from 'next/link'
 
 import { Ubuntu } from 'next/font/google'
 import { Cabin } from 'next/font/google'
+
+import Header4 from '@/components/Header4'
+import Header5 from '@/components/Header5'
+import Paragraph from '@/components/Paragraph'
 
 const ubuntu = Ubuntu({ subsets: ['latin'], weight: '300' })
 const cabin = Cabin({ subsets: ['latin'] })
@@ -69,73 +63,74 @@ const Login = () => {
 
   return (
     <main
-      className={`${cabin.className} bg-contrast-slateGray50 flex flex-col min-h-screen w-full`}
+      className={`${cabin.className} min-h-screen bg-[#FEAA00] text-[#F7F9FC] flex flex-col items-center gap-16`}
     >
-      {/* Navbar */}
-      <div className='bg-primary-brownPod800 w-full flex flex-row justify-center h-36'></div>
-      {/* Parte central del form del login*/}
-      <section className='flex flex-row justify-center items-center h-[1200px] m-auto w-full'>
-        <div className='flex flex-row w-[70%] h-[70%] shadow-2xl'>
-          {/* Logo */}
-          <div className='w-1/2 h-full'></div>
-          {/* Form */}
+      <div className='flex flex-row justify-between w-full max-w-[80%] m-1'>
+        <div className='flex flex-row justify-between items-center gap-5'>
+          <Image
+            className=''
+            src='/logo-elegance-mix.svg'
+            alt='GuapoApp Logo'
+            width={50}
+            height={50}
+            priority
+          />
+          <h6>Consultoria de Imagen</h6>
+        </div>
+        <div className='flex items-center'>
+          <ul className='flex flex-row justify-between gap-10'>
+            <li>Inicio</li>
+            <li>Beneficios</li>
+            <li>Acerca de</li>
+          </ul>
+        </div>
+      </div>
+      <div className='flex flex-row w-full max-w-[80%] gap-6'>
+        <div className='flex flex-row items-center justify-center w-full bg-[#E28000]'>
           <form
-            className='w-1/2 h-full flex flex-col justify-center px-36 gap-11'
             onSubmit={handleSubmit(onSubmit)}
+            className='flex flex-col gap-5 justify-center size-4/5'
           >
-            <Header3 text='BIENVENIDO,' textColor='text-primary-brownPod800' />
-            <div className='w-full flex flex-col gap-4 '>
-              <label className='w-full text-2xl' htmlFor='email'>
-                <Header5 text='Email' />
-              </label>
-              <input
-                className={`w-full p-5 text-contrast-slateGray500 rounded-md text-2xl bg-contrast-slateGray300`}
-                placeholder='Escribe tu email'
-                type='email'
-                name='email'
-                id='email'
-                {...register('email')}
-              />
-            </div>
-            <div className='w-full flex flex-col gap-4'>
-              <label className='w-full text-2xl' htmlFor='password'>
-                <Header5 text='Password' />
-              </label>
-              <input
-                className={`w-full p-5 text-contrast-slateGray500 rounded-md text-2xl bg-contrast-slateGray300`}
-                placeholder='Escribe tu contraseña'
-                type='password'
-                name='password'
-                id='password'
-                {...register('password')}
-              />
-              <Link href='/'>
-                <Header6
-                  text='¿Olvidaste tu contraseña?'
-                  textAlign='text-right'
-                />
-              </Link>
-            </div>
-            <div>
-              <button
-                className={`bg-primary-brownPod600 px-2 py-3 rounded-md text-2xl text-contrast-slateGray50 w-1/4 font-semibold shadow-2xl`}
-              >
-                Inicia Sesión
-              </button>
-            </div>
-            {/* Sección: No tienes cuenta */}
-            <div className='flex flex-row justify-end items-center gap-4'>
-              <Header6 text='¿No tienes cuenta?' />
-              <Link href='/register' className='border-4 rounded-xl px-7 py-4'>
-                <Header6 text='Regístrate' />
-              </Link>
-            </div>
+            <Header5 text='¡BIENVENIDO!' />
+            <Header4 text='Inicia Sesión' />
+
+            <label className='text-2xl' htmlFor='email'>
+              Email
+            </label>
+            <input
+              className={`text-[#3E4B5E] p-2 rounded-md text-2xl`}
+              placeholder='Tu correo electrónico'
+              type='email'
+              name='email'
+              id='email'
+              {...register('email')}
+            />
+            <label className='text-2xl' htmlFor='password'>
+              Password
+            </label>
+            <input
+              className={`text-[#3E4B5E] p-2 rounded-md text-2xl`}
+              placeholder='Password'
+              type='password'
+              name='password'
+              id='password'
+              {...register('password')}
+            />
+            <button className={`bg-[#974508] px-2 py-3 rounded-md text-2xl`}>
+              Inicia Sesión
+            </button>
           </form>
         </div>
-      </section>
-      {/* Curved Background */}
-      <div className='h-24 absolute -bottom-0 w-full'>
-        <CurvedBackground color='bg-primary-brownPod700' />
+        <div className='w-full'>
+          <Image
+            className='w-full h-full'
+            src='/assets/consulting.webp'
+            alt='GuapoApp Logo'
+            width={503}
+            height={433}
+            priority
+          />
+        </div>
       </div>
     </main>
   )
