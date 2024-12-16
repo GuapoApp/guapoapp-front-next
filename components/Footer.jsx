@@ -1,9 +1,10 @@
 export default function Footer() {
   return (
-    <footer className='flex flex-cols-6 gap-8 text-slate-50
+    <footer className='flex flex-cols-6 gap-8 k
                        justify-center items-center 
-                       p-4 bg-orange-600 text-gray-600'>
-      <div>
+                       p-10  bg-primary-brownPod900 absolute 
+                       mt-[100px] ml-[-50%] h-[200px] w-[200%] rounded-t-[120%]'>
+      <div className="text-slate-200">
         <ul>Logo</ul>
         <ul>Consultoria y Asesoria de Imagen</ul>
         <ul>Siguenos</ul>
