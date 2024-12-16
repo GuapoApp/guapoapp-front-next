@@ -40,7 +40,7 @@ const ProfessionalDashboard = () => {
       <div className='bg-primary-brownPod800 w-full flex flex-row justify-center'>
         <Image
           className='p-3'
-          src='/logo-elegance-mix.svg'
+          src='/assets/logos/logo-blanco.png'
           alt='GuapoApp Logo'
           width={110}
           height={110}
@@ -64,7 +64,7 @@ const ProfessionalDashboard = () => {
         {/* Agenda y proximas citas sección izquierda */}
         <section className='flex flex-col p-5'>
           {/*Header Agenda tu cita*/}
-          <Header4 text='AGENDA TU CITA' textColor='primary-brownPod900' />
+          <Header4 text='AGENDA TU CITA' textColor='text-primary-brownPod900' />
           {/*Agenda*/}
           <div className='flex flex-row gap-5'>
             {/*Calendar*/}
