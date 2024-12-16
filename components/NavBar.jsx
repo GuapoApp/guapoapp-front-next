@@ -4,18 +4,18 @@ export default function Navbar() {
   return (
     <>
          
-            <div className='flex flex-row bg-[#3E1800] h-2/3 justify-between 
-                  pr-6  pl-6  pt-5 text-orange-500 mt-auto mb-auto'>
+            <div className='flex flex-row  bg-primary-brownPod900 justify-between 
+                  pr-6  pl-6  pt-5 text-orange-500  '>
               
               <Link className='' href='/'>INICIO</Link>
               <Link href='/'>BENEFICIOS</Link>
               <Link href='/'>ACERCA DE</Link>
               <Image
-                className='p-3'
-                src='/logo-elegance-mix.svg'
+                className='relative -mt-14'
+                src='/assets/logos/logo-blanco.png'
                 alt='GuapoApp Logo'
-                width={110}
-                height={110}
+                width={150}
+                height={150}
                 
                />
 

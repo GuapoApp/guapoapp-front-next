@@ -26,7 +26,7 @@ export default function Sections() {
               <Paragraph text="elegancia en cada aspecto de su vida"/>        
         </article>
         <div className='items-center justify-center mt-8
-             text-slate-50 bg-orange-700 pt-3 pl-2 pr-2 pb-2'>
+              bg-primary-brownPod700 text-white pt-3 pl-2 pr-2 pb-2'>
             <Header5 text="Tu mejor versión  COMIENZA AQUI"/>
         </div>
       </div>
