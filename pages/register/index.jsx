@@ -75,26 +75,26 @@ const Register = () => {
       className={`${cabin.className} bg-contrast-slateGray50 flex flex-col min-h-screen w-full`}
     >
       {/* Navbar */}
-      <div className='bg-primary-brownPod800 w-full flex flex-row justify-center h-36'></div>
+      <div className='bg-primary-brownPod800 w-full flex flex-row justify-center h-24'></div>
       {/* Parte central del form del login*/}
-      <section className='flex flex-row justify-center items-center h-[1200px] m-auto w-full'>
+      <section className='flex flex-row justify-center items-center h-[820px] m-auto w-full'>
         <div className='flex flex-row w-[70%] h-[70%] shadow-2xl'>
           {/* Logo */}
-          <div className='w-1/2 h-full bg-[url("/assets/images/background-2.jpg")] bg-cover flex justify-center items-end'>
+          <div className='w-1/2 bg-[url("/assets/images/background-2.jpg")] bg-cover flex justify-center items-end'>
             <Image
               className='pb-10'
               src='/assets/logos/logo-blanco.png'
               alt=''
-              height={500}
-              width={500}
+              height={200}
+              width={200}
             ></Image>
           </div>
           {/* Form */}
           <form
-            className='w-1/2 h-full flex flex-col justify-center px-36 gap-11'
+            className='w-1/2 h-full flex flex-col justify-center px-24 gap-5'
             onSubmit={handleSubmit(onSubmit)}
           >
-            <Header3 text='REGÍSTRATE,' textColor='text-primary-brownPod800' />
+            <Header4 text='REGÍSTRATE,' textColor='text-primary-brownPod800' />
             <div className='flex flex-row gap-5'>
               <input
                 className={`form-radio text-primary-brownPod950`}
@@ -104,8 +104,8 @@ const Register = () => {
                 value='Consultant'
                 {...register('role')}
               />
-              <label className='w-full text-2xl' htmlFor='Consultant'>
-                <Header5 text='Voy a dar Asesorías' />
+              <label className='w-full' htmlFor='Consultant'>
+                <Header6 text='Voy a dar Asesorías' />
               </label>
               <input
                 className={``}
@@ -115,16 +115,16 @@ const Register = () => {
                 value='Professional'
                 {...register('role')}
               />
-              <label className='w-full text-2xl' htmlFor='Profesional'>
-                <Header5 text='Quiero asesorarme' />
+              <label className='w-full' htmlFor='Profesional'>
+                <Header6 text='Quiero asesorarme' />
               </label>
             </div>
             <div className='w-full flex flex-col gap-4 '>
-              <label className='w-full text-2xl' htmlFor='name'>
-                <Header5 text='Nombre Completo' />
+              <label className='w-full' htmlFor='name'>
+                <Header6 text='Nombre Completo' />
               </label>
               <input
-                className={`w-full p-5 text-contrast-slateGray500 rounded-md text-2xl bg-contrast-slateGray300`}
+                className={`w-full p-3 text-contrast-slateGray500 rounded-md text-xl bg-contrast-slateGray300`}
                 placeholder='Escribe tu nombre'
                 type='text'
                 name='name'
@@ -133,11 +133,11 @@ const Register = () => {
               />
             </div>
             <div className='w-full flex flex-col gap-4'>
-              <label className='w-full text-2xl' htmlFor='email'>
-                <Header5 text='Escribe tu email' />
+              <label className='w-full' htmlFor='email'>
+                <Header6 text='Escribe tu email' />
               </label>
               <input
-                className={`w-full p-5 text-contrast-slateGray500 rounded-md text-2xl bg-contrast-slateGray300`}
+                className={`w-full p-3 text-contrast-slateGray500 rounded-md text-xl bg-contrast-slateGray300`}
                 placeholder='Escribe tu email'
                 type='email'
                 name='email'
@@ -146,11 +146,11 @@ const Register = () => {
               />
             </div>
             <div className='w-full flex flex-col gap-4 '>
-              <label className='w-full text-2xl' htmlFor='password'>
-                <Header5 text='Contraseña' />
+              <label className='w-full' htmlFor='password'>
+                <Header6 text='Contraseña' />
               </label>
               <input
-                className={`w-full p-5 text-contrast-slateGray500 rounded-md text-2xl bg-contrast-slateGray300`}
+                className={`w-full p-3 text-contrast-slateGray500 rounded-md text-xl bg-contrast-slateGray300`}
                 placeholder='Escribe tu contraseña'
                 type='password'
                 name='password'
@@ -160,7 +160,7 @@ const Register = () => {
             </div>
             <div>
               <button
-                className={`bg-primary-brownPod600 px-2 py-3 rounded-md text-2xl text-contrast-slateGray50 w-1/4 font-semibold shadow-2xl`}
+                className={`bg-primary-brownPod600 px-2 py-3 rounded-md text-xl text-contrast-slateGray50 w-2/4 font-semibold shadow-2xl`}
               >
                 Crea tu cuenta
               </button>
@@ -169,7 +169,7 @@ const Register = () => {
         </div>
       </section>
       {/* Curved Background */}
-      <div className='h-24 absolute -bottom-0 w-full'>
+      <div className='h-24 w-full'>
         <CurvedBackground color='bg-primary-brownPod600' />
       </div>
     </main>
