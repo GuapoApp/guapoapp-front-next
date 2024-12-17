@@ -80,7 +80,15 @@ const Register = () => {
       <section className='flex flex-row justify-center items-center h-[1200px] m-auto w-full'>
         <div className='flex flex-row w-[70%] h-[70%] shadow-2xl'>
           {/* Logo */}
-          <div className='w-1/2 h-full'></div>
+          <div className='w-1/2 h-full bg-[url("/assets/images/background-2.jpg")] bg-cover flex justify-center items-end'>
+            <Image
+              className='pb-10'
+              src='/assets/logos/logo-blanco.png'
+              alt=''
+              height={500}
+              width={500}
+            ></Image>
+          </div>
           {/* Form */}
           <form
             className='w-1/2 h-full flex flex-col justify-center px-36 gap-11'
