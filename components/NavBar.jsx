@@ -5,7 +5,7 @@ export default function Navbar() {
     <>
          
             <div className='flex flex-row  bg-primary-brownPod900 justify-between 
-                  pr-6  pl-6  pt-5 text-orange-500  '>
+                  pr-6  pl-6  pt-5 text-primary-brownPod600  '>
               
               <Link className='' href='/'>INICIO</Link>
               <Link href='/'>BENEFICIOS</Link>
@@ -19,8 +19,8 @@ export default function Navbar() {
                 
                />
 
-              <Link href='/'>UNETE AHORA </Link>
-              <Link href='/'>INICIAR SESION</Link>
+              <Link href='/register'>UNETE AHORA </Link>
+              <Link href='/login'>INICIAR SESION</Link>
               </div>
           
 

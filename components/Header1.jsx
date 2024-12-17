@@ -7,8 +7,8 @@ const ubuntu = Ubuntu({ subsets: ['latin'], weight: '500' })
 /** 
  * PROPS:
  @param: text ==> The text to be printed 
- @param: textColor ==> The color of the text
- @param: textAlign ==> The alignment of the text
+ @param: textColor ==> The color of the text 
+ @param: textAlign ==> The alignment of the text  
 */
 const Header1 = (props) => {
   const headerClasses = clsx({

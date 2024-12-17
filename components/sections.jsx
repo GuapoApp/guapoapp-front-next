@@ -14,11 +14,14 @@ export default function Sections() {
     {/*First section of the landing page */}
     <div className='flex flex-row items-center justify-center gap-8'>
       <div>
-        <Header1 text="GuapoApp"/>
-        <div className='ml-16 mb-8'>
-          <Header6 text="Consultoria de imagen"/>
-        </div>
-         
+                                 <Image
+                                   className='relative -mt-6'
+                                   src='/assets/logos/logo-naranja.png'
+                                   alt='GuapoApp Logo'
+                                   width={200}
+                                   height={200}                        
+                                  />        
+            
        <article className=''>
               <Paragraph text="Sabemos que a imagen habla bien por ti. Somos una"/>
               <Paragraph text="consultoria de imagen dedicada exclusivamente a"/>
@@ -27,7 +30,7 @@ export default function Sections() {
         </article>
         <div className='items-center justify-center mt-8
               bg-primary-brownPod700 text-white pt-3 pl-2 pr-2 pb-2'>
-            <Header5 text="Tu mejor versión  COMIENZA AQUI"/>
+            <Header5 text="Tu mejor versión  COMIENZA AQUI" textColor="text-slate-50"/>
         </div>
       </div>
       <div className='flex flex-row relative mt-12'>
@@ -82,14 +85,14 @@ export default function Sections() {
 
 {/*third section of landing page  */}
 <div className='items-center justify-center flex flex-col mb-8 '>
-  <div className='text-orange-500 mt-8 mb-8'>
-      <Header5 text="¿Que incluye mi asesoria de imagen personalizada?"/>
+  <div className='mt-8 mb-8'>
+      <Header2 text="¿Que incluye mi asesoria de imagen personalizada?" textColor="text-orange-600" />
  </div> 
 
    <div className='flex flex-row items-center  mt-3 gap-20 '>
       {/*First card */}
-      <div className='items-center justify-center  bg-orange-950 pb-7
-                     border-4 border-orange-950 '>
+      <div className='items-center justify-center  bg-primary-brownPod950 pb-7
+                     border-4 border-primary-brownPod950 '>
             <div className='w-38 pt-4 '>
             <Image
                 className=''
@@ -101,8 +104,8 @@ export default function Sections() {
 
             </div> 
           
-          <div className='bg-contrast-slateGray50 border-4 border-orange-950 w-full  grid justify-items-center'>
-              <Header5 text="PROYECCION " textColor ="text-orange-500"/>
+          <div className='bg-contrast-slateGray50 border-4 border-primary-brownPod950 w-full  grid justify-items-center'>
+              <Header5 text="PROYECCION " textColor ="text-black" />
               <Header5 text="DE TU IMAGEN "/>
               <Paragraph text="Conocer cúal es la imagen que proyectas" />
               <Paragraph text="al exterior es importante para alcanzar" />
@@ -113,8 +116,8 @@ export default function Sections() {
 
       {/*Second Card*/}
       <div className='items-center justify-center
-                       bg-orange-950 pb-7
-                     border-4 border-orange-950'>
+                       bg-primary-brownPod950 pb-7
+                     border-4 border-primary-brownPod950'>
             <div className='w-38  pt-4'>
             <Image
                 className=''
@@ -127,8 +130,8 @@ export default function Sections() {
             <div>
 
             </div>
-           <div className='bg-contrast-slateGray50 border-4 border-orange-950  grid justify-items-center'>
-              <Header5 text="ASESORIA " textColor ="text-orange-500"/>
+           <div className='bg-contrast-slateGray50 border-4 border-primary-brownPod950  grid justify-items-center'>
+              <Header5 text="ASESORIA " textColor ="text-black"/>
               <Header5 text="PERSONALIZADA "/>
               <Paragraph text="Adoptaremos tu imagen y tu estilo a tus " />
               <Paragraph text="necesidades y objetivos a conseguir," />
@@ -137,8 +140,8 @@ export default function Sections() {
            </div>
       </div>
       {/*Third Card*/}
-      <div className='items-center justify-center bg-primary-brownPod950
-                      border-4 border-orange-950 pb-7'>
+      <div className=' bg-primary-brownPod950 
+                      border-4 border-primary-brownPod950 pb-7'>
           <div className='w-38 pt-4'>
           <Image
                 className=''
@@ -149,7 +152,7 @@ export default function Sections() {
                />
           </div>
         
-         <div className='bg-contrast-slateGray50 border-4 border-orange-950 '>
+         <div className='bg-contrast-slateGray50 border-4 border-primary-brownPod950 grid justify-items-center '>
               <Header5 text="NOS VAMOS "/>
               <Header5 text="DE COMPRA"/>
               <Paragraph text="Te enseñaremos a potenciar tu imagen" />
@@ -160,7 +163,7 @@ export default function Sections() {
       </div>
       {/*Fourth Card*/}
       <div className='items-center justify-center 
-                      border-4 border-orange-950 bg-primary-brownPod950 pb-7'>
+                      border-4 border-primary-brownPod950 bg-primary-brownPod950 pb-7'>
           <div className='w-38 pt-4'>
           <Image
                 className=''
@@ -170,7 +173,7 @@ export default function Sections() {
                 height={400}            
                />
           </div>
-          <div className='bg-contrast-slateGray50 border-4 border-orange-950 
+          <div className='bg-contrast-slateGray50 border-4 border-primary-brownPod950 
              grid justify-items-center'>
               
               <Header5 text="ESTUDIO "/>
@@ -184,45 +187,10 @@ export default function Sections() {
    </div>
 </div>
 {/*Fourth section of landing page */}
- 
- <div className='flex flex-row gap-8 bg-primary-brownPod100 
- items-center justify-center'>
-    <div className='flex flex-row' >
-         espacio en blanco
-         <div className=' bg-primary-brownPod500 pt-10 h-auto'>
-         <Image
-                className='h-auto'
-                src='/assets/images/stock-image-6.jpg'
-                alt='GuapoApp Logo'
-                width={300}
-                height={800}            
-               />               
-         </div>
-    </div>
+     
+     
 
-    <div > 
-        <div>EXPERIENCIA</div>
-            <div>GuapoApp</div>
-            <div>¿Nuevo empleo?</div>
-        <div>
-            <p>Te ayudamos a definir el nuevo vestuario</p>
-            <p>para tu nuevo puesto</p>
-        </div>
-     </div>
- </div>
  
- 
- {/*Fifth section of landing page */}
- <Image
-                className=''
-                src='/assets/images/stock-image-6.jpg'
-                alt='GuapoApp Logo'
-                width={300}
-                height={800}            
-               />               
- 
-                        
- {/**/}   
-    </>
+ </>
   )
 }
