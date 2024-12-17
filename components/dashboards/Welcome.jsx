@@ -9,10 +9,10 @@ import Header3 from '../Header3'
 const Welcome = (props) => {
   return (
     <div className='m-auto pl-16 flex flex-col'>
-      <Header2 text='BIENVENIDO' textColor='text-primary-brownPod700' />
+      <Header2 text='BIENVENIDO' textColor='text-primary-brownPod900' />
       <Header3
         text={`${props.userName},`}
-        textColor='text-primary-brownPod700'
+        textColor='text-primary-brownPod900'
       />
     </div>
   )
