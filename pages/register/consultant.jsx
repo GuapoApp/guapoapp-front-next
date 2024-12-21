@@ -6,6 +6,8 @@ import Header4 from '@/components/Header4'
 import Header5 from '@/components/Header5'
 import Header6 from '@/components/Header6'
 import Paragraph from '@/components/Paragraph'
+import FormSquareInput from '@/components/forms/FormSquareInput'
+import FileInput from '@/components/forms/FileInput'
 
 import Image from 'next/image'
 
@@ -23,7 +25,7 @@ const ConsultantRegister = () => {
       {/* Navbar */}
       <div className='bg-primary-brownPod800 w-full flex flex-row justify-center h-24'></div>
       {/*Seccion Principal */}
-      <section className='flex flex-row justify-center items-center h-[820px] m-auto w-full'>
+      <section className='flex flex-row justify-center items-center m-auto w-full'>
         <div className='flex flex-col w-[70%] h-[70%] shadow-2xl'>
           <div className='h-1/4 flex justify-center'>
             <Image
@@ -33,7 +35,7 @@ const ConsultantRegister = () => {
               alt=''
             />
           </div>
-          <form className='w-full h-3/4 bg-primary-brownPod900 flex flex-row'>
+          <form className='w-full h-3/4 bg-primary-brownPod900 flex flex-row px-12 py-10'>
             <div className='w-1/3 h-full flex flex-col items-center justify-center gap-5'>
               <Image
                 alt=''
@@ -46,10 +48,13 @@ const ConsultantRegister = () => {
                   textColor='text-contrast-slateGray50'
                   text='Sube una foto de perfil'
                 />
-                <input
-                  type='file'
+                <FileInput
                   accept='image/*'
-                  className='bg-primary-brownPod600'
+                  color='bg-primary-brownPod600'
+                  textColor='text-contrast-slateGray50'
+                  id='profilePicture'
+                  name='profilePicture'
+                  text='Selecciona un archivo'
                 />
               </div>
             </div>
@@ -59,7 +64,7 @@ const ConsultantRegister = () => {
                   text='BIENVENIDO'
                   textColor='text-contrast-slateGray50'
                 />
-                <Header4
+                <Header5
                   text='Completa tus datos,'
                   textColor='text-contrast-slateGray50'
                 />
@@ -69,10 +74,13 @@ const ConsultantRegister = () => {
                   textColor='text-contrast-slateGray50'
                   text='Sube tu CV'
                 />
-                <input
-                  type='file'
-                  accept='image/*'
-                  className='bg-primary-brownPod600'
+                <FileInput
+                  accept='.pdf'
+                  color='bg-primary-brownPod600'
+                  textColor='text-contrast-slateGray50'
+                  id='cv'
+                  name='cv'
+                  text='Selecciona un archivo'
                 />
               </div>
               <div className='flex flex-col gap-3'>
@@ -80,10 +88,45 @@ const ConsultantRegister = () => {
                   textColor='text-contrast-slateGray50'
                   text='Fecha de Nacimiento'
                 />
-                <input type='date' />
+                <input
+                  type='date'
+                  className={`w-full p-3 text-contrast-slateGray500 rounded-md text-xl bg-contrast-slateGray300`}
+                />
               </div>
             </div>
-            <div className='w-1/3 h-full flex flex-col'></div>
+            <div className='w-1/3 h-full flex flex-col px-20 justify-center gap-4'>
+              <Header6
+                text='Experiencia profesional'
+                textColor='text-contrast-slateGray50'
+              />
+              <textarea
+                name='professionalExperiencia'
+                id='professionalExperience'
+                placeholder='Escribe aquí tu experiencia'
+                className={`w-full p-3 text-contrast-slateGray500 rounded-md text-xl bg-contrast-slateGray300`}
+                rows='5'
+                maxlength='200'
+              ></textarea>
+              <Header6
+                text='Agrega al menos una red social profesional'
+                textColor='text-contrast-slateGray50'
+              />
+              <input
+                type='text'
+                name='socialMedia'
+                id='socialMedia'
+                placeholder='Escribe el link'
+                className={`w-full p-3 text-contrast-slateGray500 rounded-md text-xl bg-contrast-slateGray300`}
+              />
+              <div>
+                <FormSquareInput
+                  text='Finalizar'
+                  color='bg-primary-brownPod600'
+                  textColor='text-contrast-slateGray50'
+                  width='w-2/4'
+                />
+              </div>
+            </div>
           </form>
         </div>
       </section>

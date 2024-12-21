@@ -6,8 +6,7 @@ import Header4 from '@/components/Header4'
 import Header5 from '@/components/Header5'
 import Header6 from '@/components/Header6'
 import Paragraph from '@/components/Paragraph'
-import FormSquareButton from '@/components/forms/FormSquareButton'
-import IconInput from '@/components/forms/LogoInput'
+import FormSquareInput from '@/components/forms/FormSquareInput'
 
 import { useForm } from 'react-hook-form'
 import { jwtDecode } from 'jwt-decode'
@@ -82,7 +81,7 @@ const Login = () => {
       {/* Navbar */}
       <div className='bg-primary-brownPod800 w-full flex flex-row justify-center h-24'></div>
       {/* Parte central del form del login*/}
-      <section className='flex flex-row justify-center items-center h-820px] m-auto w-full'>
+      <section className='flex flex-row justify-center items-center m-auto w-full'>
         <div className='flex flex-row w-[70%] h-[70%] shadow-2xl'>
           {/* Logo */}
           <div className='w-1/2 bg-[url("/assets/images/background-1.jpg")] bg-cover flex justify-center items-start'>
@@ -96,7 +95,7 @@ const Login = () => {
           </div>
           {/* Form */}
           <form
-            className='w-1/2 h-full flex flex-col justify-center px-24 gap-5'
+            className='w-1/2 h-full flex flex-col justify-center px-24 gap-5 py-10'
             onSubmit={handleSubmit(onSubmit)}
           >
             <Header4 text='BIENVENIDO,' textColor='text-primary-brownPod800' />
@@ -104,14 +103,6 @@ const Login = () => {
               <label className='w-full' htmlFor='email'>
                 <Header6 text='Email' />
               </label>
-              {/* <IconInput
-                placeholder='Escribe tu email'
-                type='email'
-                name='email'
-                id='email'
-                register='email'
-                source='/assets/icons/person-fill.svg'
-              /> */}
               <input
                 className={`w-full p-3 text-contrast-slateGray500 rounded-md text-xl bg-contrast-slateGray300`}
                 placeholder='Escribe tu email'
@@ -153,7 +144,7 @@ const Login = () => {
               </div>
             </div>
             <div>
-              <FormSquareButton
+              <FormSquareInput
                 text='Inicia Sesión'
                 color='bg-primary-brownPod600'
                 textColor='text-contrast-slateGray50'

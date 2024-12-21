@@ -11,7 +11,7 @@ const cabin = Cabin({ subsets: ['latin'] })
  * @param: width - The width of the button
  */
 
-const FormSquareButton = (props) => {
+const FormSquareInput = (props) => {
   const buttonClasses = clsx({
     [props.color]: props.color,
     [props.textColor]: props.textColor,
@@ -31,4 +31,4 @@ const FormSquareButton = (props) => {
   )
 }
 
-export default FormSquareButton
+export default FormSquareInput

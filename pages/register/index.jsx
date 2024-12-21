@@ -6,6 +6,7 @@ import Header4 from '@/components/Header4'
 import Header5 from '@/components/Header5'
 import Header6 from '@/components/Header6'
 import Paragraph from '@/components/Paragraph'
+import FormSquareInput from '@/components/forms/FormSquareInput'
 
 import { useForm } from 'react-hook-form'
 import { useRouter } from 'next/router'
@@ -77,7 +78,7 @@ const Register = () => {
       {/* Navbar */}
       <div className='bg-primary-brownPod800 w-full flex flex-row justify-center h-24'></div>
       {/* Parte central del form del login*/}
-      <section className='flex flex-row justify-center items-center h-[820px] m-auto w-full'>
+      <section className='flex flex-row justify-center items-center m-auto w-full'>
         <div className='flex flex-row w-[70%] h-[70%] shadow-2xl'>
           {/* Logo */}
           <div className='w-1/2 bg-[url("/assets/images/background-2.jpg")] bg-cover flex justify-center items-end'>
@@ -91,7 +92,7 @@ const Register = () => {
           </div>
           {/* Form */}
           <form
-            className='w-1/2 h-full flex flex-col justify-center px-24 gap-5'
+            className='w-1/2 h-full flex flex-col justify-center px-24 gap-5 py-10'
             onSubmit={handleSubmit(onSubmit)}
           >
             <Header4 text='REGÍSTRATE,' textColor='text-primary-brownPod800' />
@@ -159,11 +160,12 @@ const Register = () => {
               />
             </div>
             <div>
-              <button
-                className={`bg-primary-brownPod600 px-2 py-3 rounded-md text-xl text-contrast-slateGray50 w-2/4 font-semibold shadow-2xl`}
-              >
-                Crea tu cuenta
-              </button>
+              <FormSquareInput
+                text='Crea tu cuenta'
+                color='bg-primary-brownPod600'
+                textColor='text-contrast-slateGray50'
+                width='w-2/4'
+              />
             </div>
           </form>
         </div>
