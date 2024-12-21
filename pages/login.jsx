@@ -6,6 +6,8 @@ import Header4 from '@/components/Header4'
 import Header5 from '@/components/Header5'
 import Header6 from '@/components/Header6'
 import Paragraph from '@/components/Paragraph'
+import FormSquareButton from '@/components/forms/FormSquareButton'
+import IconInput from '@/components/forms/LogoInput'
 
 import { useForm } from 'react-hook-form'
 import { jwtDecode } from 'jwt-decode'
@@ -65,6 +67,12 @@ const Login = () => {
         return
       }
     }
+
+    setError('root', { message: json.error })
+  }
+
+  const displayLoginError = (message) => {
+    return <Paragraph text={message} textColor='text-red-600' />
   }
 
   return (
@@ -96,13 +104,23 @@ const Login = () => {
               <label className='w-full' htmlFor='email'>
                 <Header6 text='Email' />
               </label>
+              {/* <IconInput
+                placeholder='Escribe tu email'
+                type='email'
+                name='email'
+                id='email'
+                register='email'
+                source='/assets/icons/person-fill.svg'
+              /> */}
               <input
                 className={`w-full p-3 text-contrast-slateGray500 rounded-md text-xl bg-contrast-slateGray300`}
                 placeholder='Escribe tu email'
                 type='email'
                 name='email'
                 id='email'
-                {...register('email')}
+                {...register('email', {
+                  required: { value: true, message: 'El email es requerido' }
+                })}
               />
             </div>
             <div className='w-full flex flex-col gap-4'>
@@ -115,21 +133,32 @@ const Login = () => {
                 type='password'
                 name='password'
                 id='password'
-                {...register('password')}
+                {...register('password', {
+                  required: { value: true, message: 'El password es requerido' }
+                })}
               />
-              <Link href='/'>
-                <Paragraph
-                  text='¿Olvidaste tu contraseña?'
-                  textAlign='text-right'
-                />
-              </Link>
+              <div className='flex flex-row justify-between items-center'>
+                {/* <Paragraph text='Mensaje de error' textColor='text-red-600' /> */}
+                {errors?.email?.message &&
+                  displayLoginError(errors.email.message)}
+                {errors?.password?.message &&
+                  displayLoginError(errors.password.message)}
+                {errors?.root && displayLoginError(errors.root.message)}
+                <Link href='/'>
+                  <Paragraph
+                    text='¿Olvidaste tu contraseña?'
+                    textAlign='text-right'
+                  />
+                </Link>
+              </div>
             </div>
             <div>
-              <button
-                className={`bg-primary-brownPod600 px-2 py-3 rounded-md text-xl text-contrast-slateGray50 w-2/4 font-semibold shadow-2xl`}
-              >
-                Inicia Sesión
-              </button>
+              <FormSquareButton
+                text='Inicia Sesión'
+                color='bg-primary-brownPod600'
+                textColor='text-contrast-slateGray50'
+                width='w-2/4'
+              />
             </div>
             {/* Sección: No tienes cuenta */}
             <div className='flex flex-row justify-end items-center gap-4'>
