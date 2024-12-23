@@ -6,7 +6,7 @@ import Header4 from '@/components/Header4'
 import Header5 from '@/components/Header5'
 import Header6 from '@/components/Header6'
 import Paragraph from '@/components/Paragraph'
-import FormSquareInput from '@/components/forms/FormSquareInput'
+import FormSquareButton from '@/components/forms/FormSquareButton'
 
 import { useForm } from 'react-hook-form'
 import { jwtDecode } from 'jwt-decode'
@@ -113,6 +113,8 @@ const Login = () => {
                   required: { value: true, message: 'El email es requerido' }
                 })}
               />
+              {errors?.email?.message &&
+                displayLoginError(errors.email.message)}
             </div>
             <div className='w-full flex flex-col gap-4'>
               <label className='w-full' htmlFor='password'>
@@ -128,12 +130,9 @@ const Login = () => {
                   required: { value: true, message: 'El password es requerido' }
                 })}
               />
+              {errors?.password?.message &&
+                displayLoginError(errors.password.message)}
               <div className='flex flex-row justify-between items-center'>
-                {/* <Paragraph text='Mensaje de error' textColor='text-red-600' /> */}
-                {errors?.email?.message &&
-                  displayLoginError(errors.email.message)}
-                {errors?.password?.message &&
-                  displayLoginError(errors.password.message)}
                 {errors?.root && displayLoginError(errors.root.message)}
                 <Link href='/'>
                   <Paragraph
@@ -144,7 +143,7 @@ const Login = () => {
               </div>
             </div>
             <div>
-              <FormSquareInput
+              <FormSquareButton
                 text='Inicia Sesión'
                 color='bg-primary-brownPod600'
                 textColor='text-contrast-slateGray50'

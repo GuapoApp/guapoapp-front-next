@@ -2,9 +2,18 @@ import { clsx } from 'clsx'
 
 import { Cabin } from 'next/font/google'
 
+import { useForm } from 'react-hook-form'
+
 const cabin = Cabin({ subsets: ['latin'] })
 
 const FileInput = (props) => {
+  const {
+    register,
+    handleSubmit,
+    setError,
+    formState: { errors }
+  } = useForm()
+
   const fileInputClasses = clsx({
     [props.color]: props.color,
     [props.width]: props.width,
@@ -31,6 +40,9 @@ const FileInput = (props) => {
           id={props.id}
           name={props.name}
           className='hidden'
+          {...register(props.id, {
+            required: { value: props.required, message: props.message }
+          })}
         />
         {props.text}
       </label>

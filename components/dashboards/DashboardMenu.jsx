@@ -32,7 +32,7 @@ const DashboardMenu = (props) => {
 
   if (props.role === 'CONSULTANT') {
     return (
-      <div className='flex flex-col bg-primary-brownPod700 gap-7 p-7 mt-auto mb-auto h-[80%] text-primary-brownPod500 font-semibold z-20 text-xl'>
+      <div className='flex flex-col bg-primary-brownPod700 gap-7 p-7 mt-auto mb-auto h-[97%] text-primary-brownPod500 font-semibold z-20 text-xl'>
         <Link href='/'>MI PERFIL</Link>
         <Link href='/'>MIS ASESORESADOS</Link>
         <Link href='/'>MIS RESEÑAS</Link>

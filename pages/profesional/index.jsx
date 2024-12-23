@@ -10,6 +10,7 @@ import Welcome from '@/components/dashboards/Welcome'
 import ProfilePicture from '@/components/dashboards/ProfilePicture'
 import Calendar from '@/components/dashboards/Calendar'
 import HourPicker from '@/components/dashboards/HourPicker'
+import SessionCard from '@/components/dashboards/SessionCard'
 
 import { jwtDecode } from 'jwt-decode'
 
@@ -48,7 +49,7 @@ const ProfessionalDashboard = () => {
         />
       </div>
       {/* Principal */}
-      <div className='flex flex-row w-full h-full gap-10 justify-center'>
+      <div className='flex flex-row w-full gap-10 justify-center z-10'>
         {/* Menu y sección izquierda */}
         <section className='flex flex-col align-middle justify-start'>
           {/**
@@ -62,14 +63,14 @@ const ProfessionalDashboard = () => {
           <Welcome userName={userName} />
         </section>
         {/* Agenda y proximas citas sección izquierda */}
-        <section className='flex flex-col p-5'>
+        <section className='flex flex-col p-5 gap-8'>
           {/*Header Agenda tu cita*/}
           <Header4 text='AGENDA TU CITA' textColor='text-primary-brownPod900' />
           {/*Agenda*/}
           <div className='flex flex-row gap-5'>
             {/*Calendar*/}
             <div className=''>
-              <Calendar></Calendar>
+              <Calendar />
             </div>
             {/*Schedule*/}
             <div className='flex flex-col gap-5'>
@@ -82,14 +83,45 @@ const ProfessionalDashboard = () => {
             </div>
           </div>
           {/*Proximas citas*/}
-          <div></div>
-          {/*Footer Proximas citas*/}
-          <div></div>
+          <div className='flex flex-col gap-2'>
+            <div className='flex flex-col gap-3 p-2'>
+              {/* Card 1 */}
+              <SessionCard
+                dayName='LUNES'
+                hour='9:00 AM a 10:00 AM'
+                user='LUIS RAMOS'
+                sessionName='Asesoría para Boda'
+                day='10/01'
+              />
+              {/* Card 2 */}
+              <SessionCard
+                dayName='MARTES'
+                hour='1:00 PM a 02:00 PM'
+                user='JOSÉ SUÁREZ'
+                sessionName='Asesoría Integral'
+                day='11/01'
+              />
+              {/* Card 3 */}
+              <SessionCard
+                dayName='JUEVES'
+                hour='11:00 AM a 12:00 PM'
+                user='ERIKA VEGA'
+                sessionName='Asesoría para Examen Profesional'
+                day='15/01'
+              />
+            </div>
+            {/*Footer Proximas citas*/}
+            <div className='p-0'>
+              <Header5
+                text='Próxima Citas'
+                textColor='text-primary-brownPod900'
+              />
+            </div>
+          </div>
         </section>
       </div>
-
-      <div className='h-24 absolute -bottom-0 w-full'>
-        <CurvedBackground />
+      <div className='h-24 absolute -bottom-0 w-full z-0'>
+        <CurvedBackground color='bg-primary-brownPod700' />
       </div>
     </main>
   )

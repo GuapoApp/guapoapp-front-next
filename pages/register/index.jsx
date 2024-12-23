@@ -6,10 +6,11 @@ import Header4 from '@/components/Header4'
 import Header5 from '@/components/Header5'
 import Header6 from '@/components/Header6'
 import Paragraph from '@/components/Paragraph'
-import FormSquareInput from '@/components/forms/FormSquareInput'
+import FormSquareButton from '@/components/forms/FormSquareButton'
 
 import { useForm } from 'react-hook-form'
 import { useRouter } from 'next/router'
+import { useUserContext } from '../../context/UserContext'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -27,48 +28,24 @@ const Register = () => {
     formState: { errors }
   } = useForm()
 
+  const { user, setUser } = useUserContext()
+
   const router = useRouter()
 
   const onSubmit = async (data) => {
-    // const response = await fetch(
-    //   `${process.env.NEXT_PUBLIC_GUAPOAPP_URI}user/login`,
-    //   {
-    //     method: 'POST',
-    //     headers: {
-    //       'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify({
-    //       Email: data.email,
-    //       Password: data.password
-    //     })
-    //   }
-    // )
-    // const json = await response.json()
-    // if (json.data?.token) {
-    //   localStorage.setItem('token', json.data.token)
-    //   const decoded = jwtDecode(json.data.token)
-    //   const role = decoded.Role
-    //   if (role === 'ADMIN') {
-    //     router.push('/admin')
-    //     return
-    //   }
-    //   if (role === 'CONSULTANT') {
-    //     router.push('/asesor')
-    //     return
-    //   }
-    //   if (role === 'PROFESSIONAL') {
-    //     router.push('/profesional')
-    //     return
-    //   }
-    // }
+    setUser(data)
 
-    console.log('Data', data)
+    console.log('User in Register:', user)
 
-    if (data.role === 'Consultant') {
+    if (data.role === 'CONSULTANT') {
       router.push('/register/consultant')
     } else {
       router.push('/register/professional')
     }
+  }
+
+  const displayLoginError = (message) => {
+    return <Paragraph text={message} textColor='text-red-600' />
   }
 
   return (
@@ -98,12 +75,13 @@ const Register = () => {
             <Header4 text='REGÍSTRATE,' textColor='text-primary-brownPod800' />
             <div className='flex flex-row gap-5'>
               <input
-                className={`form-radio text-primary-brownPod950`}
+                className={``}
                 type='radio'
                 name='role'
-                id='role'
-                value='Consultant'
+                // id='role'
+                value='CONSULTANT'
                 {...register('role')}
+                defaultChecked
               />
               <label className='w-full' htmlFor='Consultant'>
                 <Header6 text='Voy a dar Asesorías' />
@@ -112,8 +90,8 @@ const Register = () => {
                 className={``}
                 type='radio'
                 name='role'
-                id='role'
-                value='Professional'
+                // id='role'
+                value='PROFESSIONAL'
                 {...register('role')}
               />
               <label className='w-full' htmlFor='Profesional'>
@@ -130,8 +108,11 @@ const Register = () => {
                 type='text'
                 name='name'
                 id='name'
-                {...register('name')}
+                {...register('name', {
+                  required: { value: true, message: 'El nombre es requerido' }
+                })}
               />
+              {errors?.name?.message && displayLoginError(errors.name.message)}
             </div>
             <div className='w-full flex flex-col gap-4'>
               <label className='w-full' htmlFor='email'>
@@ -143,8 +124,12 @@ const Register = () => {
                 type='email'
                 name='email'
                 id='email'
-                {...register('email')}
+                {...register('email', {
+                  required: { value: true, message: 'El email es requerido' }
+                })}
               />
+              {errors?.email?.message &&
+                displayLoginError(errors.email.message)}
             </div>
             <div className='w-full flex flex-col gap-4 '>
               <label className='w-full' htmlFor='password'>
@@ -156,11 +141,15 @@ const Register = () => {
                 type='password'
                 name='password'
                 id='password'
-                {...register('password')}
+                {...register('password', {
+                  required: { value: true, message: 'El password es requerido' }
+                })}
               />
+              {errors?.password?.message &&
+                displayLoginError(errors.password.message)}
             </div>
             <div>
-              <FormSquareInput
+              <FormSquareButton
                 text='Crea tu cuenta'
                 color='bg-primary-brownPod600'
                 textColor='text-contrast-slateGray50'
