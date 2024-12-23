@@ -18,8 +18,8 @@ const DashboardMenu = (props) => {
   if (props.role === 'PROFESSIONAL') {
     return (
       <div className='flex flex-col bg-primary-brownPod700 gap-7 p-7 mt-auto mb-auto h-[80%] text-primary-brownPod500 font-semibold z-20 text-xl'>
-        <Link href='/'>MI PERFIL</Link>
-        <Link href='/'>MIS ASESORES</Link>
+        <Link href='/profesional/profile'>MI PERFIL</Link>
+        <Link href='/profesional/asesores'>MIS ASESORES</Link>
         <Link href='/'>MI EXPEDIENTE</Link>
         <Link href='/'>AGENDA</Link>
         <Link href='/'>METODOS DE PAGO</Link>

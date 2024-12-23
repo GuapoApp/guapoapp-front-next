@@ -12,6 +12,7 @@ import Calendar from '@/components/dashboards/Calendar'
 import HourPicker from '@/components/dashboards/HourPicker'
 import SessionCard from '@/components/dashboards/SessionCard'
 import FormSquareButton from '@/components/forms/FormSquareButton'
+import SquareButton from '@/components/SquareButton'
 
 import { jwtDecode } from 'jwt-decode'
 
@@ -156,16 +157,18 @@ const ConsultantDashboard = () => {
               {/**
                * TODO: Add SquareButton but not as form
                */}
-              <FormSquareButton
+              <SquareButton
                 color='bg-primary-brownPod500'
                 textColor='text-contrast-slateGray50'
                 text='Retirar'
                 width='w-3/6'
+                href='/'
               />
             </div>
           </div>
         </section>
       </div>
+      {/* Curved Background */}
       <div className='h-24 absolute -bottom-0 w-full z-0'>
         <CurvedBackground color='bg-primary-brownPod700' />
       </div>
