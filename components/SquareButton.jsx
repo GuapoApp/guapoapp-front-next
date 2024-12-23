@@ -22,9 +22,7 @@ const SquareButton = (props) => {
 
   return (
     <div className={`${cabin.className} ${buttonClasses}`}>
-      <Link href={props.href} onclick={props.function}>
-        {props.text}
-      </Link>
+      <Link href={props.href}>{props.text}</Link>
     </div>
   )
 }
