@@ -6,6 +6,7 @@ import Header4 from '@/components/Header4'
 import Header5 from '@/components/Header5'
 import Header6 from '@/components/Header6'
 import Paragraph from '@/components/Paragraph'
+import FormSquareButton from '@/components/forms/FormSquareButton'
 
 import { useForm } from 'react-hook-form'
 import { jwtDecode } from 'jwt-decode'
@@ -65,6 +66,12 @@ const Login = () => {
         return
       }
     }
+
+    setError('root', { message: json.error })
+  }
+
+  const displayLoginError = (message) => {
+    return <Paragraph text={message} textColor='text-red-600' />
   }
 
   return (
@@ -74,7 +81,7 @@ const Login = () => {
       {/* Navbar */}
       <div className='bg-primary-brownPod800 w-full flex flex-row justify-center h-24'></div>
       {/* Parte central del form del login*/}
-      <section className='flex flex-row justify-center items-center h-820px] m-auto w-full'>
+      <section className='flex flex-row justify-center items-center m-auto w-full'>
         <div className='flex flex-row w-[70%] h-[70%] shadow-2xl'>
           {/* Logo */}
           <div className='w-1/2 bg-[url("/assets/images/background-1.jpg")] bg-cover flex justify-center items-start'>
@@ -88,7 +95,7 @@ const Login = () => {
           </div>
           {/* Form */}
           <form
-            className='w-1/2 h-full flex flex-col justify-center px-24 gap-5'
+            className='w-1/2 h-full flex flex-col justify-center px-24 gap-5 py-10'
             onSubmit={handleSubmit(onSubmit)}
           >
             <Header4 text='BIENVENIDO,' textColor='text-primary-brownPod800' />
@@ -102,8 +109,12 @@ const Login = () => {
                 type='email'
                 name='email'
                 id='email'
-                {...register('email')}
+                {...register('email', {
+                  required: { value: true, message: 'El email es requerido' }
+                })}
               />
+              {errors?.email?.message &&
+                displayLoginError(errors.email.message)}
             </div>
             <div className='w-full flex flex-col gap-4'>
               <label className='w-full' htmlFor='password'>
@@ -115,21 +126,29 @@ const Login = () => {
                 type='password'
                 name='password'
                 id='password'
-                {...register('password')}
+                {...register('password', {
+                  required: { value: true, message: 'El password es requerido' }
+                })}
               />
-              <Link href='/'>
-                <Paragraph
-                  text='¿Olvidaste tu contraseña?'
-                  textAlign='text-right'
-                />
-              </Link>
+              {errors?.password?.message &&
+                displayLoginError(errors.password.message)}
+              <div className='flex flex-row justify-between items-center'>
+                {errors?.root && displayLoginError(errors.root.message)}
+                <Link href='/'>
+                  <Paragraph
+                    text='¿Olvidaste tu contraseña?'
+                    textAlign='text-right'
+                  />
+                </Link>
+              </div>
             </div>
             <div>
-              <button
-                className={`bg-primary-brownPod600 px-2 py-3 rounded-md text-xl text-contrast-slateGray50 w-2/4 font-semibold shadow-2xl`}
-              >
-                Inicia Sesión
-              </button>
+              <FormSquareButton
+                text='Inicia Sesión'
+                color='bg-primary-brownPod600'
+                textColor='text-contrast-slateGray50'
+                width='w-2/4'
+              />
             </div>
             {/* Sección: No tienes cuenta */}
             <div className='flex flex-row justify-end items-center gap-4'>

@@ -17,8 +17,8 @@ const ProfilePicture = (props) => {
         alt=''
         className='p-2 rounded-tr-[70px] border-2 border-primary-brownPod700 relative right-3 top-2 z-10'
         src={props.profilePicture}
-        width={425}
-        height={425}
+        width={380}
+        height={380}
       />
 
       <div className='bg-primary-brownPod700 w-48 h-14 absolute -right-2 bottom-2'></div>
