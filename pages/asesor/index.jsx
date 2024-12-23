@@ -166,6 +166,7 @@ const ConsultantDashboard = () => {
           </div>
         </section>
       </div>
+      {/* Curved Background */}
       <div className='h-24 absolute -bottom-0 w-full z-0'>
         <CurvedBackground color='bg-primary-brownPod700' />
       </div>
