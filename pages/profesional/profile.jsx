@@ -12,16 +12,16 @@ import Calendar from '@/components/dashboards/Calendar'
 import HourPicker from '@/components/dashboards/HourPicker'
 import SessionCard from '@/components/dashboards/SessionCard'
 import FormSquareButton from '@/components/forms/FormSquareButton'
+import SquareButton from '@/components/SquareButton'
 
 import { useForm } from 'react-hook-form'
 import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react'
 
 import { jwtDecode } from 'jwt-decode'
 
 import Image from 'next/image'
 import Link from 'next/link'
-
-import { useEffect, useState } from 'react'
 
 import { Cabin } from 'next/font/google'
 
@@ -146,18 +146,20 @@ const ProfessionalProfile = () => {
                       color='bg-primary-brownPod600'
                       textColor='text-contrast-slateGray50'
                     />
-                    <FormSquareButton
+                    <SquareButton
                       text='Cancelar'
                       color='bg-primary-brownPod600'
                       textColor='text-contrast-slateGray50'
+                      href='/profesional'
                     />
                   </div>
                   {/* Actualiza Password */}
                   <div className='flex flex-col w-1/2'>
-                    <FormSquareButton
+                    <SquareButton
                       text='Actualizar Password'
                       color='bg-primary-brownPod600'
                       textColor='text-contrast-slateGray50'
+                      href='/password'
                     />
                   </div>
                 </div>
