@@ -11,6 +11,8 @@ import ProfilePicture from '@/components/dashboards/ProfilePicture'
 import Calendar from '@/components/dashboards/Calendar'
 import HourPicker from '@/components/dashboards/HourPicker'
 import SessionCard from '@/components/dashboards/SessionCard'
+import MainDashboardFrame from '@/components/dashboards/MainDashboardFrame'
+import DashboardNavbar from '@/components/dashboards/DashboardNavbar'
 
 import { jwtDecode } from 'jwt-decode'
 
@@ -36,18 +38,7 @@ const ProfessionalDashboard = () => {
   }, [])
 
   return (
-    <main className='box-content bg-contrast-slateGray50 min-h-screen w-full flex flex-col'>
-      {/* Navbar */}
-      <div className='bg-primary-brownPod800 w-full flex flex-row justify-center'>
-        <Image
-          className='p-3'
-          src='/assets/logos/logo-blanco.png'
-          alt='GuapoApp Logo'
-          width={110}
-          height={110}
-          priority
-        />
-      </div>
+    <MainDashboardFrame>
       {/* Principal */}
       <div className='flex flex-row w-full gap-10 justify-center z-10'>
         {/* Menu y sección izquierda */}
@@ -123,7 +114,7 @@ const ProfessionalDashboard = () => {
       <div className='h-24 absolute -bottom-0 w-full z-0'>
         <CurvedBackground color='bg-primary-brownPod700' />
       </div>
-    </main>
+    </MainDashboardFrame>
   )
 }
 export default ProfessionalDashboard

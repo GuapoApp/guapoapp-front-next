@@ -18,6 +18,8 @@ import DashboardMenu from '@/components/dashboards/DashboardMenu'
 import ConsultantBanner from '@/components/dashboards/ConsultantBanner'
 import YourConsultant from '@/components/dashboards/YourConsultant'
 import ReviewCard from '@/components/dashboards/ReviewCard'
+import MainDashboardFrame from '@/components/dashboards/MainDashboardFrame'
+import DashboardNavbar from '@/components/dashboards/DashboardNavbar'
 
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
@@ -46,18 +48,8 @@ const ConsultantProfileDetail = () => {
   const router = useRouter()
 
   return (
-    <main className='box-content bg-contrast-slateGray50 min-h-screen w-full flex flex-col'>
-      {/* Navbar */}
-      <div className='bg-primary-brownPod800 w-full flex flex-row justify-center'>
-        <Image
-          className='p-3'
-          src='/assets/logos/logo-blanco.png'
-          alt='GuapoApp Logo'
-          width={110}
-          height={110}
-          priority
-        />
-      </div>
+    // ame='box-content bg-contrast-slateGray50 min-h-screen w-full flex flex-col'>
+    <MainDashboardFrame>
       {/* Principal */}
       <div className='flex flex-row w-full gap-10 justify-center z-10 items-center '>
         {/* Menu y sección izquierda */}
@@ -130,7 +122,7 @@ const ConsultantProfileDetail = () => {
       <div className='h-24 absolute -bottom-0 w-full z-0'>
         <CurvedBackground color='bg-primary-brownPod700' />
       </div>
-    </main>
+    </MainDashboardFrame>
   )
 }
 

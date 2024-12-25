@@ -13,14 +13,17 @@ import HourPicker from '@/components/dashboards/HourPicker'
 import SessionCard from '@/components/dashboards/SessionCard'
 import FormSquareButton from '@/components/forms/FormSquareButton'
 import SquareLink from '@/components/SquareLink'
+import ConsultantCard from '@/components/dashboards/ConsultantCard'
 import MainDashboardFrame from '@/components/dashboards/MainDashboardFrame'
 
-const ConsultantStatistics = () => {
+import DashboardMenu from '@/components/dashboards/DashboardMenu'
+
+const ProfessionalFile = () => {
   return (
     <MainDashboardFrame>
-      <h1>Estadísticas Asesor</h1>
+      <h1>Expediente</h1>
     </MainDashboardFrame>
   )
 }
 
-export default ConsultantStatistics
+export default ProfessionalFile
