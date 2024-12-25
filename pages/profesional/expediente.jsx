@@ -47,7 +47,7 @@ const ProfessionalFile = () => {
         <DashboardMenu role={role} />
       </div>
       {/* File */}
-      <div className='w-4/6 flex flex-col h-full gap-11'>
+      <div className='w-4/6 flex flex-col h-full gap-10'>
         {/* Header */}
         <div className='flex flex-row w-full justify-end gap-10'>
           {/* Título */}

@@ -33,7 +33,7 @@ const ConsultantCard = (props) => {
 
   const goToConsultantProfile = (e, consultantId) => {
     e.preventDefault()
-    router.push(`/profesional/asesores/${props.consultantId}`)
+    router.push(`/profesional/asesores/${consultantId}`)
   }
 
   return (
