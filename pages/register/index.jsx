@@ -51,9 +51,6 @@ const Register = () => {
   }
 
   return (
-    // <main
-    //   className={`${cabin.className} bg-contrast-slateGray50 flex flex-col min-h-screen w-full`}
-    // >
     <MainDashboardFrame>
       {/* Parte central del form del login*/}
       <section className='flex flex-row justify-center items-center m-auto w-full'>

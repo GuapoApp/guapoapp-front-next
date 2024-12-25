@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 const DashboardNavbar = () => {
   return (
-    <div className='bg-primary-brownPod800 w-full flex flex-row justify-center'>
+    <div className='bg-primary-brownPod800 w-full flex flex-row justify-center h-1/6'>
       <Image
         className='p-3'
         src='/assets/logos/logo-blanco.png'

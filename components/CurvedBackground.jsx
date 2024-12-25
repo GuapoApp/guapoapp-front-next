@@ -4,7 +4,7 @@ const CurvedBackground = (props) => {
   const coloredDivClasses = clsx({
     [props.color]: props.color,
     'h-28': true,
-    'z-50': true,
+    'z-10': true,
     relative: true
   })
 

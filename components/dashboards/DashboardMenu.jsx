@@ -21,7 +21,7 @@ const DashboardMenu = (props) => {
         <Link href='/profesional/perfil'>MI PERFIL</Link>
         <Link href='/profesional/asesores'>MIS ASESORES</Link>
         <Link href='/profesional/expediente'>MI EXPEDIENTE</Link>
-        <Link href='/'>AGENDA</Link>
+        <Link href='/profesional/agenda'>AGENDA</Link>
         <Link href='/'>METODOS DE PAGO</Link>
         <Link href='/' className='text-right' onClick={signOut}>
           Cerrar Sesión

@@ -75,7 +75,7 @@ const ConsultantCard = (props) => {
           textAlign='text-center'
         />
       </div>
-      {/* Perfil */}
+      {/* Profile Button */}
       <div className='flex flex-row mx-auto w-1/6'>
         <SquareLink
           text='Perfil'
