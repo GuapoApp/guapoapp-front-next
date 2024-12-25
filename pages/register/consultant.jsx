@@ -8,6 +8,8 @@ import Header6 from '@/components/Header6'
 import Paragraph from '@/components/Paragraph'
 import FormSquareButton from '@/components/forms/FormSquareButton'
 import FileInput from '@/components/forms/FileInput'
+import MainDashboardFrame from '@/components/dashboards/MainDashboardFrame'
+import DashboardNavbar from '@/components/dashboards/DashboardNavbar'
 
 import { useForm } from 'react-hook-form'
 import { useUserContext } from '../../context/UserContext'
@@ -65,11 +67,7 @@ const ConsultantRegister = () => {
   }
 
   return (
-    <main
-      className={`${cabin.className} bg-contrast-slateGray50 flex flex-col min-h-screen w-full`}
-    >
-      {/* Navbar */}
-      <div className='bg-primary-brownPod800 w-full flex flex-row justify-center h-24'></div>
+    <MainDashboardFrame>
       {/*Seccion Principal */}
       <section className='flex flex-row justify-center items-center m-auto w-full'>
         <div className='flex flex-col w-[70%] h-[70%] shadow-2xl'>
@@ -215,7 +213,7 @@ const ConsultantRegister = () => {
       <div className='h-24 w-full'>
         <CurvedBackground color='bg-primary-brownPod600' />
       </div>
-    </main>
+    </MainDashboardFrame>
   )
 }
 

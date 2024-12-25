@@ -12,7 +12,9 @@ import Calendar from '@/components/dashboards/Calendar'
 import HourPicker from '@/components/dashboards/HourPicker'
 import SessionCard from '@/components/dashboards/SessionCard'
 import FormSquareButton from '@/components/forms/FormSquareButton'
-import SquareButton from '@/components/SquareButton'
+import SquareLink from '@/components/SquareLink'
+import MainDashboardFrame from '@/components/dashboards/MainDashboardFrame'
+import DashboardNavbar from '@/components/dashboards/DashboardNavbar'
 
 import Link from 'next/link'
 import Image from 'next/image'
@@ -55,20 +57,18 @@ const Password = () => {
     return <Paragraph text={message} textColor='text-red-600' />
   }
 
-  const cancel = () => {
+  const cancel = (e) => {
+    e.preventDefault()
+
     if (role === 'CONSULTANT') {
-      return '/asesor'
+      router.push('/asesor')
     } else {
-      return '/profesional'
+      router.push('/profesional')
     }
   }
 
   return (
-    <main
-      className={`${cabin.className} bg-contrast-slateGray50 flex flex-col min-h-screen w-full`}
-    >
-      {/* Navbar */}
-      <div className='bg-primary-brownPod800 w-full flex flex-row justify-center h-24'></div>
+    <MainDashboardFrame>
       {/* Parte central del form del login*/}
       <section className='flex flex-row justify-center items-center m-auto w-full'>
         <div className='flex flex-row w-[70%] h-[70%] shadow-2xl'>
@@ -133,12 +133,12 @@ const Password = () => {
                 textColor='text-contrast-slateGray50'
                 width='w-2/4'
               />
-              <SquareButton
+              <SquareLink
                 text='Cancelar'
                 color='bg-primary-brownPod600'
                 textColor='text-contrast-slateGray50'
                 width='w-2/4'
-                href={cancel()}
+                onClick={cancel}
               />
             </div>
           </form>
@@ -148,7 +148,7 @@ const Password = () => {
       <div className='h-24 w-full'>
         <CurvedBackground color='bg-primary-brownPod700' />
       </div>
-    </main>
+    </MainDashboardFrame>
   )
 }
 export default Password

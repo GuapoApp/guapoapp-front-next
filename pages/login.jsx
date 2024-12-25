@@ -7,6 +7,8 @@ import Header5 from '@/components/Header5'
 import Header6 from '@/components/Header6'
 import Paragraph from '@/components/Paragraph'
 import FormSquareButton from '@/components/forms/FormSquareButton'
+import MainDashboardFrame from '@/components/dashboards/MainDashboardFrame'
+import DashboardNavbar from '@/components/dashboards/DashboardNavbar'
 
 import { useForm } from 'react-hook-form'
 import { jwtDecode } from 'jwt-decode'
@@ -75,11 +77,7 @@ const Login = () => {
   }
 
   return (
-    <main
-      className={`${cabin.className} bg-contrast-slateGray50 flex flex-col min-h-screen w-full`}
-    >
-      {/* Navbar */}
-      <div className='bg-primary-brownPod800 w-full flex flex-row justify-center h-24'></div>
+    <MainDashboardFrame>
       {/* Parte central del form del login*/}
       <section className='flex flex-row justify-center items-center m-auto w-full'>
         <div className='flex flex-row w-[70%] h-[70%] shadow-2xl'>
@@ -164,7 +162,7 @@ const Login = () => {
       <div className='h-24 w-full'>
         <CurvedBackground color='bg-primary-brownPod700' />
       </div>
-    </main>
+    </MainDashboardFrame>
   )
 }
 
