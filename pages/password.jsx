@@ -12,7 +12,7 @@ import Calendar from '@/components/dashboards/Calendar'
 import HourPicker from '@/components/dashboards/HourPicker'
 import SessionCard from '@/components/dashboards/SessionCard'
 import FormSquareButton from '@/components/forms/FormSquareButton'
-import SquareButton from '@/components/SquareButton'
+import SquareLink from '@/components/SquareLink'
 
 import Link from 'next/link'
 import Image from 'next/image'
@@ -55,11 +55,13 @@ const Password = () => {
     return <Paragraph text={message} textColor='text-red-600' />
   }
 
-  const cancel = () => {
+  const cancel = (e) => {
+    e.preventDefault()
+
     if (role === 'CONSULTANT') {
-      return '/asesor'
+      router.push('/asesor')
     } else {
-      return '/profesional'
+      router.push('/profesional')
     }
   }
 
@@ -133,12 +135,12 @@ const Password = () => {
                 textColor='text-contrast-slateGray50'
                 width='w-2/4'
               />
-              <SquareButton
+              <SquareLink
                 text='Cancelar'
                 color='bg-primary-brownPod600'
                 textColor='text-contrast-slateGray50'
                 width='w-2/4'
-                href={cancel()}
+                onClick={cancel}
               />
             </div>
           </form>

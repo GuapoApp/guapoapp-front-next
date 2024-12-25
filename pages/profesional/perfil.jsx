@@ -12,7 +12,7 @@ import Calendar from '@/components/dashboards/Calendar'
 import HourPicker from '@/components/dashboards/HourPicker'
 import SessionCard from '@/components/dashboards/SessionCard'
 import FormSquareButton from '@/components/forms/FormSquareButton'
-import SquareButton from '@/components/SquareButton'
+import SquareLink from '@/components/SquareLink'
 
 import { useForm } from 'react-hook-form'
 import { useRouter } from 'next/router'
@@ -48,6 +48,16 @@ const ProfessionalProfile = () => {
 
   const router = useRouter()
 
+  const goToUpdatePassword = (e) => {
+    e.preventDefault()
+    router.push('/password')
+  }
+
+  const goBack = (e) => {
+    e.preventDefault()
+    router.push('/profesional')
+  }
+
   return (
     <main className='box-content bg-contrast-slateGray50 min-h-screen w-full flex flex-col'>
       {/* Navbar */}
@@ -64,7 +74,7 @@ const ProfessionalProfile = () => {
       {/* Principal */}
       <div className='flex flex-row w-full gap-14 justify-center z-10'>
         {/* Menu y sección izquierda */}
-        <section className='flex flex-col align-middle justify-start'>
+        <section className='flex flex-col justify-start'>
           {/**
            * TODO: Add profilePicture as Dynamic prop
            */}
@@ -146,20 +156,20 @@ const ProfessionalProfile = () => {
                       color='bg-primary-brownPod600'
                       textColor='text-contrast-slateGray50'
                     />
-                    <SquareButton
+                    <SquareLink
                       text='Cancelar'
                       color='bg-primary-brownPod600'
                       textColor='text-contrast-slateGray50'
-                      href='/profesional'
+                      onClick={goBack}
                     />
                   </div>
                   {/* Actualiza Password */}
                   <div className='flex flex-col w-1/2'>
-                    <SquareButton
+                    <SquareLink
                       text='Actualizar Password'
                       color='bg-primary-brownPod600'
                       textColor='text-contrast-slateGray50'
-                      href='/password'
+                      onClick={goToUpdatePassword}
                     />
                   </div>
                 </div>

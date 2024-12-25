@@ -12,7 +12,8 @@ import Calendar from '@/components/dashboards/Calendar'
 import HourPicker from '@/components/dashboards/HourPicker'
 import SessionCard from '@/components/dashboards/SessionCard'
 import FormSquareButton from '@/components/forms/FormSquareButton'
-import SquareButton from '@/components/SquareButton'
+import SquareLink from '@/components/SquareLink'
+import ConsultantBanner from '@/components/dashboards/ConsultantBanner'
 
 import { jwtDecode } from 'jwt-decode'
 
@@ -37,6 +38,11 @@ const ConsultantDashboard = () => {
       setRole(decoded.Role)
     }
   }, [])
+
+  const withdraw = (e) => {
+    e.preventDefault()
+    console.log('Withdraw')
+  }
 
   return (
     <main className='box-content bg-contrast-slateGray50 min-h-screen w-full flex flex-col'>
@@ -97,54 +103,11 @@ const ConsultantDashboard = () => {
             </div>
           </div>
           {/* Banner Experiencia y Calificación */}
-          <div className='flex flex-row gap-7 bg-primary-brownPod600 p-5 justify-center px-20 py-10'>
-            {/* Experiencia */}
-            <div className='flex flex-col gap-2'>
-              <Header1
-                text='12'
-                textColor='text-contrast-slateGray50'
-                textAlign='text-center'
-              />
-              <Header6
-                text='Años de Experiencia'
-                textColor='text-contrast-slateGray50'
-                textAlign='text-center'
-                textWrap
-              />
-            </div>
-            {/* Line */}
-            <div className='h-[90%] w-[2px] bg-contrast-slateGray50'></div>
-            {/* Número de Asesorías Realizadas */}
-            <div className='flex flex-col gap-2'>
-              <Header1
-                text='60'
-                textColor='text-contrast-slateGray50'
-                textAlign='text-center'
-              />
-              <Header6
-                text='Asesorías Realizadas'
-                textColor='text-contrast-slateGray50'
-                textAlign='text-center'
-                textWrap
-              />
-            </div>
-            {/* Line */}
-            <div className='h-[90%] w-[2px] bg-contrast-slateGray50'></div>
-            {/* Calificación */}
-            <div className='flex flex-col gap-2'>
-              <Header1
-                text='4.5/5'
-                textColor='text-contrast-slateGray50'
-                textAlign='text-center'
-              />
-              <Header6
-                text='Calificación Promedio'
-                textColor='text-contrast-slateGray50'
-                textAlign='text-center'
-                textWrap
-              />
-            </div>
-          </div>
+          <ConsultantBanner
+            experienceYears='12'
+            sessionsCount='50'
+            averageRating='4.5/5'
+          />
           {/* Saldo Pendiente de Retiro */}
           <div className='flex flex-col gap-3 bg-contrast-slateGray300 rounded-md p-5 w-2/5'>
             <Header5
@@ -154,15 +117,13 @@ const ConsultantDashboard = () => {
             />
             <div className='flex flex-row gap-5 justify-center items-center font-bold'>
               <Header6 text='$2,500.00' textColor='text-primary-brownPod900' />
-              {/**
-               * TODO: Add SquareButton but not as form
-               */}
-              <SquareButton
+
+              <SquareLink
                 color='bg-primary-brownPod500'
                 textColor='text-contrast-slateGray50'
                 text='Retirar'
                 width='w-3/6'
-                href='/'
+                onClick={withdraw}
               />
             </div>
           </div>
