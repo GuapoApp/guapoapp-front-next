@@ -65,7 +65,7 @@ const ProfessionalAgenda = () => {
       {/* Calendar || Hour Picker */}
       <div className='flex flex-col justify-center gap-5 h-full w-2/6 p-5'>
         {/* Calendar */}
-        <div className='flex flex-col justify-center gap-5 border-1 border-secondary-satinLinen100 shadow-lg p-5 rounded-lg'>
+        <div className='flex flex-col justify-center gap-5 border border-secondary-satinLinen100 shadow-lg p-5 rounded-lg'>
           <Header6
             text='SELECCIONA UNA FECHA'
             textColor='text-primary-brownPod800'
@@ -74,7 +74,7 @@ const ProfessionalAgenda = () => {
           <Calendar />
         </div>
         {/* Hour Picker */}
-        <div className='flex flex-col justify-center items-center border-1 border-secondary-satinLinen100 shadow-lg p-5 rounded-lg gap-5'>
+        <div className='flex flex-col justify-center items-center border border-secondary-satinLinen100 shadow-lg p-5 rounded-lg gap-5'>
           <Header6
             text='SELECCIONA UNA HORA'
             textColor='text-primary-brownPod800'
@@ -144,7 +144,7 @@ const ProfessionalAgenda = () => {
                   textColor='text-contrast-slateGray500'
                 />
               </label>
-              <div className='p-3 bg-contrast-slateGray50 border-1 border-secondary-satinLinen100 rounded-md'>
+              <div className='p-3 bg-contrast-slateGray50 border border-secondary-satinLinen100 rounded-md'>
                 <select name='eventType' className='bg-contrast-slateGray50'>
                   <option value='Complete'>Asesoría Integral</option>
                   <option value='Event'>Asesoría para un evento</option>

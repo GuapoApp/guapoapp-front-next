@@ -116,7 +116,7 @@ const AgendaCheckout = () => {
           <div>
             <form
               onSubmit={handleSubmit(onSubmit)}
-              className='flex flex-col gap-3 w-full border-1 border-secondary-satinLinen100 rounded-md p-5 items-center shadow-xl'
+              className='flex flex-col gap-3 w-full border border-secondary-satinLinen100 rounded-md p-5 items-center shadow-xl'
             >
               <Header6
                 text='PAGO CON TARJETA'

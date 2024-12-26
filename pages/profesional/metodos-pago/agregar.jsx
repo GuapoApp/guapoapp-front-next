@@ -1,13 +1,11 @@
 import ProfessionalDashboardFrame from '@/components/dashboards/ProfessionalDashboardFrame'
 
-const PaymentMethods = () => {
+const AddPaymentMethod = () => {
   return (
     <ProfessionalDashboardFrame>
-      <div></div>
-      <div></div>
-      <div></div>
+      <h1>Agregar Método de Pago</h1>
     </ProfessionalDashboardFrame>
   )
 }
 
-export default PaymentMethods
+export default AddPaymentMethod
