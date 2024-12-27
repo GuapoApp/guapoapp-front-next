@@ -29,7 +29,7 @@ const ConsultantProfileDetail = () => {
   return (
     <MainDashboardFrame footerColor='bg-primary-brownPod700'>
       {/* Menu y sección izquierda */}
-      <section className='flex flex-col align-middle justify-start'>
+      <div className='flex flex-col w-2/6'>
         {/**
          * TODO: Add profilePicture as Dynamic prop
          */}
@@ -42,9 +42,9 @@ const ConsultantProfileDetail = () => {
         />
 
         <YourConsultant consultantName={consultant} />
-      </section>
-      {/* Sección izquierda || Información del asesor*/}
-      <section className='flex flex-col gap-7 w-3/5 pt-14'>
+      </div>
+      {/* Sección derecha || Información del asesor*/}
+      <div className='flex flex-col w-4/6 gap-10'>
         {/* Banner del Consultor */}
         <ConsultantBanner
           experienceYears='5'
@@ -52,7 +52,7 @@ const ConsultantProfileDetail = () => {
           averageRating='4.5'
         />
         {/* Reseñas */}
-        <div className='flex flex-col gap-5 justify-center'>
+        <div className='flex flex-col gap-7 justify-center px-16'>
           <Header4
             text='RESEÑAS'
             textColor='text-primary-brownPod900'
@@ -79,21 +79,21 @@ const ConsultantProfileDetail = () => {
               comment='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at felis a massa pulvinar mattis eget sit amet turpis. Nunc sed ante eget elit consequat posuere at a turpis. Vivamus mattis dolor molestie leo eleifend, id placerat diam porttitor. In convallis enim non nibh accumsan, feugiat suscipit sapien elementum'
             />
           </div>
+          {/* Botón Regresar */}
+          <div>
+            <SquareLink
+              text='Regresar'
+              color='bg-primary-brownPod600'
+              textColor='text-contrast-slateGray50'
+              width='w-1/6'
+              onClick={(e) => {
+                e.preventDefault()
+                router.push('/profesional/asesores')
+              }}
+            />
+          </div>
         </div>
-        {/* Botón Regresar */}
-        <div>
-          <SquareLink
-            text='Regresar'
-            color='bg-primary-brownPod600'
-            textColor='text-contrast-slateGray50'
-            width='w-1/6'
-            onClick={(e) => {
-              e.preventDefault()
-              router.push('/profesional/asesores')
-            }}
-          />
-        </div>
-      </section>
+      </div>
     </MainDashboardFrame>
   )
 }

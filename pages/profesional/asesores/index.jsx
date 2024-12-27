@@ -28,13 +28,12 @@ const ProfessionalConsultants = () => {
 
   return (
     <MainDashboardFrame footerColor='bg-primary-brownPod600'>
-      {/* Principal */}
       {/* Sección Izquierda || Menú */}
-      <div className='flex flex-row h-full w-1/4 items-center justify-center'>
+      <div className='w-1/6'>
         <DashboardMenu role={role} />
       </div>
       {/* Sección Derecha || Asesores */}
-      <div className='flex flex-col w-3/4 py-5 gap-5'>
+      <div className='w-5/6'>
         {/* Header */}
         <div className='flex flex-row w-full justify-end gap-10'>
           {/* Título */}

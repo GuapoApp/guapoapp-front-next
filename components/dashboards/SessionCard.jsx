@@ -1,4 +1,6 @@
 import Paragraph from '../Paragraph'
+import clsx from 'clsx'
+
 /**
  @param: dayName ==> The name of the day
  @param: hour ==> The hour of the session
@@ -8,17 +10,23 @@ import Paragraph from '../Paragraph'
  */
 
 const SessionCard = (props) => {
+  const cardSideBarClasses = clsx({
+    [props.sideColor]: props.sideColor,
+    'h-full': true,
+    'w-4': true
+  })
+
   return (
-    <div className='flex flex-row justify-around gap-5 py-4 pl-0 bg-primary-brownPod600 h-1/3'>
+    <div className='flex flex-row justify-around gap-5 py-4 pl-0 bg-primary-brownPod600 h-[90px] w-4/6'>
       {/* Day */}
-      <div className='grow-0 bg-primary-brownPod800 -rotate-90 font-bold '>
+      <div className={`${cardSideBarClasses}`}></div>
+      {/* <div className='bg-primary-brownPod800 font-bold w-10 h-[80px] flex items-center justify-center'>
         <Paragraph
           text={props.dayName}
           textColor='text-contrast-slateGray50'
-          padding='p-1'
-          textAlign='text-center'
+          padding='pr-1'
         />
-      </div>
+      </div> */}
       {/* Hour */}
       <div className='flex grow-0 items-center'>
         <Paragraph text={props.hour} textColor='text-contrast-slateGray50' />

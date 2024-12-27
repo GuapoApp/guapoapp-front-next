@@ -28,19 +28,17 @@ const ProfessionalDashboard = () => {
   return (
     <MainDashboardFrame footerColor='bg-primary-brownPod600'>
       {/* Menu y sección izquierda */}
-      <section className='flex flex-col align-middle justify-start'>
+      <div className='flex flex-col gap-10 w-2/6 align-middle justify-start'>
         {/**
          * TODO: Add profilePicture as Dynamic prop
          */}
         <ProfilePicture
           role={role}
-          profilePicture='/assets/images/stock-image-1.jpeg'
+          profilePicture='/assets/images/stock-image-9.jpg'
         />
-
         <Welcome userName={userName} />
-      </section>
-      {/* Agenda y proximas citas sección izquierda */}
-      <section className='flex flex-col p-5 gap-8'>
+      </div>
+      <div className='flex w-4/6 flex-col gap-1 pt-3 pl-28'>
         {/*Header Agenda tu cita*/}
         <Header4 text='AGENDA TU CITA' textColor='text-primary-brownPod900' />
         {/*Agenda*/}
@@ -95,7 +93,7 @@ const ProfessionalDashboard = () => {
             />
           </div>
         </div>
-      </section>
+      </div>
     </MainDashboardFrame>
   )
 }
