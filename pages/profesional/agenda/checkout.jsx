@@ -1,4 +1,3 @@
-import ProfessionalDashboardFrame from '@/components/dashboards/ProfessionalDashboardFrame'
 import DashboardMenu from '@/components/dashboards/DashboardMenu'
 import Header5 from '@/components/Header5'
 import Header6 from '@/components/Header6'
@@ -7,6 +6,7 @@ import Paragraph from '@/components/Paragraph'
 import DashboardTitleHeader from '@/components/dashboards/DashboardTitleHeader'
 import FormSquareButton from '@/components/forms/FormSquareButton'
 import SquareLink from '@/components/SquareLink'
+import MainDashboardFrame from '@/components/dashboards/MainDashboardFrame'
 
 import { jwtDecode } from 'jwt-decode'
 import { useState, useEffect } from 'react'
@@ -48,7 +48,7 @@ const AgendaCheckout = () => {
   }
 
   return (
-    <ProfessionalDashboardFrame>
+    <MainDashboardFrame footerColor='bg-primary-brownPod700'>
       {/* Menu */}
       <div className='w-2/6 flex flex-row h-full'>
         <DashboardMenu role={role} />
@@ -244,7 +244,7 @@ const AgendaCheckout = () => {
           </div>
         </div>
       </div>
-    </ProfessionalDashboardFrame>
+    </MainDashboardFrame>
   )
 }
 

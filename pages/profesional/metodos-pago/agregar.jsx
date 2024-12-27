@@ -1,10 +1,10 @@
-import ProfessionalDashboardFrame from '@/components/dashboards/ProfessionalDashboardFrame'
+import MainDashboardFrame from '@/components/dashboards/MainDashboardFrame'
 
 const AddPaymentMethod = () => {
   return (
-    <ProfessionalDashboardFrame>
+    <MainDashboardFrame footerColor='bg-primary-brownPod700'>
       <h1>Agregar Método de Pago</h1>
-    </ProfessionalDashboardFrame>
+    </MainDashboardFrame>
   )
 }
 

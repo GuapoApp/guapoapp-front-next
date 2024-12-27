@@ -1,10 +1,9 @@
-import ProfessionalDashboardFrame from '@/components/dashboards/ProfessionalDashboardFrame'
 import DashboardMenu from '@/components/dashboards/DashboardMenu'
 import DashboardTitleHeader from '@/components/dashboards/DashboardTitleHeader'
 import Header5 from '@/components/Header5'
-import LongCardFrame from '@/components/dashboards/LongCardFrame'
 import SquareLink from '@/components/SquareLink'
 import SelectConsultantCard from '@/components/dashboards/SelectConsultantCard'
+import MainDashboardFrame from '@/components/dashboards/MainDashboardFrame'
 
 import { useEffect, useState } from 'react'
 import { jwtDecode } from 'jwt-decode'
@@ -28,7 +27,7 @@ const SessionConsultant = () => {
   }
 
   return (
-    <ProfessionalDashboardFrame>
+    <MainDashboardFrame footerColor='bg-primary-brownPod700'>
       {/* Menu */}
       <div className='w-2/6 flex flex-row h-full'>
         <DashboardMenu role={role} />
@@ -96,7 +95,7 @@ const SessionConsultant = () => {
           />
         </div>
       </div>
-    </ProfessionalDashboardFrame>
+    </MainDashboardFrame>
   )
 }
 

@@ -1,21 +1,10 @@
-import Header1 from '@/components/Header1'
-import Header2 from '@/components/Header2'
-import Header3 from '@/components/Header3'
-import Header4 from '@/components/Header4'
 import Header5 from '@/components/Header5'
 import Header6 from '@/components/Header6'
 import Paragraph from '@/components/Paragraph'
-import CurvedBackground from '@/components/CurvedBackground'
-import Welcome from '@/components/dashboards/Welcome'
-import ProfilePicture from '@/components/dashboards/ProfilePicture'
 import Calendar from '@/components/dashboards/Calendar'
 import HourPicker from '@/components/dashboards/HourPicker'
-import SessionCard from '@/components/dashboards/SessionCard'
 import FormSquareButton from '@/components/forms/FormSquareButton'
 import SquareLink from '@/components/SquareLink'
-import ConsultantCard from '@/components/dashboards/ConsultantCard'
-import ProfessionalDashboardFrame from '@/components/dashboards/ProfessionalDashboardFrame'
-import SessionFileCard from '@/components/dashboards/SessionFileCard'
 import DashboardMenu from '@/components/dashboards/DashboardMenu'
 import MainDashboardFrame from '@/components/dashboards/MainDashboardFrame'
 import DashboardTitleHeader from '@/components/dashboards/DashboardTitleHeader'
@@ -57,7 +46,7 @@ const ProfessionalAgenda = () => {
   }
 
   return (
-    <ProfessionalDashboardFrame>
+    <MainDashboardFrame footerColor='bg-primary-brownPod700'>
       {/* Menu */}
       <div className='h-full w-1/6'>
         <DashboardMenu role={role} />
@@ -223,7 +212,7 @@ const ProfessionalAgenda = () => {
           </form>
         </div>
       </div>
-    </ProfessionalDashboardFrame>
+    </MainDashboardFrame>
   )
 }
 

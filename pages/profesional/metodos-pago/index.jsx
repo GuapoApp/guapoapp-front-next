@@ -1,10 +1,10 @@
-import ProfessionalDashboardFrame from '@/components/dashboards/ProfessionalDashboardFrame'
 import DashboardMenu from '@/components/dashboards/DashboardMenu'
 import DashboardTitleHeader from '@/components/dashboards/DashboardTitleHeader'
 import Header5 from '@/components/Header5'
 import PaymentMethodCard from '@/components/dashboards/PaymentMethodCard'
 import FormSquareButton from '@/components/forms/FormSquareButton'
 import SquareLink from '@/components/SquareLink'
+import MainDashboardFrame from '@/components/dashboards/MainDashboardFrame'
 
 import { jwtDecode } from 'jwt-decode'
 import { useState, useEffect } from 'react'
@@ -41,7 +41,7 @@ const PaymentMethods = () => {
   }
 
   return (
-    <ProfessionalDashboardFrame>
+    <MainDashboardFrame footerColor='bg-primary-brownPod700'>
       {/* Menú */}
       <div className='w-2/6 flex flex-row h-full'>
         <DashboardMenu role={role} />
@@ -113,7 +113,7 @@ const PaymentMethods = () => {
           </div>
         </form>
       </div>
-    </ProfessionalDashboardFrame>
+    </MainDashboardFrame>
   )
 }
 

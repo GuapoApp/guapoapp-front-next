@@ -1,33 +1,16 @@
-import Header1 from '@/components/Header1'
-import Header2 from '@/components/Header2'
-import Header3 from '@/components/Header3'
 import Header4 from '@/components/Header4'
 import Header5 from '@/components/Header5'
 import Header6 from '@/components/Header6'
-import Paragraph from '@/components/Paragraph'
-import CurvedBackground from '@/components/CurvedBackground'
-import Welcome from '@/components/dashboards/Welcome'
 import ProfilePicture from '@/components/dashboards/ProfilePicture'
-import Calendar from '@/components/dashboards/Calendar'
-import HourPicker from '@/components/dashboards/HourPicker'
-import SessionCard from '@/components/dashboards/SessionCard'
 import FormSquareButton from '@/components/forms/FormSquareButton'
 import SquareLink from '@/components/SquareLink'
 import MainDashboardFrame from '@/components/dashboards/MainDashboardFrame'
-import DashboardNavbar from '@/components/dashboards/DashboardNavbar'
 
 import { useForm } from 'react-hook-form'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 
 import { jwtDecode } from 'jwt-decode'
-
-import Image from 'next/image'
-import Link from 'next/link'
-
-import { Cabin } from 'next/font/google'
-
-const cabin = Cabin({ subsets: ['latin'] })
 
 const ProfessionalProfile = () => {
   const [userName, setUserName] = useState('')
@@ -61,118 +44,118 @@ const ProfessionalProfile = () => {
   }
 
   return (
-    <MainDashboardFrame>
+    <MainDashboardFrame footerColor='bg-primary-brownPod600'>
       {/* Principal */}
-      <div className='flex flex-row w-full gap-14 justify-center z-10'>
-        {/* Menu y sección izquierda */}
-        <section className='flex flex-col justify-start'>
-          {/**
-           * TODO: Add profilePicture as Dynamic prop
-           */}
-          <ProfilePicture
-            role={role}
-            profilePicture='/assets/images/stock-image-1.jpeg'
-          />
-        </section>
-        {/* Sección derecha */}
-        <section className='flex flex-col gap-28 w-2/5 py-5'>
-          {/* Header */}
-          <div className='flex flex-row w-full justify-end gap-10'>
-            {/* Nombre */}
-            <div className='flex flex-col gap-2 '>
-              <Header4 text='MI PERFIL' textColor='text-primary-brownPod800' />
-              <Header5
-                text={`${userName},`}
-                textColor='text-primary-brownPod800'
-              />
-            </div>
-            {/* Cuadro Café*/}
-            <div className='bg-primary-brownPod700 w-1/5'></div>
+      {/* <div className='flex flex-row w-full gap-14 justify-center z-10'> */}
+      {/* Menu y sección izquierda */}
+      <section className='flex flex-col justify-start'>
+        {/**
+         * TODO: Add profilePicture as Dynamic prop
+         */}
+        <ProfilePicture
+          role={role}
+          profilePicture='/assets/images/stock-image-1.jpeg'
+        />
+      </section>
+      {/* Sección derecha */}
+      <section className='flex flex-col gap-28 w-2/5 py-5'>
+        {/* Header */}
+        <div className='flex flex-row w-full justify-end gap-10'>
+          {/* Nombre */}
+          <div className='flex flex-col gap-2 '>
+            <Header4 text='MI PERFIL' textColor='text-primary-brownPod800' />
+            <Header5
+              text={`${userName},`}
+              textColor='text-primary-brownPod800'
+            />
           </div>
-          {/* Profile Form */}
-          <div>
-            <form
-              className='flex flex-col w-3/5 gap-5'
-              onSubmit={console.log('Form de Profile Update')}
-            >
-              <div className='flex flex-col gap-3'>
-                <label htmlFor='birthDate'>
-                  <Header6
-                    textColor='text-contrast-slateGray700'
-                    text='Fecha de Nacimiento'
-                  />
-                </label>
-                <input
-                  type='date'
-                  className={`w-full p-3 text-contrast-slateGray500 rounded-md text-xl bg-contrast-slateGray300`}
-                  {...register('birthDate', {
-                    required: {
-                      value: true,
-                      message: 'La fecha de nacimiento es requerida'
-                    }
-                  })}
-                  id='birthDate'
-                  name='birthDate'
+          {/* Cuadro Café*/}
+          <div className='bg-primary-brownPod700 w-1/5'></div>
+        </div>
+        {/* Profile Form */}
+        <div>
+          <form
+            className='flex flex-col w-3/5 gap-5'
+            onSubmit={console.log('Form de Profile Update')}
+          >
+            <div className='flex flex-col gap-3'>
+              <label htmlFor='birthDate'>
+                <Header6
+                  textColor='text-contrast-slateGray700'
+                  text='Fecha de Nacimiento'
                 />
-                {/* {errors?.birthDate?.message &&
+              </label>
+              <input
+                type='date'
+                className={`w-full p-3 text-contrast-slateGray500 rounded-md text-xl bg-contrast-slateGray300`}
+                {...register('birthDate', {
+                  required: {
+                    value: true,
+                    message: 'La fecha de nacimiento es requerida'
+                  }
+                })}
+                id='birthDate'
+                name='birthDate'
+              />
+              {/* {errors?.birthDate?.message &&
                   displayLoginError(errors.birthDate.message)} */}
-              </div>
-              <div className=' flex flex-col gap-3'>
-                <label htmlFor='professionalExperience'>
-                  <Header6
-                    text='Experiencia profesional'
-                    textColor='text-contrast-slateGray700'
+            </div>
+            <div className=' flex flex-col gap-3'>
+              <label htmlFor='professionalExperience'>
+                <Header6
+                  text='Experiencia profesional'
+                  textColor='text-contrast-slateGray700'
+                />
+              </label>
+              <textarea
+                name='professionalExperiencia'
+                id='professionalExperience'
+                placeholder='Escribe aquí tu experiencia'
+                className={`w-full p-3 text-contrast-slateGray500 rounded-md text-xl bg-contrast-slateGray300`}
+                rows='5'
+                maxLength='200'
+                {...register('professionalExperience', {
+                  required: {
+                    value: true,
+                    message: 'La experiencia profesional es requerida'
+                  }
+                })}
+              ></textarea>
+              {/* Buttons */}
+              <div className='flex flex-row justify-around gap-10'>
+                {/* Aceptar || Cancelar */}
+                <div className='flex flex-col w-1/2 gap-5'>
+                  <FormSquareButton
+                    text='Aceptar'
+                    color='bg-primary-brownPod600'
+                    textColor='text-contrast-slateGray50'
                   />
-                </label>
-                <textarea
-                  name='professionalExperiencia'
-                  id='professionalExperience'
-                  placeholder='Escribe aquí tu experiencia'
-                  className={`w-full p-3 text-contrast-slateGray500 rounded-md text-xl bg-contrast-slateGray300`}
-                  rows='5'
-                  maxLength='200'
-                  {...register('professionalExperience', {
-                    required: {
-                      value: true,
-                      message: 'La experiencia profesional es requerida'
-                    }
-                  })}
-                ></textarea>
-                {/* Buttons */}
-                <div className='flex flex-row justify-around gap-10'>
-                  {/* Aceptar || Cancelar */}
-                  <div className='flex flex-col w-1/2 gap-5'>
-                    <FormSquareButton
-                      text='Aceptar'
-                      color='bg-primary-brownPod600'
-                      textColor='text-contrast-slateGray50'
-                    />
-                    <SquareLink
-                      text='Cancelar'
-                      color='bg-primary-brownPod600'
-                      textColor='text-contrast-slateGray50'
-                      onClick={goBack}
-                    />
-                  </div>
-                  {/* Actualiza Password */}
-                  <div className='flex flex-col w-1/2'>
-                    <SquareLink
-                      text='Actualizar Password'
-                      color='bg-primary-brownPod600'
-                      textColor='text-contrast-slateGray50'
-                      onClick={goToUpdatePassword}
-                    />
-                  </div>
+                  <SquareLink
+                    text='Cancelar'
+                    color='bg-primary-brownPod600'
+                    textColor='text-contrast-slateGray50'
+                    onClick={goBack}
+                  />
+                </div>
+                {/* Actualiza Password */}
+                <div className='flex flex-col w-1/2'>
+                  <SquareLink
+                    text='Actualizar Password'
+                    color='bg-primary-brownPod600'
+                    textColor='text-contrast-slateGray50'
+                    onClick={goToUpdatePassword}
+                  />
                 </div>
               </div>
-            </form>
-          </div>
-        </section>
-      </div>
+            </div>
+          </form>
+        </div>
+      </section>
+      {/* </div> */}
       {/* Curved Background */}
-      <div className='h-24 absolute -bottom-0 w-full z-0'>
+      {/* <div className='h-24 absolute -bottom-0 w-full z-0'>
         <CurvedBackground color='bg-primary-brownPod700' />
-      </div>
+      </div> */}
     </MainDashboardFrame>
   )
 }
