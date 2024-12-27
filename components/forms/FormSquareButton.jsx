@@ -22,7 +22,7 @@ const FormSquareButton = (props) => {
     'rounded-md': true,
     'text-xl': true,
     'font-semibold': true,
-    'shadow-2xl': true
+    'shadow-xl': true
   })
 
   return (

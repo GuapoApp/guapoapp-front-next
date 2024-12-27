@@ -36,7 +36,7 @@ const ReviewCard = (props) => {
     [props.width]: props.width,
     flex: true,
     'flex-col': true,
-    'border-1': true,
+    border: true,
     'border-secondary-satinLinen100': true,
     'shadow-lg': true,
     'p-10': true,

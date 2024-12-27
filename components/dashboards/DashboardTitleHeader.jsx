@@ -14,13 +14,13 @@ import clsx from 'clsx'
 const DashboardTitleHeader = (props) => {
   const squareClasses = clsx({
     [props.squareColor]: props.squareColor,
-    'w-1/5': true
+    'w-1/2': true
   })
 
   return (
-    <div className='flex flex-row w-full justify-end gap-5'>
+    <div className='flex flex-row w-full justify-between gap-5'>
       {/* Título */}
-      <div className='flex flex-col gap-2'>
+      <div className='flex flex-col gap-2 ml-auto justify-end'>
         <Header4 text={props.title} textColor={props.titleColor} />
         <Header4 text={props.name} textColor={props.nameColor} />
       </div>
