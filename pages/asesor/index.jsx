@@ -31,8 +31,7 @@ const ConsultantDashboard = () => {
 
   return (
     <MainDashboardFrame footerColor='bg-primary-brownPod700'>
-      {/* Menu y sección izquierda */}
-      <section className='flex flex-col align-middle justify-start'>
+      <div className='flex flex-col gap-10 w-2/6 align-middle justify-start'>
         {/**
          * TODO: Add profilePicture as Dynamic prop
          */}
@@ -41,9 +40,8 @@ const ConsultantDashboard = () => {
           profilePicture='/assets/images/stock-image-9.jpg'
         />
         <Welcome userName={userName} />
-      </section>
-      {/* Sección izquierda */}
-      <section className='flex flex-col p-5 gap-8'>
+      </div>
+      <div className='flex w-4/6 flex-col pt-5 gap-8'>
         {/* Banner superior */}
         <div>
           <Header3
@@ -52,7 +50,7 @@ const ConsultantDashboard = () => {
           />
         </div>
         {/* Próximas sesiones */}
-        <div className='flex flex-col gap-5'>
+        <div className='flex flex-col gap-1 pt-5'>
           <Header6
             text='Próximas sesiones'
             textColor='text-primary-brownPod900'
@@ -64,22 +62,26 @@ const ConsultantDashboard = () => {
               user='JORGE GÓMEZ'
               sessionName='Asesoría para Boda'
               day='10/01'
+              sideColor='bg-primary-brownPod600'
             />
             <SessionCard
-              dayName='LUNES'
+              dayName='MIERCOLES'
               hour='10:00 AM a 11:00 AM'
               user='JESÚS SOTO'
               sessionName='Asesoría Integral'
               day='10/01'
+              sideColor='bg-primary-brownPod600'
             />
           </div>
         </div>
         {/* Banner Experiencia y Calificación */}
-        <ConsultantBanner
-          experienceYears='12'
-          sessionsCount='50'
-          averageRating='4.5/5'
-        />
+        <div className='relative'>
+          <ConsultantBanner
+            experienceYears='12'
+            sessionsCount='50'
+            averageRating='4.5/5'
+          />
+        </div>
         {/* Saldo Pendiente de Retiro */}
         <div className='flex flex-col gap-3 bg-contrast-slateGray300 rounded-md p-5 w-2/5'>
           <Header5
@@ -99,8 +101,7 @@ const ConsultantDashboard = () => {
             />
           </div>
         </div>
-      </section>
-      {/* </div> */}
+      </div>
     </MainDashboardFrame>
   )
 }

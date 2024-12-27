@@ -23,7 +23,7 @@ import SquareLink from '@/components/SquareLink'
 
 const ConsultantBanner = (props) => {
   return (
-    <div className='flex flex-row gap-7 bg-primary-brownPod600 p-5 justify-center px-20 py-10 h-40'>
+    <div className='flex flex-row gap-14 bg-primary-brownPod600 p-5 justify-center px-20 py-10 h-40 w-full'>
       {/* Experiencia */}
       <div className='flex flex-col gap-2'>
         <Header1
