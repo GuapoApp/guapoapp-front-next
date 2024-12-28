@@ -21,43 +21,47 @@ const Login = () => {
   const router = useRouter()
 
   const onSubmit = async (data) => {
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_GUAPOAPP_URI}user/login`,
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          Email: data.email,
-          Password: data.password
-        })
-      }
-    )
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_GUAPOAPP_URI}user/login`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            Email: data.email,
+            Password: data.password
+          })
+        }
+      )
 
-    const json = await response.json()
+      const json = await response.json()
 
-    if (json.data?.token) {
-      localStorage.setItem('token', json.data.token)
+      if (json.data?.token) {
+        localStorage.setItem('token', json.data.token)
 
-      const decoded = jwtDecode(json.data.token)
-      const role = decoded.Role
+        const decoded = jwtDecode(json.data.token)
+        const role = decoded.Role
 
-      if (role === 'ADMIN') {
-        router.push('/admin')
-        return
+        if (role === 'ADMIN') {
+          router.push('/admin')
+          return
+        }
+        if (role === 'CONSULTANT') {
+          router.push('/asesor')
+          return
+        }
+        if (role === 'PROFESSIONAL') {
+          router.push('/profesional')
+          return
+        }
       }
-      if (role === 'CONSULTANT') {
-        router.push('/asesor')
-        return
-      }
-      if (role === 'PROFESSIONAL') {
-        router.push('/profesional')
-        return
-      }
+
+      setError('root', { message: json.error.error_message })
+    } catch (error) {
+      console.log('Error when logging in:', error)
     }
-
-    setError('root', { message: json.error })
   }
 
   const displayLoginError = (message) => {
