@@ -2,6 +2,14 @@ import clsx from 'clsx'
 
 import Image from 'next/image'
 
+/** 
+ * The component is a frame with a side bar and a profile picture if required for wrapping some children tags to create a card
+ * 
+ * PROPS:
+ @param: cardColor: The color of the card
+ @param: sideColor: The color of the side bar
+ @param: profilePicture: The profile picture of the user || if not passed, the card will not display a profile picture
+ */
 const LongCardFrame = ({ cardColor, sideColor, profilePicture, children }) => {
   const cardClasses = clsx({
     [cardColor]: cardColor,
@@ -20,11 +28,8 @@ const LongCardFrame = ({ cardColor, sideColor, profilePicture, children }) => {
     'w-4': true
   })
 
-  return (
-    <article className={`${cardClasses}`}>
-      {/* Barra Cafe */}
-      <div className={`${cardSideBarClasses}`}></div>
-      {/* Foto */}
+  const displayProfilePicture = () => {
+    return (
       <div className='pt-7'>
         <div className='relative w-16 h-16'>
           <Image
@@ -36,6 +41,15 @@ const LongCardFrame = ({ cardColor, sideColor, profilePicture, children }) => {
           />
         </div>
       </div>
+    )
+  }
+
+  return (
+    <article className={`${cardClasses}`}>
+      {/* Barra Cafe */}
+      <div className={`${cardSideBarClasses}`}></div>
+      {/* Foto */}
+      {profilePicture && displayProfilePicture()}
       {children}
     </article>
   )

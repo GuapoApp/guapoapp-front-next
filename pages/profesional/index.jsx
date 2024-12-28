@@ -58,7 +58,7 @@ const ProfessionalDashboard = () => {
           </div>
         </div>
         {/*Proximas citas*/}
-        <div className='flex flex-col gap-2'>
+        <div className='flex flex-col gap-2 w-4/5'>
           <div className='flex flex-col gap-3 p-2'>
             {/* Card 1 */}
             <SessionCard
@@ -66,7 +66,7 @@ const ProfessionalDashboard = () => {
               hour='9:00 AM a 10:00 AM'
               user='LUIS RAMOS'
               sessionName='Asesoría para Boda'
-              day='10/01'
+              // day='10/01'
             />
             {/* Card 2 */}
             <SessionCard
@@ -74,7 +74,7 @@ const ProfessionalDashboard = () => {
               hour='1:00 PM a 02:00 PM'
               user='JOSÉ SUÁREZ'
               sessionName='Asesoría Integral'
-              day='11/01'
+              // day='11/01'
             />
             {/* Card 3 */}
             <SessionCard
@@ -82,7 +82,7 @@ const ProfessionalDashboard = () => {
               hour='11:00 AM a 12:00 PM'
               user='ERIKA VEGA'
               sessionName='Asesoría para Examen Profesional'
-              day='15/01'
+              // day='15/01'
             />
           </div>
           {/*Footer Proximas citas*/}
