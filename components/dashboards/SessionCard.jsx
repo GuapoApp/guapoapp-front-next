@@ -1,4 +1,8 @@
 import Paragraph from '../Paragraph'
+import Header6 from '../Header6'
+import LongCardFrame from './LongCardFrame'
+import SquareLink from '../SquareLink'
+
 import clsx from 'clsx'
 
 /**
@@ -10,43 +14,35 @@ import clsx from 'clsx'
  */
 
 const SessionCard = (props) => {
-  const cardSideBarClasses = clsx({
-    [props.sideColor]: props.sideColor,
-    'h-full': true,
-    'w-4': true
-  })
-
   return (
-    <div className='flex flex-row justify-around gap-5 py-4 pl-0 bg-primary-brownPod600 h-[90px] w-4/6'>
-      {/* Day */}
-      <div className={`${cardSideBarClasses}`}></div>
-      {/* <div className='bg-primary-brownPod800 font-bold w-10 h-[80px] flex items-center justify-center'>
-        <Paragraph
-          text={props.dayName}
-          textColor='text-contrast-slateGray50'
-          padding='pr-1'
-        />
-      </div> */}
-      {/* Hour */}
-      <div className='flex grow-0 items-center'>
+    <LongCardFrame
+      cardColor='bg-primary-brownPod600'
+      sideColor='bg-primary-brownPod800'
+    >
+      {/* Day || Hour */}
+      <div className='flex flex-col items-center w-2/6 gap-2'>
+        <Header6 text={props.dayName} textColor='text-contrast-slateGray50' />
         <Paragraph text={props.hour} textColor='text-contrast-slateGray50' />
       </div>
       {/* Line */}
       <div className='h-[90%] w-[2px] bg-contrast-slateGray50'></div>
       {/* Consultant */}
-      <div className='flex flex-row grow justify-around items-center'>
-        <div>
-          <Paragraph text={props.user} textColor='text-contrast-slateGray50' />
-          <Paragraph
-            text={props.sessionName}
-            textColor='text-contrast-slateGray50'
-          />
-        </div>
-        <div>
-          <Paragraph text={props.day} textColor='text-contrast-slateGray50' />
-        </div>
+      <div className='flex flex-col items-start w-2/6 gap-2'>
+        <Header6 text={props.user} textColor='text-contrast-slateGray50' />
+        <Paragraph
+          text={props.sessionName}
+          textColor='text-contrast-slateGray50'
+        />
       </div>
-    </div>
+      <div className='flex flex-row justify-end w-2/6'>
+        <SquareLink
+          color='bg-primary-brownPod950'
+          textColor='text-contrast-slateGray50'
+          text='Iniciar'
+          width='w-4/6'
+        />
+      </div>
+    </LongCardFrame>
   )
 }
 

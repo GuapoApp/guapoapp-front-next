@@ -1,6 +1,7 @@
 import Header5 from '@/components/Header5'
 import Paragraph from '@/components/Paragraph'
 import SquareLink from '../SquareLink'
+import LongCardFrame from './LongCardFrame'
 
 import clsx from 'clsx'
 
@@ -21,13 +22,13 @@ import { useRouter } from 'next/router'
  */
 
 const ConsultantCard = (props) => {
-  const pictureClasses = clsx({
-    [props.profilePicture]: props.profilePicture,
-    'rounded-tr-[30px]': true,
-    'w-24': true,
-    'h-24': true,
-    'bg-cover': true
-  })
+  // const pictureClasses = clsx({
+  //   [props.profilePicture]: props.profilePicture,
+  //   'rounded-tr-[30px]': true,
+  //   'w-24': true,
+  //   'h-24': true,
+  //   'bg-cover': true
+  // })
 
   const router = useRouter()
 
@@ -37,11 +38,11 @@ const ConsultantCard = (props) => {
   }
 
   return (
-    <div className='w-4/5 h-28 bg-primary-brownPod600 flex flex-row gap-5 items-center'>
-      {/* Barra Café Inicial */}
-      <div className='h-full w-4 bg-primary-brownPod800'></div>
-      {/* Foto */}
-      <div className={`${cabin.className} ${pictureClasses}`}></div>
+    <LongCardFrame
+      cardColor='bg-primary-brownPod600'
+      sideColor='bg-primary-brownPod800'
+      profilePicture={props.profilePicture}
+    >
       {/* Nombre || Tipo Asesoría */}
       <div className='flex flex-col gap-1 w-1/5 justify-center items-center'>
         <Header5
@@ -87,7 +88,14 @@ const ConsultantCard = (props) => {
           }}
         />
       </div>
-    </div>
+    </LongCardFrame>
+    // <div className='w-4/5 h-28 bg-primary-brownPod600 flex flex-row gap-5 items-center'>
+
+    // <div className='h-full w-4 bg-primary-brownPod800'></div>
+
+    // <div className={`${cabin.className} ${pictureClasses}`}></div>
+
+    // </div>
   )
 }
 

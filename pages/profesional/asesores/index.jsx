@@ -44,14 +44,14 @@ const ProfessionalConsultants = () => {
           <div className='bg-primary-brownPod700 w-1/5'></div>
         </div>
         {/* Asesores */}
-        <div className='p-10 flex flex-col gap-5 justify-center items-center'>
+        <div className='p-10 flex flex-col gap-5 justify-center items-center w-5/6'>
           {/* Card 1 */}
           <ConsultantCard
             consultantName='ALFONSO RUIZ'
             consultancyType='Asesoría Integral'
             lastSessionDate='Lunes 16 de Diciembre 2024'
             lastSessionSchedule='10:00 AM A 11:00 AM'
-            profilePicture='bg-[url("/assets/images/stock-image-4.jpg")]'
+            profilePicture='/assets/images/stock-image-4.jpg'
             consultantId='123MongoId'
           />
           {/* Card 2 */}
@@ -60,7 +60,7 @@ const ProfessionalConsultants = () => {
             consultancyType='Asesoría Integral'
             lastSessionDate='Lunes 16 de Diciembre 2024'
             lastSessionSchedule='10:00 AM A 11:00 AM'
-            profilePicture='bg-[url("/assets/images/stock-image-4.jpg")]'
+            profilePicture='/assets/images/stock-image-4.jpg'
             consultantId='123MongoId'
           />
           {/* Card 3 */}
@@ -69,7 +69,7 @@ const ProfessionalConsultants = () => {
             consultancyType='Asesoría Integral'
             lastSessionDate='Lunes 16 de Diciembre 2024'
             lastSessionSchedule='10:00 AM A 11:00 AM'
-            profilePicture='bg-[url("/assets/images/stock-image-4.jpg")]'
+            profilePicture='/assets/images/stock-image-4.jpg'
             consultantId='123MongoId'
           />
           {/* Card 4 */}
@@ -78,7 +78,7 @@ const ProfessionalConsultants = () => {
             consultancyType='Asesoría Integral'
             lastSessionDate='Lunes 16 de Diciembre 2024'
             lastSessionSchedule='10:00 AM A 11:00 AM'
-            profilePicture='bg-[url("/assets/images/stock-image-4.jpg")]'
+            profilePicture='/assets/images/stock-image-4.jpg'
             consultantId='123MongoId'
           />
         </div>

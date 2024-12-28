@@ -50,8 +50,8 @@ const ConsultantDashboard = () => {
           />
         </div>
         {/* Próximas sesiones */}
-        <div className='flex flex-col gap-1 pt-5'>
-          <Header6
+        <div className='flex flex-col gap-1 pt-5 w-5/6'>
+          <Header5
             text='Próximas sesiones'
             textColor='text-primary-brownPod900'
           />
@@ -61,16 +61,16 @@ const ConsultantDashboard = () => {
               hour='9:00 AM a 10:00 AM'
               user='JORGE GÓMEZ'
               sessionName='Asesoría para Boda'
-              day='10/01'
-              sideColor='bg-primary-brownPod600'
+              // day='10/01'
+              // sideColor='bg-primary-brownPod600'
             />
             <SessionCard
               dayName='MIERCOLES'
               hour='10:00 AM a 11:00 AM'
               user='JESÚS SOTO'
               sessionName='Asesoría Integral'
-              day='10/01'
-              sideColor='bg-primary-brownPod600'
+              // day='10/01'
+              // sideColor='bg-primary-brownPod600'
             />
           </div>
         </div>
