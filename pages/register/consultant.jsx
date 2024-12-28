@@ -24,31 +24,43 @@ const ConsultantRegister = () => {
     console.log('Data', data)
     console.log('User in Register:', user)
 
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_GUAPOAPP_URI}consultant`,
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          Email: user.email,
-          Password: user.password,
-          Name: user.name,
-          Role: user.role,
-          Curriculum_File: '/profilePicture',
-          Profile_Picture: '/profilePicture',
-          Birth_Date: data.birthDate,
-          Experience: data.professionalExperience,
-          Social_Media: data.socialMedia
-        })
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_GUAPOAPP_URI}consultant`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            Email: user.email,
+            Password: user.password,
+            Name: user.name,
+            Role: user.role,
+            Curriculum_File: '/profilePicture',
+            Profile_Picture: '/profilePicture',
+            Birth_Date: data.birthDate,
+            Experience: data.professionalExperience,
+            Social_Media: data.socialMedia
+          })
+        }
+      )
+
+      const json = await response.json()
+
+      if (response.status === 201) {
+        console.log('JSON: ', json)
+        alert('Usuario registrado correctamente')
+        return
       }
-    )
-    const json = await response.json()
 
-    console.log('Json: ', json)
-
-    alert('Usuario registrado correctamente')
+      if (response.status === 400) {
+        alert(`${json.error.error_message.message}`)
+        return
+      }
+    } catch (error) {
+      console.log('Error when registering consultant:', error)
+    }
   }
 
   const displayLoginError = (message) => {
