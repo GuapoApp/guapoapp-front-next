@@ -4,14 +4,14 @@ export default function Navbar() {
   return (
     <>
          
-            <div className='flex flex-row  bg-primary-brownPod900 justify-between 
-                  pr-6  pl-6  pt-5 text-primary-brownPod600  '>
+            <div className='flex flex-cols-6  bg-primary-brownPod900 items-center justify-center
+                  pr-6  pl-6  pt-5 gap-20 text-primary-brownPod600  '>
               
               <Link className='' href='/'>INICIO</Link>
               <Link href='/'>BENEFICIOS</Link>
               <Link href='/'>ACERCA DE</Link>
               <Image
-                className='relative -mt-14'
+                className='relative -mt-10'
                 src='/assets/logos/logo-blanco.png'
                 alt='GuapoApp Logo'
                 width={150}
