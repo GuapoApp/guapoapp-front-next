@@ -58,7 +58,7 @@ const Login = () => {
         }
       }
 
-      setError('root', { message: json.error.error_message })
+      setError('root', { message: json.status })
     } catch (error) {
       console.log('Error when logging in:', error)
     }
