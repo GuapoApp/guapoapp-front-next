@@ -7,6 +7,7 @@ import CurvedBackgroundOrange from './CurveBackgroundOrange'
 import Header3 from './Header3'
 import Header2 from './Header2'
 import Header4 from './Header4'
+import Contact from './Contact'
 export default function Sections() {
  
   return (
@@ -35,7 +36,7 @@ export default function Sections() {
       </div>
       <div className='flex flex-row relative mt-12'>
              <Image
-                className=''
+                className='pt-5'
                 src='/stock-image-7.jpg'
                 alt='GuapoApp Logo'
                 width={400}
@@ -187,10 +188,176 @@ export default function Sections() {
    </div>
 </div>
 {/*Fourth section of landing page */}
-     
-     
+  <div className='items-center justify-center 
+    flex flex-row gap-32'>
+     <div>
+     <div className='w-38 pt-4'>
+          <Image
+                className=''
+                src='/assets/images/stock-image-14.jpeg'
+                alt='GuapoApp Logo'
+                width={400}
+                height={1000}            
+               />
+          </div>
+       
+      </div>
+     <div className='items-center justify-center text-center'> 
+     <div>
+        <Header2 text="EXPERIENCIA" 
+        textColor="text-orange-800" 
+          textAlign="items-center justify-center" />
+     </div>
 
- 
+     <Image
+                className='ml-28'
+                src='/assets/logos/logo-naranja.png'
+                alt='GuapoApp Logo'
+                width={200}
+                height={200}            
+               />
+        <div class>       
+              <Header2 text="¿Nuevo Empleo?" textColor="text-orange-600" 
+              textAlign="items-center justify-center" />
+        </div> 
+        <div className='mt-8'>
+          <Header5 text = "Te ayudamos a definir el vestuario adecuado" textAlign="center" />
+          <Header5 text = "para tu nuevo puesto" textAlign="center" />
+          <button className='mt-8 bg-primary-brownPod900 p-5 w-44 rounded-md'> <Header6 text="CONSULTANOS" textColor= "text-slate-100"/> </button>
+       </div>
+        </div>
+  </div>
+
+  {/* fifth section*/}
+
+  <div className='flex flex-cols-6 gap-20 
+                       justify-center items-center 
+                        bg-primary-brownPod900
+                       mt-[100px] ml-[-50%] h-[200px] w-[200%] rounded-t-[120%]'>
+                       <div className='bg-primary-brownPod600 p-3'>  
+                        <Header3 text="NUESTROS PLANES" textColor="text-primary-brownPod950" />
+                        
+                        </div>
+</div>
+{/* seccion de las columnas*/}
+<div className='flex flex-cols-2 items-center 
+          justify-center  gap-28 bg-primary-brownPod900'>
+  {/* Columna izquierda*/}          
+  <div className='border border-primary-brownPod600 p-5' >
+     {/*Titulo */}
+    <div className='bg-primary-brownPod800 text-center p-12'> 
+      <Header3 text="Asesoria por evento" textColor= "text-contrast-slateGray100" />
+      </div>
+      {/*Contenido */}
+    <div className='bg-primary-brownPod700 p-12'>
+        <Paragraph text="Servicio de asesoría de imagen personal"
+        textColor="text-contrast-slateGray100" textAlign="" />
+        <Paragraph text="Analisis detallado de tu estilo" 
+        textColor="text-contrast-slateGray100" textAlign="" />
+        <Paragraph text="Recomendaciones personalizadas de tu vestimenta" 
+        textColor="text-contrast-slateGray100" textAlign="" />
+        <Paragraph text="Asesoramiento sobre el cuidado de la piel y el cabello" 
+        textColor="text-contrast-slateGray100" textAlign="" />
+        <Paragraph text="Consejos de cómo proyectar una imagen personal más segura"
+         textColor="text-contrast-slateGray100" textAlign="" />        
+        <Paragraph text="y mas atractiva" textColor="text-contrast-slateGray100" 
+        textAlign="" />        
+
+    </div>  
+  </div>
+  {/*Columna derecha */}
+  <div className='border border-primary-brownPod600 p-5'> 
+    {/*Titulo de la caja interna */}
+      <div className='bg-primary-brownPod800 text-center p-12'> 
+         <Header3 text="Plan Premium" textColor= "text-contrast-slateGray100" />
+    </div>
+    {/*Contenido de la caja interna */}
+    <div className='bg-primary-brownPod700 text-justify p-12'>
+        <Paragraph text="Servicio de asesoría de imagen personal" 
+        textColor="text-contrast-slateGray100" textAlign="" />
+        <Paragraph text="Analisis detallado de tu estilo"
+         textColor="text-contrast-slateGray100" textAlign="" />
+        <Paragraph text="Recomendaciones personalizadas de tu vestimenta"
+         textColor="text-contrast-slateGray100" textAlign="" />
+        <Paragraph text="Asesoramiento sobre el cuidado de la piel y el cabello" 
+        textColor="text-contrast-slateGray100" textAlign="" />
+        <Paragraph text="Consejos de cómo proyectar una imagen personal más segura"
+         textColor="text-contrast-slateGray100" textAlign="" />
+        <Paragraph text="y mas atractiva"
+         textColor="text-contrast-slateGray100" textAlign="" />                
+    </div>  
+  </div>
+</div>
+<div className='bg-primary-brownPod900 text-center p-8'>
+<Header3 text="Asesoría de imagen personal para potenciar" textColor= "text-contrast-slateGray100" />
+<Header3 text="tu autopercepcion y estilo " textColor= "text-contrast-slateGray100" />
+</div>
+
+{/*sixth section */}
+
+<div className='items-center justify-center
+    flex flex-cols-2 bg-primary-brownPod50'>        
+    <div className='mr-3 '>
+      <div className='flex flex-row mt-2 '>
+      <Image
+          className='mt-1 mr-12 rounded-full'
+          src='/assets/images/stock-image-15.jpg'
+          alt='GuapoApp Logo'
+          width={80}
+          height={80}            
+          />
+          <div>
+          <Header5  text= "Jesus RODENAS" textColor="text-blue-600"/>
+          <Header6  text= "Hace 1 día" textColor="text-contrast-slateGray600"/>
+          </div>
+      </div>
+      <div className="mt-3">
+        <Header3 text="5.0 " textColor="text-primary-brownPod600" />
+      </div>
+    <div className='mt-3 '>
+      <Header4 text="Servicio profesional que va mas" 
+       textColor="text-contrast-slateGray600"  />
+      <Header4 text="alla de un simple asesoramiento de "
+       textColor="text-contrast-slateGray600"  />
+      <Header4 text="imagen basado en las tendencias. Te" 
+      textColor="text-contrast-slateGray600"  />
+      <Header4 text="ayudan a definir tus objetivos en lo "
+       textColor="text-contrast-slateGray600"  />
+      <Header4 text="que imagen se refiere y su "
+       textColor="text-contrast-slateGray600"  />
+      <Header4 text="completisimo estudio te ayuda de"
+       textColor="text-contrast-slateGray600"  />
+      <Header4 text="forma determinante a conseguirlos." 
+      textColor="text-contrast-slateGray600"  />
+      <Header4 text="Experiencia del todo recomendable!" 
+      textColor="text-contrast-slateGray600"  />
+      </div>
+    </div>
+    <div>
+    <Image
+          className='mt-1'
+          src='/assets/images/stock-image-15.jpg'
+          alt='GuapoApp Logo'
+          width={700}
+          height={600}            
+          />
+
+    </div>
+</div>
+{/*sexta seccion de la pagina */}
+
+<div className='bg-primary-brownPod700 text-center p-16 items-center justify-center' >
+      <Header1 text="Es tu momento" textColor="text-contrast-slateGray100" />
+      <Header3 text="Alcanza tus objetivos" textColor="text-contrast-slateGray100" />
+      <br />
+      <Header1 text="Resultados inmediatos" textColor="text-primary-brownPod400" />
+</div>
+{/*Octava seccion de la pagina */}
+<div>
+  <Contact />
+   
+</div>
+
  </>
   )
 }
