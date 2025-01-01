@@ -9,7 +9,7 @@ const Calendar = () => {
   const [date, setDate] = useState(dayjs())
 
   useEffect(() => {
-    console.log('Now', date)
+    console.log('Now', date.$d)
   }, [])
 
   return (

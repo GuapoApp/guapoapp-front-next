@@ -8,7 +8,9 @@ import { TimePicker } from '@mui/x-date-pickers/TimePicker'
 const HourPicker = () => {
   const [time, setTime] = useState(dayjs())
 
-  useEffect(() => {}, [])
+  useEffect(() => {
+    console.log('Time', time)
+  }, [])
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>

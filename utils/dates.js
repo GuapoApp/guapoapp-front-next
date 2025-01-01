@@ -1,6 +1,6 @@
-import { format } from 'date-fns'
-import { es, fr, ja } from 'date-fns/locale'
-// const format = require('date-fns')
+import { format, addHours } from 'date-fns'
+import { es } from 'date-fns/locale'
+// import { tz } from '@date-fns/tz'
 
 const formatDate = (date, language) => {
   if (language === 'es') {
@@ -13,21 +13,32 @@ const formatDate = (date, language) => {
   return format(date, 'eeee')
 }
 
-// const formatHour = (date) => {
-//   return `${date.substring(11, 16)} ${isAMOrPM(date.substring(11, 13))}`
-// }
-
 const isAMOrPM = (hour) => {
   return hour >= 12 ? 'PM' : 'AM'
 }
 
 const getSchedule = (date) => {
-  const hour = date.substring(11, 13)
-  const minutes = date.substring(14, 16)
+  const timedZoneDate = new Date(
+    format(date, 'yyyy-MM-dd HH:mm:ss', {
+      timeZone: 'America/Mexico_City'
+    })
+  )
 
-  return `${hour}:${minutes} ${isAMOrPM(hour)} A ${
-    parseInt(hour) + 1
-  }:${minutes} ${isAMOrPM(hour)}`
+  const startHour = timedZoneDate.getHours()
+  const startMinutes = timedZoneDate.getMinutes()
+
+  const finishSchedule = addHours(timedZoneDate, 1)
+
+  const finishHour = finishSchedule.getHours()
+  const finishMinutes = finishSchedule.getMinutes()
+
+  return `${startHour.toString().padStart(2, '0')}:${startMinutes
+    .toString()
+    .padStart(2, '0')} ${isAMOrPM(startHour)} A ${finishHour
+    .toString()
+    .padStart(2, '0')}:${finishMinutes.toString().padStart(2, '0')} ${isAMOrPM(
+    finishHour
+  )}`
 }
 
-export { formatDate, getSchedule }
+export { formatDate, getSchedule, isAMOrPM }

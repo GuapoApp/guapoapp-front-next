@@ -6,6 +6,7 @@ import Calendar from '@/components/dashboards/Calendar'
 import HourPicker from '@/components/dashboards/HourPicker'
 import SessionCard from '@/components/dashboards/SessionCard'
 import MainDashboardFrame from '@/components/dashboards/MainDashboardFrame'
+import NextSessions from '@/components/dashboards/NextSessions'
 
 import { jwtDecode } from 'jwt-decode'
 
@@ -16,12 +17,18 @@ import { useEffect, useState } from 'react'
 const ProfessionalDashboard = () => {
   const [userName, setUserName] = useState('')
   const [role, setRole] = useState('')
+  const [profilePicture, setProfilePicture] = useState('')
+  const [userId, setUserId] = useState('')
+  const [token, setToken] = useState('')
 
   useEffect(() => {
+    setToken(localStorage.token)
     const decoded = jwtDecode(localStorage.token)
     if (decoded) {
       setUserName(decoded.Name)
       setRole(decoded.Role)
+      setProfilePicture(decoded.Profile_Picture)
+      setUserId(decoded._id)
     }
   }, [])
 
@@ -32,10 +39,7 @@ const ProfessionalDashboard = () => {
         {/**
          * TODO: Add profilePicture as Dynamic prop
          */}
-        <ProfilePicture
-          role={role}
-          profilePicture='/assets/images/stock-image-9.jpg'
-        />
+        <ProfilePicture role={role} profilePicture={profilePicture} />
         <Welcome userName={userName} />
       </div>
       <div className='flex w-4/6 flex-col gap-1 pt-3 pl-28'>
@@ -58,41 +62,7 @@ const ProfessionalDashboard = () => {
           </div>
         </div>
         {/*Proximas citas*/}
-        <div className='flex flex-col gap-2 w-4/5'>
-          <div className='flex flex-col gap-3 p-2'>
-            {/* Card 1 */}
-            <SessionCard
-              dayName='LUNES'
-              hour='9:00 AM a 10:00 AM'
-              user='LUIS RAMOS'
-              sessionName='Asesoría para Boda'
-              // day='10/01'
-            />
-            {/* Card 2 */}
-            <SessionCard
-              dayName='MARTES'
-              hour='1:00 PM a 02:00 PM'
-              user='JOSÉ SUÁREZ'
-              sessionName='Asesoría Integral'
-              // day='11/01'
-            />
-            {/* Card 3 */}
-            <SessionCard
-              dayName='JUEVES'
-              hour='11:00 AM a 12:00 PM'
-              user='ERIKA VEGA'
-              sessionName='Asesoría para Examen Profesional'
-              // day='15/01'
-            />
-          </div>
-          {/*Footer Proximas citas*/}
-          <div className='p-0'>
-            <Header5
-              text='Próxima Citas'
-              textColor='text-primary-brownPod900'
-            />
-          </div>
-        </div>
+        <NextSessions userId={userId} token={token} />
       </div>
     </MainDashboardFrame>
   )
