@@ -13,8 +13,8 @@ const ubuntu = Ubuntu({ subsets: ['latin'], weight: '500' })
 const Header5 = (props) => {
   const headerClasses = clsx({
     [props.textColor]: props.textColor,
-    'text-2xl': true,
-    [props.textAlign]: props.textAlign
+    [props.textAlign]: props.textAlign,
+    'text-2xl': true
   })
 
   return (

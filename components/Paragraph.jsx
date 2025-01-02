@@ -14,6 +14,7 @@ const Paragraph = (props) => {
   const paragraphClasses = clsx({
     [props.textColor]: props.textColor,
     [props.textAlign]: props.textAlign,
+    [props.padding]: props.padding,
     'text-base': true
   })
 
