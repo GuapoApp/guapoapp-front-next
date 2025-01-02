@@ -223,7 +223,7 @@ export default function Sections() {
         <div className='mt-8'>
           <Header5 text = "Te ayudamos a definir el vestuario adecuado" textAlign="center" />
           <Header5 text = "para tu nuevo puesto" textAlign="center" />
-          <button className='mt-8 bg-primary-brownPod900 p-5 w-44 rounded-md'> <Header6 text="CONSULTANOS" textColor= "text-slate-100"/> </button>
+          <button className='mt-8 bg-primary-brownPod900 pt-3 pb-3 pl-3 pr-3 w-44 rounded-md'> <Header6 text="CONSULTANOS" textColor= "text-slate-100"/> </button>
        </div>
         </div>
   </div>
@@ -236,7 +236,6 @@ export default function Sections() {
                        mt-[100px] ml-[-50%] h-[200px] w-[200%] rounded-t-[120%]'>
                        <div className='bg-primary-brownPod600 p-3'>  
                         <Header3 text="NUESTROS PLANES" textColor="text-primary-brownPod950" />
-                        
                         </div>
 </div>
 {/* seccion de las columnas*/}
