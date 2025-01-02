@@ -21,25 +21,25 @@ export default function Footer() {
                      border-primary-brownPod900 pr-20 
                      border-r-contrast-slateGray100 h-32 ">
         
-        <ul><Paragraph text="Inicio" textColor="text-slate-100" /> </ul>
-        <ul><Paragraph text="Beneficios" textColor="text-slate-100"  /></ul>
-        <ul><Paragraph text="Acerca de" textColor="text-slate-100"  /></ul>
+        <ul><Link href="/"><Paragraph text="Inicio" textColor="text-slate-100" /> </Link> </ul>
+        <ul><Link href="/benefitsl¿">  <Paragraph text="Beneficios" textColor="text-slate-100"  /></Link> </ul>
+        <ul> <Link href="/about"><Paragraph text="Acerca de" textColor="text-slate-100"  /></Link></ul>
         <ul> <Link href='/register' >  <Paragraph text="Unete Ahora" textColor="text-slate-100"  /> </Link> </ul>
         <ul> <Link href='/login'>  <Paragraph text="Inicia Sesión" textColor="text-slate-100" /> </Link></ul>
       </div>
-      <div className="align-top border-4  border-primary-brownPod900  border-r-contrast-slateGray100 pr-20 h-32">
+     {/*} <div className="align-top border-4  border-primary-brownPod900  border-r-contrast-slateGray100 pr-20 h-32">
         <ul><Paragraph text="Quienes somos" textColor="text-slate-100" /></ul>
-        <ul><Paragraph text="Misión" textColor="text-slate-100"  /></ul>
-        <ul><Paragraph text="Nuestra Visión" textColor="text-slate-100" /></ul>
-        <ul><Paragraph text="Valores" textColor="text-slate-100" /></ul>
-      </div>
-      <div className="align-top border-4 pr-20  border-primary-brownPod900  border-r-contrast-slateGray100 h-32">
+        <ul> <Link href="/mision"><Paragraph text="Misión" textColor="text-slate-100"  /></Link></ul>
+        <ul> <Link href="/vision"><Paragraph text="Nuestra Visión" textColor="text-slate-100" /> </Link></ul>
+        <ul> <Link href="/valores"><Paragraph text="Valores" textColor="text-slate-100" /></Link></ul>
+      </div>*/}
+     {/*} <div className="align-top border-4 pr-20  border-primary-brownPod900  border-r-contrast-slateGray100 h-32">
         <ul><Paragraph text="Asesores" textColor="text-slate-100"  /></ul>
         <ul><Paragraph text="Asesorados" textColor="text-slate-100"/></ul>
         <ul></ul>
         <ul></ul>
         
-      </div>
+      </div>*/}
       <div className="align-top border-4  border-primary-brownPod900 
        border-r-contrast-slateGray100 pr-20 h-32 ">
         <ul><Paragraph text="CONTACTO" textColor="text-slate-100" textAlign="left" /></ul>

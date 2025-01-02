@@ -4,6 +4,7 @@ import Header3 from "@/components/Header3";
 import Header6 from "@/components/Header6";
 import Paragraph from "@/components/Paragraph";
 import Image from "next/image";
+import grayBox from "@/components/modalEmail"
 export default function Test(){
     return(
 <> 
@@ -81,7 +82,6 @@ export default function Test(){
   <div className="absolute bottom-0 right-0 h-16 w-16  bg-slate-100">09</div>
 </div>
 
-<Paragraph text = "Hola mundo" />
 
 
 <div className="overflow-x-hidden">
@@ -91,8 +91,7 @@ export default function Test(){
   </div>
 </div>
 
-     
-     
+<grayBox/>
 
 
 
