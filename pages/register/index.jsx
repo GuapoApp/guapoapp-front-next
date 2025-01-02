@@ -4,9 +4,10 @@ import Paragraph from '@/components/Paragraph'
 import FormSquareButton from '@/components/forms/FormSquareButton'
 import MainDashboardFrame from '@/components/dashboards/MainDashboardFrame'
 
+import { useUserContext } from '../../context/UserContext'
+
 import { useForm } from 'react-hook-form'
 import { useRouter } from 'next/router'
-import { useUserContext } from '../../context/UserContext'
 
 import Image from 'next/image'
 
@@ -143,11 +144,6 @@ const Register = () => {
           </div>
         </form>
       </div>
-      {/* </section> */}
-      {/* Curved Background */}
-      {/* <div className='h-24 w-full'>
-        <CurvedBackground color='bg-primary-brownPod600' />
-      </div> */}
     </MainDashboardFrame>
   )
 }

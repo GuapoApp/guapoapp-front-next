@@ -6,6 +6,8 @@ import SquareLink from '../SquareLink'
 import clsx from 'clsx'
 
 /**
+ * PROPS:
+ @param: sessionId ==> The id of the session
  @param: dayName ==> The name of the day
  @param: hour ==> The hour of the session
  @param: user ==> The name of the user || either the consultant or the professional
@@ -14,6 +16,10 @@ import clsx from 'clsx'
  */
 
 const SessionCard = (props) => {
+  const beginSession = (sessionId) => {
+    console.log(`Sesión iniciada: ${sessionId}`)
+  }
+
   return (
     <LongCardFrame
       cardColor='bg-primary-brownPod600'
@@ -40,6 +46,7 @@ const SessionCard = (props) => {
           textColor='text-contrast-slateGray50'
           text='Iniciar'
           width='w-4/6'
+          onClick={() => beginSession(props.sessionId)}
         />
       </div>
     </LongCardFrame>
