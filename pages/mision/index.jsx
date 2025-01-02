@@ -1,10 +1,12 @@
-import ModalErrPago from "@/components/modalErrPago"
+// import ModalBox from '@/components/modalBox'
+import AlertModal from '@/components/AlertModal'
 
-export default function Mision(){
-    return(
-   <>
-     <ModalErrPago button1="boton 1" button2= "Boton 2" />
-   </>
-  
-    )
+export default function Mision() {
+  return (
+    <AlertModal
+      title='ERROR EN PAGO'
+      text='Tu pago fue rechazado o hubo un error favor de reintentar o seleccionar otro metodo de pago'
+      button1='Cambiar metodo de pago'
+    />
+  )
 }

@@ -15,6 +15,7 @@ const SelectConsultantCard = (props) => {
 
   const goToAgendaConfirmation = (e) => {
     e.preventDefault()
+    console.log('Clicked on Select Consultant')
     router.push(`/profesional/agenda/checkout`)
   }
 

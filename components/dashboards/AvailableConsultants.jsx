@@ -1,10 +1,28 @@
 import SelectConsultantCard from './SelectConsultantCard'
 import Header5 from '../Header5'
 
+import { useSessionContext } from '@/context/SessionContext'
+
 import { useEffect, useState } from 'react'
+import { set } from 'date-fns'
 
 const AvailableConsultants = (props) => {
   const [availableConsultants, setAvailableConsultants] = useState([])
+
+  const {
+    session,
+    setSession,
+    sessionDate,
+    setSessionDate,
+    sessionTime,
+    setSessionTime,
+    sessionConsultantId,
+    setSessionConsultantId,
+    sessionConsultantName,
+    setSessionConsultantName,
+    sessionConsultantPhoto,
+    setSessionConsultantPhoto
+  } = useSessionContext()
 
   useEffect(() => {
     fetch(
@@ -20,6 +38,9 @@ const AvailableConsultants = (props) => {
       .then((response) => response.json())
       .then((json) => {
         setAvailableConsultants(json.data)
+        setSessionConsultantId(json.data[0]._id)
+        setSessionConsultantName(json.data[0].User.Name)
+        setSessionConsultantPhoto(json.data[0].User.Profile_Picture)
       })
       .catch((error) => {
         console.log('Error:', error)

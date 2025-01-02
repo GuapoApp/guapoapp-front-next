@@ -6,6 +6,9 @@ export const SessionProvider = ({ children }) => {
   const [session, setSession] = useState({})
   const [sessionDate, setSessionDate] = useState()
   const [sessionTime, setSessionTime] = useState()
+  const [sessionConsultantId, setSessionConsultantId] = useState()
+  const [sessionConsultantName, setSessionConsultantName] = useState()
+  const [sessionConsultantPhoto, setSessionConsultantPhoto] = useState()
 
   return (
     <SessionContext.Provider
@@ -15,7 +18,13 @@ export const SessionProvider = ({ children }) => {
         sessionDate,
         setSessionDate,
         sessionTime,
-        setSessionTime
+        setSessionTime,
+        sessionConsultantId,
+        setSessionConsultantId,
+        sessionConsultantName,
+        setSessionConsultantName,
+        sessionConsultantPhoto,
+        setSessionConsultantPhoto
       }}
     >
       {children}
