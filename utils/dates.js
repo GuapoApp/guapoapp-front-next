@@ -41,4 +41,31 @@ const getSchedule = (date) => {
   )}`
 }
 
-export { formatDate, getSchedule, isAMOrPM }
+const formatSchedule = (hour) => {
+  const [hourString, minutes] = hour.split(':')
+
+  const finalHour = parseInt(hourString) + 1
+
+  return `${hourString.padStart(2, '0')}:${minutes} A ${finalHour
+    .toString()
+    .padStart(2, '0')}:${minutes}`
+}
+
+const getLargeDate = (date) => {
+  console.log('Date: ', date)
+
+  const day = formatDate(new Date(date), 'es')
+  const dayNumber = format(new Date(date), 'dd')
+
+  const largeDate = `${day} ${format(new Date(date), 'dd')} de ${format(
+    new Date(date),
+    'MMMM',
+    {
+      locale: es
+    }
+  )} de ${format(new Date(date), 'yyyy')}`
+
+  return largeDate
+}
+
+export { formatDate, getSchedule, isAMOrPM, formatSchedule, getLargeDate }

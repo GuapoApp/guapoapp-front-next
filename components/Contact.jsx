@@ -76,7 +76,7 @@ const Register = () => {
     >
       {/* Parte central del form del login*/}
       <button className='w-[30%] h-12 mt-12 rounded-2 rounded-md
-       bg-primary-brownPod600 mb-12'> 
+       bg-primary-brownPod700 mb-12'> 
          <Header5 text="AGENDA TU SESION HOY" textColor="text-contrast-slateGray100"/>
         </button>
         <div className='flex flex-row w-[70%] h-[40%] shadow-2xl items-center justify-center'>

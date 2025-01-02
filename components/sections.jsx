@@ -12,7 +12,7 @@ export default function Sections() {
   return (
     <>
       {/*First section of the landing page */}
-      <div className='flex flex-row items-center justify-center gap-8'>
+      <div className='flex flex-row  items-center justify-center gap-8'>
         <div>
           <Image
             className='relative -mt-6'
@@ -38,7 +38,7 @@ export default function Sections() {
             />
           </div>
         </div>
-        <div className='flex flex-row relative mt-12'>
+        <div className='flex flex-row sm:flex-col relative mt-12'>
           <Image
             className='pt-5'
             src='/stock-image-7.jpg'
@@ -254,7 +254,7 @@ export default function Sections() {
               textAlign='center'
             />
             <Header5 text='para tu nuevo puesto' textAlign='center' />
-            <button className='mt-8 bg-primary-brownPod900 p-5 w-44 rounded-md'>
+            <button className='mt-8 bg-primary-brownPod900 pt-3 pb-3 pl-3 pr-3 w-44 rounded-md'>
               {' '}
               <Header6 text='CONSULTANOS' textColor='text-slate-100' />{' '}
             </button>
@@ -268,117 +268,65 @@ export default function Sections() {
         className='flex flex-cols-6 gap-20 
                        justify-center items-center 
                         bg-primary-brownPod900
-                       mt-[100px] ml-[-50%] h-[200px] w-[200%] rounded-t-[120%]'
-      >
-        <div className='bg-primary-brownPod600 p-3'>
-          <Header3
-            text='NUESTROS PLANES'
-            textColor='text-primary-brownPod950'
-          />
-        </div>
+                       mt-[100px] ml-[-50%] h-[200px] w-[200%] rounded-t-[120%]'>
+                       <div className='bg-primary-brownPod600 p-3'>  
+                        <Header3 text="NUESTROS PLANES" textColor="text-primary-brownPod950" />
+                        
+                        </div>
+</div>
+{/* seccion de las columnas*/}
+<div className='flex flex-cols-2 items-center 
+          justify-center  gap-28 bg-primary-brownPod900'>
+  {/* Columna izquierda*/}          
+  <div className='border border-primary-brownPod600 p-5' >
+     {/*Titulo */}
+    <div className='bg-primary-brownPod800 text-center p-12'> 
+      <Header3 text="Asesoria por evento" textColor= "text-contrast-slateGray100" />
       </div>
-      {/* seccion de las columnas*/}
-      <div
-        className='flex flex-cols-2 items-center 
-          justify-center  gap-28 bg-primary-brownPod900'
-      >
-        {/* Columna izquierda*/}
-        <div className='border border-primary-brownPod600 p-5'>
-          {/*Titulo */}
-          <div className='bg-primary-brownPod800 text-center p-12'>
-            <Header3
-              text='Asesoria por evento'
-              textColor='text-contrast-slateGray100'
-            />
-          </div>
-          {/*Contenido */}
-          <div className='bg-primary-brownPod700 p-12'>
-            <Paragraph
-              text='Servicio de asesoría de imagen personal'
-              textColor='text-contrast-slateGray100'
-              textAlign=''
-            />
-            <Paragraph
-              text='Analisis detallado de tu estilo'
-              textColor='text-contrast-slateGray100'
-              textAlign=''
-            />
-            <Paragraph
-              text='Recomendaciones personalizadas de tu vestimenta'
-              textColor='text-contrast-slateGray100'
-              textAlign=''
-            />
-            <Paragraph
-              text='Asesoramiento sobre el cuidado de la piel y el cabello'
-              textColor='text-contrast-slateGray100'
-              textAlign=''
-            />
-            <Paragraph
-              text='Consejos de cómo proyectar una imagen personal más segura'
-              textColor='text-contrast-slateGray100'
-              textAlign=''
-            />
-            <Paragraph
-              text='y mas atractiva'
-              textColor='text-contrast-slateGray100'
-              textAlign=''
-            />
-          </div>
-        </div>
-        {/*Columna derecha */}
-        <div className='border border-primary-brownPod600 p-5'>
-          {/*Titulo de la caja interna */}
-          <div className='bg-primary-brownPod800 text-center p-12'>
-            <Header3
-              text='Plan Premium'
-              textColor='text-contrast-slateGray100'
-            />
-          </div>
-          {/*Contenido de la caja interna */}
-          <div className='bg-primary-brownPod700 text-justify p-12'>
-            <Paragraph
-              text='Servicio de asesoría de imagen personal'
-              textColor='text-contrast-slateGray100'
-              textAlign=''
-            />
-            <Paragraph
-              text='Analisis detallado de tu estilo'
-              textColor='text-contrast-slateGray100'
-              textAlign=''
-            />
-            <Paragraph
-              text='Recomendaciones personalizadas de tu vestimenta'
-              textColor='text-contrast-slateGray100'
-              textAlign=''
-            />
-            <Paragraph
-              text='Asesoramiento sobre el cuidado de la piel y el cabello'
-              textColor='text-contrast-slateGray100'
-              textAlign=''
-            />
-            <Paragraph
-              text='Consejos de cómo proyectar una imagen personal más segura'
-              textColor='text-contrast-slateGray100'
-              textAlign=''
-            />
-            <Paragraph
-              text='y mas atractiva'
-              textColor='text-contrast-slateGray100'
-              textAlign=''
-            />
-          </div>
-        </div>
-      </div>
-      <div className='bg-primary-brownPod900 text-center p-8'>
-        <Header3
-          text='Asesoría de imagen personal para potenciar'
-          textColor='text-contrast-slateGray100'
-        />
-        <Header3
-          text='tu autopercepcion y estilo '
-          textColor='text-contrast-slateGray100'
-        />
-      </div>
+      {/*Contenido */}
+    <div className='bg-primary-brownPod700 p-12'>
+        <Paragraph text="Servicio de asesoría de imagen personal"
+        textColor="text-contrast-slateGray100" textAlign="" />
+        <Paragraph text="Analisis detallado de tu estilo" 
+        textColor="text-contrast-slateGray100" textAlign="" />
+        <Paragraph text="Recomendaciones personalizadas de tu vestimenta" 
+        textColor="text-contrast-slateGray100" textAlign="" />
+        <Paragraph text="Asesoramiento sobre el cuidado de la piel y el cabello" 
+        textColor="text-contrast-slateGray100" textAlign="" />
+        <Paragraph text="Consejos de cómo proyectar una imagen personal más segura"
+         textColor="text-contrast-slateGray100" textAlign="" />        
+        <Paragraph text="y mas atractiva" textColor="text-contrast-slateGray100" 
+        textAlign="" />        
+
+    </div>  
+  </div>
+  {/*Columna derecha */}
+  <div className='border border-primary-brownPod600 p-5'> 
+    {/*Titulo de la caja interna */}
+      <div className='bg-primary-brownPod800 text-center p-12'> 
+         <Header3 text="Plan Premium" textColor= "text-contrast-slateGray100" />
+    </div>
+    {/*Contenido de la caja interna */}
+    <div className='bg-primary-brownPod700 text-justify p-12'>
+        <Paragraph text="Servicio de asesoría de imagen personal" 
+        textColor="text-contrast-slateGray100" textAlign="" />
+        <Paragraph text="Analisis detallado de tu estilo"
+         textColor="text-contrast-slateGray100" textAlign="" />
+        <Paragraph text="Recomendaciones personalizadas de tu vestimenta"
+         textColor="text-contrast-slateGray100" textAlign="" />
+        <Paragraph text="Asesoramiento sobre el cuidado de la piel y el cabello" 
+        textColor="text-contrast-slateGray100" textAlign="" />
+        <Paragraph text="Consejos de cómo proyectar una imagen personal más segura"
+         textColor="text-contrast-slateGray100" textAlign="" />
+        <Paragraph text="y mas atractiva"
+         textColor="text-contrast-slateGray100" textAlign="" />                
+    </div>  
+  </div>
+</div>
+<div className='bg-primary-brownPod900 text-center p-8'>
+<Header3 text="Asesoría de imagen personal para potenciar" textColor= "text-contrast-slateGray100" />
+<Header3 text="tu autopercepcion y estilo " textColor= "text-contrast-slateGray100" />
+</div>
 
       {/*sixth section */}
 

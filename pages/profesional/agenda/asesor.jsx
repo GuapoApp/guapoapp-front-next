@@ -10,6 +10,7 @@ import { useSessionContext } from '@/context/SessionContext'
 import { useEffect, useState } from 'react'
 import { jwtDecode } from 'jwt-decode'
 import { useRouter } from 'next/router'
+import { format } from 'date-fns'
 
 const SessionConsultant = () => {
   const [role, setRole] = useState('')
@@ -31,12 +32,12 @@ const SessionConsultant = () => {
       setRole(decoded.Role)
     }
 
-    // console.log('Token in Select Consultant:', token)
-    // console.log('Token in Select Consultant Local:', localStorage.token)
-    // console.log('Session in Select Consultant:', session)
-    // console.log('Session Date in Select Consultant:', sessionDate)
-    // console.log('Session Time in Select Consultant:', sessionTime)
-    console.log(token)
+    setSessionDate(format(sessionDate, 'yyyy-MM-dd').toString())
+    setSessionTime(
+      `${sessionTime.$H.toString().padStart(2, '0')}:${sessionTime.$m
+        .toString()
+        .padStart(2, '0')}`
+    )
   }, [])
 
   console.log(token)
@@ -72,7 +73,11 @@ const SessionConsultant = () => {
           />
         </div>
         {/* Cards */}
-        <AvailableConsultants date='2025-01-30' hour='13:00' token={token} />
+        <AvailableConsultants
+          date={sessionDate}
+          hour={sessionTime}
+          token={token}
+        />
         {/* Back Button */}
         <div className='flex flex-row justify-start h-1/6'>
           <SquareLink
