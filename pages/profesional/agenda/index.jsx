@@ -9,10 +9,13 @@ import DashboardMenu from '@/components/dashboards/DashboardMenu'
 import MainDashboardFrame from '@/components/dashboards/MainDashboardFrame'
 import DashboardTitleHeader from '@/components/dashboards/DashboardTitleHeader'
 
+import { useSessionContext } from '@/context/SessionContext'
+
 import { useEffect, useState } from 'react'
 import { jwtDecode } from 'jwt-decode'
 import { useForm } from 'react-hook-form'
 import { useRouter } from 'next/router'
+import { set } from 'date-fns'
 
 const ProfessionalAgenda = () => {
   const {
@@ -24,6 +27,15 @@ const ProfessionalAgenda = () => {
 
   const [role, setRole] = useState('')
 
+  const {
+    session,
+    setSession,
+    sessionDate,
+    setSessionDate,
+    sessionTime,
+    setSessionTime
+  } = useSessionContext()
+
   const router = useRouter()
 
   useEffect(() => {
@@ -31,8 +43,6 @@ const ProfessionalAgenda = () => {
     if (decoded) {
       setRole(decoded.Role)
     }
-
-    console.log(role)
   }, [])
 
   const goBack = (e) => {
@@ -41,7 +51,11 @@ const ProfessionalAgenda = () => {
   }
 
   const onSubmit = async (data) => {
-    console.log(data)
+    console.log('Data:', data)
+    setSession(data)
+    console.log('Session:', session)
+    console.log('Session Date:', sessionDate)
+    console.log('Session Time:', sessionTime)
     router.push('/profesional/agenda/asesor')
   }
 

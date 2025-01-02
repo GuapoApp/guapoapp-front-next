@@ -2,8 +2,10 @@ import DashboardMenu from '@/components/dashboards/DashboardMenu'
 import DashboardTitleHeader from '@/components/dashboards/DashboardTitleHeader'
 import Header5 from '@/components/Header5'
 import SquareLink from '@/components/SquareLink'
-import SelectConsultantCard from '@/components/dashboards/SelectConsultantCard'
 import MainDashboardFrame from '@/components/dashboards/MainDashboardFrame'
+import AvailableConsultants from '@/components/dashboards/AvailableConsultants'
+
+import { useSessionContext } from '@/context/SessionContext'
 
 import { useEffect, useState } from 'react'
 import { jwtDecode } from 'jwt-decode'
@@ -11,13 +13,33 @@ import { useRouter } from 'next/router'
 
 const SessionConsultant = () => {
   const [role, setRole] = useState('')
+  const [token, setToken] = useState(localStorage.token)
+
+  const {
+    session,
+    setSession,
+    sessionDate,
+    setSessionDate,
+    sessionTime,
+    setSessionTime
+  } = useSessionContext()
 
   useEffect(() => {
+    // setToken(localStorage.token)
     const decoded = jwtDecode(localStorage.token)
     if (decoded) {
       setRole(decoded.Role)
     }
+
+    // console.log('Token in Select Consultant:', token)
+    // console.log('Token in Select Consultant Local:', localStorage.token)
+    // console.log('Session in Select Consultant:', session)
+    // console.log('Session Date in Select Consultant:', sessionDate)
+    // console.log('Session Time in Select Consultant:', sessionTime)
+    console.log(token)
   }, [])
+
+  console.log(token)
 
   const router = useRouter()
 
@@ -50,40 +72,7 @@ const SessionConsultant = () => {
           />
         </div>
         {/* Cards */}
-        <div className='flex flex-col gap-5'>
-          <SelectConsultantCard
-            cardColor='bg-primary-brownPod600'
-            sideColor='bg-primary-brownPod700'
-            profilePicture='/assets/images/stock-image-2.jpg'
-            consultantName='ALFONSO RUIZ'
-            consultantId='1'
-            // consultancyType='Asesoría Integral'
-          />
-          <SelectConsultantCard
-            cardColor='bg-primary-brownPod600'
-            sideColor='bg-primary-brownPod700'
-            profilePicture='/assets/images/stock-image-2.jpg'
-            consultantName='ALFONSO RUIZ'
-            consultantId='1'
-            // consultancyType='Asesoría Integral'
-          />
-          <SelectConsultantCard
-            cardColor='bg-primary-brownPod600'
-            sideColor='bg-primary-brownPod700'
-            profilePicture='/assets/images/stock-image-2.jpg'
-            consultantName='ALFONSO RUIZ'
-            consultantId='1'
-            // consultancyType='Asesoría Integral'
-          />
-          <SelectConsultantCard
-            cardColor='bg-primary-brownPod600'
-            sideColor='bg-primary-brownPod700'
-            profilePicture='/assets/images/stock-image-2.jpg'
-            consultantName='ALFONSO RUIZ'
-            consultantId='1'
-            // consultancyType='Asesoría Integral'
-          />
-        </div>
+        <AvailableConsultants date='2025-01-30' hour='13:00' token={token} />
         {/* Back Button */}
         <div className='flex flex-row justify-start h-1/6'>
           <SquareLink

@@ -1,4 +1,7 @@
 import dayjs from 'dayjs'
+
+import { useSessionContext } from '@/context/SessionContext'
+
 import { useState, useEffect } from 'react'
 
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
@@ -7,6 +10,15 @@ import { TimePicker } from '@mui/x-date-pickers/TimePicker'
 
 const HourPicker = () => {
   const [time, setTime] = useState(dayjs())
+
+  const {
+    session,
+    setSession,
+    sessionDate,
+    setSessionDate,
+    sessionTime,
+    setSessionTime
+  } = useSessionContext()
 
   useEffect(() => {
     console.log('Time', time)
@@ -17,7 +29,7 @@ const HourPicker = () => {
       <TimePicker
         label='Selecciona la hora'
         value={time}
-        onChange={(value) => setTime(value)}
+        onChange={(value) => setSessionTime(value)}
       />
     </LocalizationProvider>
   )
