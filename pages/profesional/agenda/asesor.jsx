@@ -6,6 +6,7 @@ import MainDashboardFrame from '@/components/dashboards/MainDashboardFrame'
 import AvailableConsultants from '@/components/dashboards/AvailableConsultants'
 
 import { useSessionContext } from '@/context/SessionContext'
+import { useUserContext } from '../../../context/UserContext'
 
 import { useEffect, useState } from 'react'
 import { jwtDecode } from 'jwt-decode'
@@ -14,7 +15,9 @@ import { format } from 'date-fns'
 
 const SessionConsultant = () => {
   const [role, setRole] = useState('')
-  const [token, setToken] = useState(localStorage.token)
+  // const [token, setToken] = useState(localStorage.token)
+
+  const { token, setToken } = useUserContext()
 
   const {
     session,
@@ -27,17 +30,18 @@ const SessionConsultant = () => {
 
   useEffect(() => {
     // setToken(localStorage.token)
-    const decoded = jwtDecode(localStorage.token)
+    // const decoded = jwtDecode(localStorage.token)
+    const decoded = jwtDecode(token)
     if (decoded) {
       setRole(decoded.Role)
     }
 
-    setSessionDate(format(sessionDate, 'yyyy-MM-dd').toString())
-    setSessionTime(
-      `${sessionTime.$H.toString().padStart(2, '0')}:${sessionTime.$m
-        .toString()
-        .padStart(2, '0')}`
-    )
+    // setSessionDate(format(sessionDate, 'yyyy-MM-dd').toString())
+    // setSessionTime(
+    //   `${sessionTime.$H.toString().padStart(2, '0')}:${sessionTime.$m
+    //     .toString()
+    //     .padStart(2, '0')}`
+    // )
   }, [])
 
   console.log(token)

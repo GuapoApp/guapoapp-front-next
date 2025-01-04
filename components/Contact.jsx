@@ -61,7 +61,7 @@ const Register = () => {
     //   }
     // }
 
-    console.log('Data', data)
+    // console.log('Data', data)
 
     if (data.role === 'Consultant') {
       router.push('/register/consultant')
@@ -75,47 +75,49 @@ const Register = () => {
       className={`${cabin.className} bg-contrast-slateGray50 flex items-center justify-center flex-col`}
     >
       {/* Parte central del form del login*/}
-      <button className='w-[30%] h-12 mt-12 rounded-2 rounded-md
-       bg-primary-brownPod700 mb-12'> 
-         <Header5 text="AGENDA TU SESION HOY" textColor="text-contrast-slateGray100"/>
-        </button>
-        <div className='flex flex-row w-[70%] h-[40%] shadow-2xl items-center justify-center'>
-              
-          <form
-            className='w-1/2 h-full flex flex-col  p-10 gap-5'
-            onSubmit={handleSubmit(onSubmit)}
-          >
-
-            <div className='w-full flex flex-col gap-4 '>
-              <label className='w-full' htmlFor='name'>
-                <Header6 text='Nombre Completo' />
-              </label>
-              <input
-                className={`w-[100%] p-3 text-contrast-slateGray500 rounded-md
+      <button
+        className='w-[30%] h-12 mt-12 rounded-2 rounded-md
+       bg-primary-brownPod700 mb-12'
+      >
+        <Header5
+          text='AGENDA TU SESION HOY'
+          textColor='text-contrast-slateGray100'
+        />
+      </button>
+      <div className='flex flex-row w-[70%] h-[40%] shadow-2xl items-center justify-center'>
+        <form
+          className='w-1/2 h-full flex flex-col  p-10 gap-5'
+          onSubmit={handleSubmit(onSubmit)}
+        >
+          <div className='w-full flex flex-col gap-4 '>
+            <label className='w-full' htmlFor='name'>
+              <Header6 text='Nombre Completo' />
+            </label>
+            <input
+              className={`w-[100%] p-3 text-contrast-slateGray500 rounded-md
                      text-xl bg-contrast-slateGray300`}
-                placeholder='Escribe tu nombre aquí'
-                type='text'
-                name='name'
-                id='name'
-                {...register('name')}
-              />
-            </div>
-            <div className='w-full flex flex-col gap-4'>
-              <label className='w-full' htmlFor='email'>
-                <Header6 text='Escribe tu email' />
-              </label>
-              <input
-                className={`w-full p-3 text-contrast-slateGray500 rounded-md text-xl bg-contrast-slateGray300`}
-                placeholder='Escribe tu email'
-                type='email'
-                name='email'
-                id='email'
-                {...register('email')}
-              />
-            </div>
-            
-          </form>
-        </div>
+              placeholder='Escribe tu nombre aquí'
+              type='text'
+              name='name'
+              id='name'
+              {...register('name')}
+            />
+          </div>
+          <div className='w-full flex flex-col gap-4'>
+            <label className='w-full' htmlFor='email'>
+              <Header6 text='Escribe tu email' />
+            </label>
+            <input
+              className={`w-full p-3 text-contrast-slateGray500 rounded-md text-xl bg-contrast-slateGray300`}
+              placeholder='Escribe tu email'
+              type='email'
+              name='email'
+              id='email'
+              {...register('email')}
+            />
+          </div>
+        </form>
+      </div>
     </main>
   )
 }

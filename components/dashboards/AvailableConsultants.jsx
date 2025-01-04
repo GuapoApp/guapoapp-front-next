@@ -38,9 +38,9 @@ const AvailableConsultants = (props) => {
       .then((response) => response.json())
       .then((json) => {
         setAvailableConsultants(json.data)
-        setSessionConsultantId(json.data[0]._id)
-        setSessionConsultantName(json.data[0].User.Name)
-        setSessionConsultantPhoto(json.data[0].User.Profile_Picture)
+        // setSessionConsultantId(json.data[0]._id)
+        // setSessionConsultantName(json.data[0].User.Name)
+        // setSessionConsultantPhoto(json.data[0].User.Profile_Picture)
       })
       .catch((error) => {
         console.log('Error:', error)

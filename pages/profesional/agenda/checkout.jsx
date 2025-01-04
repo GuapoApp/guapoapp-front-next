@@ -33,7 +33,9 @@ const AgendaCheckout = () => {
     sessionConsultantName,
     setSessionConsultantName,
     sessionConsultantPhoto,
-    setSessionConsultantPhoto
+    setSessionConsultantPhoto,
+    sessionProfesionalId,
+    setSessionProfesionalId
   } = useSessionContext()
 
   const {
@@ -51,11 +53,11 @@ const AgendaCheckout = () => {
       setRole(decoded.Role)
     }
 
-    console.log('Checkout Session:', session)
-    console.log('Checkout Session Date:', sessionDate)
-    console.log('Checkout Session Time:', sessionTime)
-    console.log('Checkout Consultant ID:', sessionConsultantId)
-    console.log('Checkout Consultant Name:', sessionConsultantName)
+    // console.log('Checkout Session:', session)
+    // console.log('Checkout Session Date:', sessionDate)
+    // console.log('Checkout Session Time:', sessionTime)
+    // console.log('Checkout Consultant ID:', sessionConsultantId)
+    // console.log('Checkout Consultant Name:', sessionConsultantName)
   }, [])
 
   const onSubmit = async (data) => {
@@ -72,7 +74,7 @@ const AgendaCheckout = () => {
             Transcript: '',
             Status: 'Scheduled',
             Paid: false,
-            Professional: '677052bb7e40b9da34a2d8aa',
+            Professional: sessionProfesionalId,
             Consultant: sessionConsultantId,
             Consultancy_Type: session.consultancyType,
             About:
@@ -86,8 +88,8 @@ const AgendaCheckout = () => {
       const json = await response.json()
 
       if (response.status === 201) {
-        console.log('JSON: ', json)
-        alert('Usuario registrado correctamente')
+        // console.log('JSON: ', json)
+        alert('Sesión registrada correctamente')
         return
       }
 

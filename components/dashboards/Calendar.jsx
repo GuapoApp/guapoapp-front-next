@@ -3,6 +3,7 @@ import dayjs from 'dayjs'
 import { useSessionContext } from '@/context/SessionContext'
 
 import { useState, useEffect } from 'react'
+import { format } from 'date-fns'
 
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
@@ -21,7 +22,8 @@ const Calendar = () => {
   } = useSessionContext()
 
   useEffect(() => {
-    console.log('Now', date.$d)
+    setSessionDate(format(date, 'yyyy-MM-dd').toString())
+    // console.log('Session Date', sessionDate)
   }, [])
 
   return (
@@ -29,9 +31,8 @@ const Calendar = () => {
       <DateCalendar
         value={date}
         onChange={(value) => {
-          setSessionDate(value)
-
-          console.log('Date Change', sessionDate)
+          setSessionDate(format(value, 'yyyy-MM-dd').toString())
+          // console.log('Session Date', sessionDate)
         }}
       />
     </LocalizationProvider>
