@@ -17,7 +17,7 @@ import clsx from 'clsx'
 
 const SessionCard = (props) => {
   const beginSession = (sessionId) => {
-    console.log(`Sesión iniciada: ${sessionId}`)
+    // console.log(`Sesión iniciada: ${sessionId}`)
   }
 
   return (

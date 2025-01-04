@@ -39,7 +39,11 @@ const CheckoutCard = (props) => {
           textColor='text-contrast-slateGray50'
         />
         <Paragraph
-          text={props.consultancyType}
+          text={
+            props.consultancyType === 'Event'
+              ? 'Asesoría por Evento'
+              : 'Asesoría Integral'
+          }
           textColor='text-contrast-slateGray50'
         />
         <Paragraph
