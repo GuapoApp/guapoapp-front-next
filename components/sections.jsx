@@ -15,14 +15,14 @@ export default function Sections() {
       <div className='flex flex-row  items-center justify-center gap-8'>
         <div>
           <Image
-            className='relative -mt-6'
+            className='relative sm:hidden -mt-6'
             src='/assets/logos/logo-naranja.png'
             alt='GuapoApp Logo'
             width={200}
             height={200}
           />
 
-          <article className=''>
+          <article className='sm:hidden'>
             <Paragraph text='Sabemos que a imagen habla bien por ti. Somos una' />
             <Paragraph text='consultoria de imagen dedicada exclusivamente a' />
             <Paragraph text='hombre que desean proyectar seguridad, estio y' />
@@ -80,7 +80,7 @@ export default function Sections() {
             <Paragraph text='una imagen que te haga sentir seguro y listo para' />
             <Paragraph text='conquistar cualquier reto' />
           </div>
-          <div className='flex flex-row min-h-32 mt-2'>
+          <div className='flex flex-row min-h-32 mt-2 sm:hidden'>
             <Image
               src='/sotck-image-2.jpg'
               alt='GuapoApp Logo'
@@ -90,7 +90,7 @@ export default function Sections() {
           </div>
         </div>
         <div
-          className='bg-orange-700 border-orange-700 
+          className='bg-orange-700 border-orange-700 sm:hidden
      w-[55.4%] ml-60 text-orange-700 justify-items-center flex flex-row'
         >
           .

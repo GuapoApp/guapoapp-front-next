@@ -23,10 +23,15 @@ export default function NavbarR(){
             </button>
 
              </section>
-            <div className="flex flex-col items-start mt-3 gap-1 sm:flex-row sm:m-0 ">
-                <button className="text-gray-600 hover:bg-gray-700 hover:text-gray-900 w-auto text-left px-2 rounded-md">INICIO</button>
-                <button className="text-gray-600 hover:bg-gray-700 hover:text-gray-900 w-auto text-left px-2 rounded-md"> UNETE AHORA</button>
-                <button className="text-gray-600 hover:bg-gray-700 hover:text-gray-900 w-auto text-left px-2 rounded-md">INICIAR SESION</button>
+            <div className="flex flex-col items-start mt-3 mb-3 gap-1 sm:flex-row sm:m-0 ">
+                <button className="text-gray-600 hover:bg-gray-700
+                 hover:text-gray-900 w-auto 
+                 text-left px-2 rounded-md">INICIO</button>
+                <button className="text-gray-600 hover:bg-gray-700
+                 hover:text-gray-900 w-auto
+                 text-left px-2 rounded-md"> UNETE AHORA</button>
+                <button className="text-gray-600 hover:bg-gray-700 hover:text-gray-900 
+                w-auto text-left px-2 rounded-md">INICIAR SESION</button>
 
             </div>
 
