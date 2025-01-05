@@ -8,6 +8,10 @@ import FormSquareButton from '@/components/forms/FormSquareButton'
 import SquareLink from '@/components/SquareLink'
 import MainDashboardFrame from '@/components/dashboards/MainDashboardFrame'
 
+import { formatSchedule, getLargeDate } from '../../../utils/dates'
+
+import { useSessionContext } from '@/context/SessionContext'
+
 import { jwtDecode } from 'jwt-decode'
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
@@ -16,6 +20,23 @@ import { useForm } from 'react-hook-form'
 const AgendaCheckout = () => {
   const [role, setRole] = useState('')
   const [amount, setAmount] = useState(500)
+
+  const {
+    session,
+    setSession,
+    sessionDate,
+    setSessionDate,
+    sessionTime,
+    setSessionTime,
+    sessionConsultantId,
+    setSessionConsultantId,
+    sessionConsultantName,
+    setSessionConsultantName,
+    sessionConsultantPhoto,
+    setSessionConsultantPhoto,
+    sessionProfesionalId,
+    setSessionProfesionalId
+  } = useSessionContext()
 
   const {
     register,
@@ -31,11 +52,54 @@ const AgendaCheckout = () => {
     if (decoded) {
       setRole(decoded.Role)
     }
+
+    // console.log('Checkout Session:', session)
+    // console.log('Checkout Session Date:', sessionDate)
+    // console.log('Checkout Session Time:', sessionTime)
+    // console.log('Checkout Consultant ID:', sessionConsultantId)
+    // console.log('Checkout Consultant Name:', sessionConsultantName)
   }, [])
 
-  const onSubmit = (data) => {
-    console.log('Formulario enviado')
-    console.log('Data:', data)
+  const onSubmit = async (data) => {
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_GUAPOAPP_URI}session`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            Date: new Date(sessionDate),
+            Transcript: '',
+            Status: 'Scheduled',
+            Paid: false,
+            Professional: sessionProfesionalId,
+            Consultant: sessionConsultantId,
+            Consultancy_Type: session.consultancyType,
+            About:
+              session.consultancyType === 'Event'
+                ? session.eventDescription
+                : session.consultancyDescription
+          })
+        }
+      )
+
+      const json = await response.json()
+
+      if (response.status === 201) {
+        // console.log('JSON: ', json)
+        alert('Sesión registrada correctamente')
+        return
+      }
+
+      if (response.status === 400) {
+        alert(`${json.error.error_message.message}`)
+        return
+      }
+    } catch (error) {
+      console.log('Error when registering consultant:', error)
+    }
   }
 
   const goToPaymentMethods = (e) => {
@@ -65,7 +129,7 @@ const AgendaCheckout = () => {
             />
           </div>
           {/* Consultancy Type */}
-          <div className='flex flex-row gap-3'>
+          {/* <div className='flex flex-row gap-3'>
             <input
               className={``}
               type='radio'
@@ -96,20 +160,20 @@ const AgendaCheckout = () => {
                 textColor='text-contrast-slateGray500'
               />
             </label>
-          </div>
+          </div> */}
           {/* Session Information Cards */}
           <div className='flex flex-col gap-2 items-center w-3/5 mx-auto'>
             <CheckoutCard
               cardColor='bg-primary-brownPod600'
-              profilePicture='/assets/images/stock-image-2.jpg'
-              consultantName='ALFONSO RUIZ'
-              consultancyType='Asesoría para Evento'
+              profilePicture={sessionConsultantPhoto}
+              consultantName={sessionConsultantName}
+              consultancyType={session.consultancyType}
             />
             <CheckoutCard
               cardColor='bg-primary-brownPod700'
-              profilePicture='/assets/images/stock-image-2.jpg'
-              sessionDate='Lunes 16 Diciembre 2024'
-              sessionSchedule='10:00 AM A 11:00 AM'
+              profilePicture={sessionConsultantPhoto}
+              sessionDate={getLargeDate(sessionDate)}
+              sessionSchedule={formatSchedule(sessionTime)}
             />
           </div>
           {/* Checkout Form */}

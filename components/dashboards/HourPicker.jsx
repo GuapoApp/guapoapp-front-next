@@ -21,7 +21,15 @@ const HourPicker = () => {
   } = useSessionContext()
 
   useEffect(() => {
-    console.log('Time', time)
+    // console.log('Time', time)
+    setTime(time)
+    // console.log('Time', time)
+    setSessionTime(
+      `${time.$H.toString().padStart(2, '0')}:${time.$m
+        .toString()
+        .padStart(2, '0')}`
+    )
+    // console.log('Session Time', sessionTime)
   }, [])
 
   return (
@@ -29,7 +37,13 @@ const HourPicker = () => {
       <TimePicker
         label='Selecciona la hora'
         value={time}
-        onChange={(value) => setSessionTime(value)}
+        onChange={(value) =>
+          setSessionTime(
+            `${value.$H.toString().padStart(2, '0')}:${value.$m
+              .toString()
+              .padStart(2, '0')}`
+          )
+        }
       />
     </LocalizationProvider>
   )

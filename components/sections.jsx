@@ -254,7 +254,7 @@ export default function Sections() {
               textAlign='center'
             />
             <Header5 text='para tu nuevo puesto' textAlign='center' />
-            <button className='mt-8 bg-primary-brownPod900 p-5 w-44 rounded-md'>
+            <button className='mt-8 bg-primary-brownPod900 pt-3 pb-3 pl-3 pr-3 w-44 rounded-md'>
               {' '}
               <Header6 text='CONSULTANOS' textColor='text-slate-100' />{' '}
             </button>

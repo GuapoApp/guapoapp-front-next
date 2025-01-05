@@ -1,25 +1,26 @@
 import Header4 from '@/components/Header4'
-import Header5 from '@/components/Header5'
 import Welcome from '@/components/dashboards/Welcome'
 import ProfilePicture from '@/components/dashboards/ProfilePicture'
 import Calendar from '@/components/dashboards/Calendar'
 import HourPicker from '@/components/dashboards/HourPicker'
-import SessionCard from '@/components/dashboards/SessionCard'
 import MainDashboardFrame from '@/components/dashboards/MainDashboardFrame'
 import NextSessions from '@/components/dashboards/NextSessions'
 
+import { useUserContext } from '../../context/UserContext'
+
 import { jwtDecode } from 'jwt-decode'
+import { useEffect, useState } from 'react'
 
 import Link from 'next/link'
-
-import { useEffect, useState } from 'react'
 
 const ProfessionalDashboard = () => {
   const [userName, setUserName] = useState('')
   const [role, setRole] = useState('')
   const [profilePicture, setProfilePicture] = useState('')
   const [userId, setUserId] = useState('')
-  const [token, setToken] = useState('')
+  // const [token, setToken] = useState('')
+
+  const { token, setToken } = useUserContext()
 
   useEffect(() => {
     setToken(localStorage.token)

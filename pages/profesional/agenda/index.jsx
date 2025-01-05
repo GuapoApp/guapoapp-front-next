@@ -1,6 +1,5 @@
 import Header5 from '@/components/Header5'
 import Header6 from '@/components/Header6'
-import Paragraph from '@/components/Paragraph'
 import Calendar from '@/components/dashboards/Calendar'
 import HourPicker from '@/components/dashboards/HourPicker'
 import FormSquareButton from '@/components/forms/FormSquareButton'
@@ -15,7 +14,6 @@ import { useEffect, useState } from 'react'
 import { jwtDecode } from 'jwt-decode'
 import { useForm } from 'react-hook-form'
 import { useRouter } from 'next/router'
-import { set } from 'date-fns'
 
 const ProfessionalAgenda = () => {
   const {
@@ -26,6 +24,7 @@ const ProfessionalAgenda = () => {
   } = useForm()
 
   const [role, setRole] = useState('')
+  const [type, setType] = useState('Complete')
 
   const {
     session,
@@ -33,7 +32,9 @@ const ProfessionalAgenda = () => {
     sessionDate,
     setSessionDate,
     sessionTime,
-    setSessionTime
+    setSessionTime,
+    sessionProfesionalId,
+    setSessionProfesionalId
   } = useSessionContext()
 
   const router = useRouter()
@@ -42,8 +43,67 @@ const ProfessionalAgenda = () => {
     const decoded = jwtDecode(localStorage.token)
     if (decoded) {
       setRole(decoded.Role)
+      setSessionProfesionalId(decoded.Professional_Id)
     }
   }, [])
+
+  const displayEventDetail = () => {
+    return (
+      <div className='flex flex-col gap-3 w-4/6'>
+        <div>
+          <Header6
+            text='Cuéntanos sobre tu evento'
+            textColor='text-contrast-slateGray500'
+          />
+        </div>
+        <div>
+          <textarea
+            name='eventDescription'
+            id='eventDescription'
+            placeholder='Escribe aquí sobre tu evento'
+            className={`w-full p-3 text-contrast-slateGray500 rounded-md text-xl bg-contrast-slateGray300`}
+            rows='5'
+            maxLength='200'
+            {...register('eventDescription', {
+              // required: {
+              //   value: true,
+              //   message: 'La experiencia profesional es requerida'
+              // }
+            })}
+          ></textarea>
+        </div>
+      </div>
+    )
+  }
+
+  const displayIntegralDetail = () => {
+    return (
+      <div className='flex flex-col gap-3 w-4/6'>
+        <div>
+          <Header6
+            text='Cuéntanos qué quieres obtener en tu asesoría'
+            textColor='text-contrast-slateGray500'
+          />
+        </div>
+        <div>
+          <textarea
+            name='consultancyDescription'
+            id='consultancyDescription'
+            placeholder='Escribe aquí lo que quieres obtener'
+            className={`w-full p-3 text-contrast-slateGray500 rounded-md text-xl bg-contrast-slateGray300`}
+            rows='5'
+            maxLength='200'
+            {...register('consultancyDescription', {
+              // required: {
+              //   value: true,
+              //   message: 'La experiencia profesional es requerida'
+              // }
+            })}
+          ></textarea>
+        </div>
+      </div>
+    )
+  }
 
   const goBack = (e) => {
     e.preventDefault()
@@ -51,11 +111,11 @@ const ProfessionalAgenda = () => {
   }
 
   const onSubmit = async (data) => {
-    console.log('Data:', data)
+    // console.log('Data:', data)
     setSession(data)
-    console.log('Session:', session)
-    console.log('Session Date:', sessionDate)
-    console.log('Session Time:', sessionTime)
+    // console.log('Session:', session)
+    // console.log('Session Date:', sessionDate)
+    // console.log('Session Time:', sessionTime)
     router.push('/profesional/agenda/asesor')
   }
 
@@ -108,7 +168,7 @@ const ProfessionalAgenda = () => {
             onSubmit={handleSubmit(onSubmit)}
           >
             {/* Consultancy Type */}
-            <div className='flex flex-row gap-5'>
+            {/* <div className='flex flex-row gap-5'>
               <input
                 className={``}
                 type='radio'
@@ -138,26 +198,33 @@ const ProfessionalAgenda = () => {
                   textColor='text-contrast-slateGray500'
                 />
               </label>
-            </div>
+            </div> */}
             {/* Event Type */}
             <div className='flex flex-col gap-5 items-center'>
               <label htmlFor='EventType'>
                 <Header6
-                  text='¿Cuál es tu evento?'
+                  text='Tipo de Asesoría'
                   textColor='text-contrast-slateGray500'
                 />
               </label>
               <div className='p-3 bg-contrast-slateGray50 border border-secondary-satinLinen100 rounded-md'>
-                <select name='eventType' className='bg-contrast-slateGray50'>
+                <select
+                  name='eventType'
+                  className='bg-contrast-slateGray50'
+                  onChange={(e) => setType(e.target.value)}
+                >
                   <option value='Complete'>Asesoría Integral</option>
                   <option value='Event'>Asesoría para un evento</option>
                 </select>
               </div>
             </div>
             {/* Consultancy Detail || Either Event or Complete */}
-            <div className='flex flex-row gap-5'>
+            <div className='flex flex-row gap-5 justify-center'>
               {/* Event */}
-              <div className='flex flex-col gap-3 w-1/2'>
+              {type === 'Event'
+                ? displayEventDetail()
+                : displayIntegralDetail()}
+              {/* <div className='flex flex-col gap-3 w-1/2'>
                 <div>
                   <Header6
                     text='Cuéntanos sobre tu evento'
@@ -180,9 +247,9 @@ const ProfessionalAgenda = () => {
                     })}
                   ></textarea>
                 </div>
-              </div>
+              </div> */}
               {/* Complete */}
-              <div className='flex flex-col gap-3 w-1/2'>
+              {/* <div className='flex flex-col gap-3 w-1/2'>
                 <div>
                   <Header6
                     text='Cuéntanos qué quieres obtener en tu asesoría'
@@ -205,7 +272,7 @@ const ProfessionalAgenda = () => {
                     })}
                   ></textarea>
                 </div>
-              </div>
+              </div> */}
             </div>
             {/* Submit and Back Buttons */}
             <div className='flex flex-row gap-5'>

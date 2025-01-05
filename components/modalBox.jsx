@@ -6,12 +6,6 @@ import Header5 from "./Header5"
 {/*
   Title: title the messsage box
   line1: text
-  line2: text
-  line3: text
-  line4: text
-  line5: text
-  line6: text
-  line7: text
   button1: text
   button2: text
     

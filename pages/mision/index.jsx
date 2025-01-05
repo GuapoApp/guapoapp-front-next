@@ -1,11 +1,11 @@
-import ModalBox from "@/components/modalBox";
-import ModalCard from "@/components/modalCard";
+import AlertModal from '@/components/AlertModal'
 
- export default function Mision(){
-    return(
-   <>
-   <ModalCard title="AGREGAR TARJETA"/>
-   </>
-   
-   )
+export default function Mision() {
+  return (
+    <AlertModal
+      title='ERROR EN PAGO'
+      text='Tu pago fue rechazado o hubo un error favor de reintentar o seleccionar otro metodo de pago'
+      button1='Cambiar metodo de pago'
+    />
+  )
 }

@@ -3,18 +3,45 @@ import Header5 from '../Header5'
 import Paragraph from '../Paragraph'
 import SquareLink from '../SquareLink'
 
+import { useSessionContext } from '@/context/SessionContext'
+
 import { useRouter } from 'next/router'
+import { set } from 'date-fns'
 
 const SelectConsultantCard = (props) => {
   const router = useRouter()
+
+  const {
+    session,
+    setSession,
+    sessionDate,
+    setSessionDate,
+    sessionTime,
+    setSessionTime,
+    sessionConsultantId,
+    setSessionConsultantId,
+    sessionConsultantName,
+    setSessionConsultantName,
+    sessionConsultantPhoto,
+    setSessionConsultantPhoto
+  } = useSessionContext()
 
   const goToConsultantProfile = (e, consultantId) => {
     e.preventDefault()
     router.push(`/profesional/asesores/${consultantId}`)
   }
 
-  const goToAgendaConfirmation = (e) => {
+  const goToAgendaConfirmation = (
+    e,
+    consultantId,
+    consultantName,
+    profilePicture
+  ) => {
     e.preventDefault()
+    console.log('Clicked on Select Consultant')
+    setSessionConsultantId(consultantId)
+    setSessionConsultantName(consultantName)
+    setSessionConsultantPhoto(profilePicture)
     router.push(`/profesional/agenda/checkout`)
   }
 
@@ -53,7 +80,12 @@ const SelectConsultantCard = (props) => {
             textColor='text-contrast-slateGray50'
             width='w-full'
             onClick={(event) => {
-              goToAgendaConfirmation(event)
+              goToAgendaConfirmation(
+                event,
+                props.consultantId,
+                props.consultantName,
+                props.profilePicture
+              )
             }}
           />
         </div>

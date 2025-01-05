@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import OpenMenu from "./OpenMenu"
+import Header6 from "./Header6"
 
 
 export default function NavbarR1(){
@@ -35,11 +36,10 @@ export default function NavbarR1(){
                 lg:relative lg:top-0 top-20 left-0
               bg-primary-brownPod900 items-center lg:w-auto" >
                <div className="flex flex-col lg:flex-row md:flex-row mb-8 lg:mb-0  ">
-                  <Link className="text-black lg:mr-7  mb-2 lg:mb-0" href="">INICIO</Link>
-                  <Link className="text-black lg:mr-7  mb-2 lg:mb-0" href="">UNETE AHORA </Link>
-                  <Link className="text-black lg:mr-7  mb-0 lg:mb-0" href="">INCIAR SESION </Link>   
-              </div>
-              
+                  <Link className="text-black lg:mr-7  mb-2 lg:mb-0" href="/"><Header6 text="INICIO" textColor="text-primary-brownPod600"/></Link>
+                  <Link className="text-black lg:mr-7  mb-2 lg:mb-0" href="/register"><Header6 text="UNETE AHORA" textColor="text-primary-brownPod600"/> </Link>
+                  <Link className="text-black lg:mr-7  mb-0 lg:mb-0" href="login"><Header6 text="INICIAR SESION" textColor="text-primary-brownPod600"/> </Link>   
+              </div>              
            </div>
         </div>    
         </nav>
