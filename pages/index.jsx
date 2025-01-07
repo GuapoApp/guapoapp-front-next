@@ -1,5 +1,6 @@
 
-import NavbarR1 from '@/components/NavBarR1'
+
+import Navbar from '@/components/NavBar'
 import Footer from '../components/Footer'
 import Sections from '../components/sections'
 
@@ -8,7 +9,7 @@ export default function Page() {
     <>
       <div>
         
-        <NavbarR1 />       
+        <Navbar />       
         <Sections />
         <Footer />
       </div>

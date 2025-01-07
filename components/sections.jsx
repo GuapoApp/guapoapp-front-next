@@ -12,17 +12,18 @@ export default function Sections() {
   return (
     <>
       {/*First section of the landing page */}
-      <div className='flex flex-row  items-center justify-center gap-8'>
+      <div className='flex  flex-row  items-center justify-center gap-8'>
         <div>
+          <div className='lg:flex hidden flex-row'> 
           <Image
-            className='relative sm:hidden -mt-6'
+            className=' relative -mt-6'
             src='/assets/logos/logo-naranja.png'
             alt='GuapoApp Logo'
             width={200}
             height={200}
           />
-
-          <article className='sm:hidden'>
+          </div>
+          <article className=''>
             <Paragraph text='Sabemos que a imagen habla bien por ti. Somos una' />
             <Paragraph text='consultoria de imagen dedicada exclusivamente a' />
             <Paragraph text='hombre que desean proyectar seguridad, estio y' />
@@ -80,7 +81,7 @@ export default function Sections() {
             <Paragraph text='una imagen que te haga sentir seguro y listo para' />
             <Paragraph text='conquistar cualquier reto' />
           </div>
-          <div className='flex flex-row min-h-32 mt-2 sm:hidden'>
+          <div className='lg:flex hidden flex-row min-h-32 mt-2 '>
             <Image
               src='/sotck-image-2.jpg'
               alt='GuapoApp Logo'
@@ -90,15 +91,16 @@ export default function Sections() {
           </div>
         </div>
         <div
-          className='bg-orange-700 border-orange-700 sm:hidden
-     w-[55.4%] ml-60 text-orange-700 justify-items-center flex flex-row'
+          className='lg:flex hidden flex-row bg-orange-700 border-orange-700 
+     w-[55.4%] ml-60 text-orange-700 justify-items-center '
         >
           .
         </div>
       </div>
 
       {/*third section of landing page  */}
-      <div className='items-center justify-center flex flex-col mb-8 '>
+      <div className='' >
+        <div className='items-center justify-center flex flex-col mb-8 '>
         <div className='mt-8 mb-8'>
           <Header2
             text='¿Que incluye mi asesoria de imagen personalizada?'
@@ -159,10 +161,10 @@ export default function Sections() {
           </div>
           {/*Third Card*/}
           <div
-            className=' bg-primary-brownPod950 
+            className='lg:flex hidden bg-primary-brownPod950 
                       border-4 border-primary-brownPod950 pb-7'
           >
-            <div className='w-38 pt-4'>
+            <div className=' w-38 pt-4'>
               <Image
                 className=''
                 src='/assets/images/T3.jpg'
@@ -172,7 +174,7 @@ export default function Sections() {
               />
             </div>
 
-            <div className='bg-contrast-slateGray50 border-4 border-primary-brownPod950 grid justify-items-center '>
+            <div className='  bg-contrast-slateGray50 border-4 border-primary-brownPod950 grid justify-items-center '>
               <Header5 text='NOS VAMOS ' />
               <Header5 text='DE COMPRA' />
               <Paragraph text='Te enseñaremos a potenciar tu imagen' />
@@ -182,8 +184,7 @@ export default function Sections() {
             </div>
           </div>
           {/*Fourth Card*/}
-          <div
-            className='items-center justify-center 
+          <div className=' lg:flex hidden items-center justify-center 
                       border-4 border-primary-brownPod950 bg-primary-brownPod950 pb-7'
           >
             <div className='w-38 pt-4'>
@@ -209,13 +210,14 @@ export default function Sections() {
           </div>
         </div>
       </div>
+    </div>
+
       {/*Fourth section of landing page */}
-      <div
-        className='items-center justify-center 
+      <div  className='items-center justify-center 
     flex flex-row gap-32'
       >
         <div>
-          <div className='w-38 pt-4'>
+          <div className='lg:flex hidden flex-row w-38 pt-4'>
             <Image
               className=''
               src='/assets/images/stock-image-14.jpeg'
@@ -226,14 +228,14 @@ export default function Sections() {
           </div>
         </div>
         <div className='items-center justify-center text-center'>
-          <div>
+          <div >
             <Header2
               text='EXPERIENCIA'
               textColor='text-orange-800'
               textAlign='items-center justify-center'
             />
           </div>
-
+         <div className=''>
           <Image
             className='ml-28'
             src='/assets/logos/logo-naranja.png'
@@ -241,7 +243,8 @@ export default function Sections() {
             width={200}
             height={200}
           />
-          <div class>
+          </div>
+          <div>
             <Header2
               text='¿Nuevo Empleo?'
               textColor='text-orange-600'
@@ -264,16 +267,14 @@ export default function Sections() {
 
       {/* fifth section*/}
 
-      <div
-        className='flex flex-cols-6 gap-20 
-                       justify-center items-center 
-                        bg-primary-brownPod900
-                       mt-[100px] ml-[-50%] h-[200px] w-[200%] rounded-t-[120%]'>
-                       <div className='bg-primary-brownPod600 p-3'>  
-                        <Header3 text="NUESTROS PLANES" textColor="text-primary-brownPod950" />
-                        
-                        </div>
-</div>
+      <div className='flex flex-cols-6 gap-20 
+        justify-center items-center 
+        bg-primary-brownPod900
+        mt-[100px] ml-[-50%] h-[200px] w-[200%] rounded-t-[120%]'>
+           <div className='bg-primary-brownPod600 p-3'>  
+              <Header3 text="NUESTROS PLANES" textColor="text-primary-brownPod950" />               
+          </div>
+      </div>
 {/* seccion de las columnas*/}
 <div className='flex flex-cols-2 items-center 
           justify-center  gap-28 bg-primary-brownPod900'>
@@ -343,7 +344,7 @@ export default function Sections() {
               width={80}
               height={80}
             />
-            <div>
+            <div className=''> 
               <Header5 text='Jesus RODENAS' textColor='text-blue-600' />
               <Header6
                 text='Hace 1 día'
@@ -389,7 +390,7 @@ export default function Sections() {
             />
           </div>
         </div>
-        <div>
+        <div className='lg:flex hidden flex-row'>
           <Image
             className='mt-1'
             src='/assets/images/stock-image-15.jpg'
