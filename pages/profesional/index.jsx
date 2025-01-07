@@ -15,12 +15,23 @@ import Link from 'next/link'
 
 const ProfessionalDashboard = () => {
   const [userName, setUserName] = useState('')
-  const [role, setRole] = useState('')
+  // const [role, setRole] = useState('')
   const [profilePicture, setProfilePicture] = useState('')
-  const [userId, setUserId] = useState('')
+  // const [userId, setUserId] = useState('')
   // const [token, setToken] = useState('')
 
-  const { token, setToken } = useUserContext()
+  const {
+    token,
+    setToken,
+    userId,
+    setUserId,
+    professionalId,
+    setProfessionalId,
+    consultantId,
+    setConsultantId,
+    role,
+    setRole
+  } = useUserContext()
 
   useEffect(() => {
     setToken(localStorage.token)
@@ -30,6 +41,7 @@ const ProfessionalDashboard = () => {
       setRole(decoded.Role)
       setProfilePicture(decoded.Profile_Picture)
       setUserId(decoded._id)
+      setProfessionalId(decoded.Professional_Id)
     }
   }, [])
 
