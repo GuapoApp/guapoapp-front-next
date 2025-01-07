@@ -1,13 +1,10 @@
-import Navbar from "@/components/NavBar";
+
+import NavbarR1 from "@/components/NavBarR1";
 
 export default function Vision(){
     return(
         <>
-        <Navbar />
-        <h1>
-             Vision
-        </h1>
-        
+        <NavbarR1 />
         </>
     )
 }
