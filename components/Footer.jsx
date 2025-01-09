@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className='flex flex-cols-6 gap-20 
                        justify-center items-center 
                         bg-primary-brownPod900 absolute 
-                       mt-[100px] ml-[-50%] h-[200px] w-[200%] rounded-t-[120%]'>
+                       mt-[100px]  h-[200px] w-[100%] rounded-t-[10%]'>
       <div className="align-top  h-32">
                       <Image
                         className='relative -mt-6'
@@ -17,8 +17,8 @@ export default function Footer() {
                        />        
       </div>
 
-      <div className="align-top border-4 
-                     border-primary-brownPod900 pr-20 
+      <div className="align-top border-4 items-center justify-center
+                     border-primary-brownPod900 
                      border-r-contrast-slateGray100 h-32 ">
         
         <ul><Link href="/"><Paragraph text="Inicio" textColor="text-slate-100" /> </Link> </ul>

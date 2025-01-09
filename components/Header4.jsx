@@ -14,7 +14,9 @@ const Header4 = (props) => {
   const headerClasses = clsx({
     [props.textColor]: props.textColor,
     'text-3xl': true,
-    [props.textAlign]: props.textAlign
+    [props.textAlign]: props.textAlign,
+    
+    
   })
 
   return (

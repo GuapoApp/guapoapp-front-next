@@ -70,7 +70,7 @@ const ConsultantRegister = () => {
   return (
     <MainDashboardFrame footerColor='bg-primary-brownPod600'>
       {/*Seccion Principal */}
-      <div className='flex flex-col w-[70%] h-[70%] shadow-2xl'>
+      <div className='flex flex-col  w-[70%] h-[70%] shadow-2xl'>
         <div className='h-1/4 flex justify-center'>
           <Image
             src='/assets/logos/logo-naranja.png'
@@ -105,6 +105,9 @@ const ConsultantRegister = () => {
               />
             </div>
           </div>
+
+{/* */}
+
           <div className='w-1/3 h-full flex flex-col px-20 justify-center gap-4'>
             <div className='flex flex-col gap-3'>
               <Header4

@@ -10,13 +10,15 @@ const ubuntu = Ubuntu({ subsets: ['latin'], weight: '500' })
  @param: text ==> The text to be printed 
  @param: textAlign ==> The alignment of the text
  @param: textWrap ==> Wrap texts if entered
+ 
 */
 const Header6 = (props) => {
   const headerClasses = clsx({
     [props.textColor]: props.textColor,
     [props.textAlign]: props.textAlign,
     'text-wrap': props.textWrap,
-    'text-xl': true
+    //'text-xl': true
+    'sm:text-sm md:text-xl': true
   })
 
   return (

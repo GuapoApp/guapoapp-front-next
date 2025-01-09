@@ -95,7 +95,7 @@ const Register = () => {
             </label>
             <input
               className={`w-[100%] p-3 text-contrast-slateGray500 rounded-md
-                     text-xl bg-contrast-slateGray300`}
+                     text-xl bg-contrast-slateGray300 md-80 sm:w-72`}
               placeholder='Escribe tu nombre aquí'
               type='text'
               name='name'
@@ -108,7 +108,8 @@ const Register = () => {
               <Header6 text='Escribe tu email' />
             </label>
             <input
-              className={`w-full p-3 text-contrast-slateGray500 rounded-md text-xl bg-contrast-slateGray300`}
+              className={`w-full p-3 text-contrast-slateGray500 rounded-md text-xl
+                 bg-contrast-slateGray300 sm:w-72`}
               placeholder='Escribe tu email'
               type='email'
               name='email'

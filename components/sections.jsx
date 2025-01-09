@@ -99,7 +99,7 @@ export default function Sections() {
       </div>
 
       {/*third section of landing page  */}
-      <div className='' >
+      <div className='grid grid-row  md:grid-col gap-2' >
         <div className='items-center justify-center flex flex-col mb-8 '>
         <div className='mt-8 mb-8'>
           <Header2
@@ -108,10 +108,9 @@ export default function Sections() {
           />
         </div>
 
-        <div className='flex flex-row items-center  mt-3 gap-20 '>
+        <div className='lg:flex flex-row items-center sm:grid grid-cols-2   mt-3 gap-20 '>
           {/*First card */}
-          <div
-            className='items-center justify-center  bg-primary-brownPod950 pb-7
+          <div className='items-center justify-center  bg-primary-brownPod950 pb-7
                      border-4 border-primary-brownPod950 '
           >
             <div className='w-38 pt-4 '>
@@ -124,7 +123,8 @@ export default function Sections() {
               />
             </div>
 
-            <div className='bg-contrast-slateGray50 border-4 border-primary-brownPod950 w-full  grid justify-items-center'>
+            <div className='bg-contrast-slateGray50 border-4 border-primary-brownPod950 w-full 
+               grid justify-items-center'>
               <Header5 text='PROYECCION ' textColor='text-black' />
               <Header5 text='DE TU IMAGEN ' />
               <Paragraph text='Conocer cúal es la imagen que proyectas' />
@@ -135,8 +135,7 @@ export default function Sections() {
           </div>
 
           {/*Second Card*/}
-          <div
-            className='items-center justify-center
+          <div className='items-center justify-center
                        bg-primary-brownPod950 pb-7
                      border-4 border-primary-brownPod950'
           >
@@ -149,8 +148,9 @@ export default function Sections() {
                 height={1000}
               />
             </div>
-            <div></div>
-            <div className='bg-contrast-slateGray50 border-4 border-primary-brownPod950  grid justify-items-center'>
+            
+            <div className='bg-contrast-slateGray50 border-4 border-primary-brownPod950  
+            grid justify-items-center'>
               <Header5 text='ASESORIA ' textColor='text-black' />
               <Header5 text='PERSONALIZADA ' />
               <Paragraph text='Adoptaremos tu imagen y tu estilo a tus ' />
@@ -160,11 +160,10 @@ export default function Sections() {
             </div>
           </div>
           {/*Third Card*/}
-          <div
-            className='lg:flex hidden bg-primary-brownPod950 
-                      border-4 border-primary-brownPod950 pb-7'
+          <div className=' bg-primary-brownPod950 
+                       border-4 border-primary-brownPod950 pb-7'
           >
-            <div className=' w-38 pt-4'>
+            <div className='w-38 pt-4'>
               <Image
                 className=''
                 src='/assets/images/T3.jpg'
@@ -174,7 +173,7 @@ export default function Sections() {
               />
             </div>
 
-            <div className='  bg-contrast-slateGray50 border-4 border-primary-brownPod950 grid justify-items-center '>
+            <div className='  bg-contrast-slateGray50 border-4 border-primary-brownPod950 grid justify-items-center  '>
               <Header5 text='NOS VAMOS ' />
               <Header5 text='DE COMPRA' />
               <Paragraph text='Te enseñaremos a potenciar tu imagen' />
@@ -184,7 +183,7 @@ export default function Sections() {
             </div>
           </div>
           {/*Fourth Card*/}
-          <div className=' lg:flex hidden items-center justify-center 
+          <div className='lg:items-center justify-center  
                       border-4 border-primary-brownPod950 bg-primary-brownPod950 pb-7'
           >
             <div className='w-38 pt-4'>
@@ -197,7 +196,7 @@ export default function Sections() {
               />
             </div>
             <div
-              className='bg-contrast-slateGray50 border-4 border-primary-brownPod950 
+              className='bg-contrast-slateGray50  border-4 border-primary-brownPod950 
              grid justify-items-center'
             >
               <Header5 text='ESTUDIO ' />
@@ -214,8 +213,7 @@ export default function Sections() {
 
       {/*Fourth section of landing page */}
       <div  className='items-center justify-center 
-    flex flex-row gap-32'
-      >
+    flex flex-row gap-32' >
         <div>
           <div className='lg:flex hidden flex-row w-38 pt-4'>
             <Image
@@ -257,7 +255,7 @@ export default function Sections() {
               textAlign='center'
             />
             <Header5 text='para tu nuevo puesto' textAlign='center' />
-            <button className='mt-8 bg-primary-brownPod900 pt-3 pb-3 pl-3 pr-3 w-44 rounded-md'>
+            <button className='mt-8 bg-primary-brownPod900 pt-3 pb-3 sm:mb-5 pl-3 pr-3 w-44 rounded-md'>
               {' '}
               <Header6 text='CONSULTANOS' textColor='text-slate-100' />{' '}
             </button>
@@ -267,20 +265,20 @@ export default function Sections() {
 
       {/* fifth section*/}
 
-      <div className='flex flex-cols-6 gap-20 
+      <div className='lg:flex hidden flex-cols-6 gap-20 
         justify-center items-center 
         bg-primary-brownPod900
-        mt-[100px] ml-[-50%] h-[200px] w-[200%] rounded-t-[120%]'>
-           <div className='bg-primary-brownPod600 p-3'>  
+        mt-[100px]  h-[200px] w-[100%] rounded-t-[200%] sm:hidden'>
+           <div className='bg-primary-brownPod600 p-3 items-center justify-center '>  
               <Header3 text="NUESTROS PLANES" textColor="text-primary-brownPod950" />               
           </div>
       </div>
 {/* seccion de las columnas*/}
-<div className='flex flex-cols-2 items-center 
+<div className='flex flex-cols-2 items-center  
           justify-center  gap-28 bg-primary-brownPod900'>
   {/* Columna izquierda*/}          
   <div className='border border-primary-brownPod600 p-5' >
-     {/*Titulo */}
+     {/*Titulo */}{}
     <div className='bg-primary-brownPod800 text-center p-12'> 
       <Header3 text="Asesoria por evento" textColor= "text-contrast-slateGray100" />
       </div>
