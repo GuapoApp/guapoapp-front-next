@@ -77,7 +77,7 @@ const Register = () => {
               <Header6 text='Voy a dar Asesorías' />
             </label>
             <input 
-              className="lg:hidden" 
+              className="" 
               type='radio'
               name='role'
               // id='role'
@@ -90,7 +90,7 @@ const Register = () => {
           </div>
           <div className='w-full flex flex-col gap-4 '>
             <label className='w-full' htmlFor='name'>
-              <Header6 text='Nombre Completo' textColor="sm:text-sm md:text-xl" />
+              <Header6 text='Nombre Completo' />
             </label>
             <input
               className={`w-full p-3 text-contrast-slateGray500 
@@ -107,7 +107,7 @@ const Register = () => {
           </div>
           <div className='w-full flex flex-col gap-4'>
             <label className='w-full' htmlFor='email'>
-              <Header6 text='Escribe tu email'  />
+              <Header6 text='Escribe tu email' />
             </label>
             <input
               className={`w-full p-3 text-contrast-slateGray500 rounded-md text-xl
@@ -124,7 +124,7 @@ const Register = () => {
           </div>
           <div className='w-full flex flex-col gap-4 '>
             <label className='w-full' htmlFor='password'>
-              <Header6 text='Contraseña' textColor="sm:text-sm md:text-xl flex" />
+              <Header6 text='Contraseña' />
             </label>
             <input
               className={`w-full p-3 text-contrast-slateGray500

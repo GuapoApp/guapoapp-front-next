@@ -23,6 +23,7 @@ const FileInput = (props) => {
     'text-xl': true,
     'font-semibold': true,
     'shadow-2xl': true,
+    
     flex: true,
     'justify-center': true
   })

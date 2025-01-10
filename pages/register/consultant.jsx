@@ -71,7 +71,7 @@ const ConsultantRegister = () => {
     <MainDashboardFrame footerColor='bg-primary-brownPod600'>
       {/*Seccion Principal */}
       <div className='flex flex-col  w-[70%] h-[70%] shadow-2xl'>
-        <div className='h-1/4 flex justify-center'>
+        <div className='h-1/4 lg:flex hidden justify-center sm:hidden'>
           <Image
             src='/assets/logos/logo-naranja.png'
             width={160}
@@ -102,6 +102,7 @@ const ConsultantRegister = () => {
                 id='profilePicture'
                 name='profilePicture'
                 text='Selecciona un archivo'
+                
               />
             </div>
           </div>
