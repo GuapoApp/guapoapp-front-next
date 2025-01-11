@@ -70,7 +70,7 @@ const ProfessionalRegister = () => {
     <MainDashboardFrame footerColor='bg-primary-brownPod600'>
       {/*Seccion Principal */}
       <div className='flex flex-col w-[70%] h-[70%] shadow-2xl'>
-        <div className='h-1/4 flex justify-center'>
+        <div className='h-1/4 lg:flex hidden justify-center sm:hidden'>
           <Image
             src='/assets/logos/logo-naranja.png'
             width={160}
@@ -79,10 +79,11 @@ const ProfessionalRegister = () => {
           />
         </div>
         <form
-          className='w-full h-3/4 bg-primary-brownPod900 flex flex-row px-12 gap-20 py-10'
+          className='w-full h-3/4 bg-primary-brownPod900 flex flex-row sm:flex-col lg:flex-row px-12 gap-20 py-10'
           onSubmit={handleSubmit(onSubmit)}
         >
-          <div className='w-2/6 h-full flex flex-col items-center justify-center gap-5 m-auto'>
+          <div className='lg:w-2/6 h-full flex flex-col items-center justify-center gap-5 m-auto '
+          >
             <Image
               alt=''
               src='/assets/images/profile-pic.jpg'
@@ -104,8 +105,8 @@ const ProfessionalRegister = () => {
               />
             </div>
           </div>
-          <div className='w-4/6 h-full flex flex-col px-20 justify-center gap-4'>
-            <div className='flex flex-col gap-3'>
+          <div className='lg:w-4/6 h-full flex flex-col px-20 items-center sm:flex-col justify-center gap-4'>
+            <div className='flex flex-col gap-3 items-center justify-center'>
               <Header4
                 text='BIENVENIDO'
                 textColor='text-contrast-slateGray50'
@@ -125,7 +126,8 @@ const ProfessionalRegister = () => {
                 </label>
                 <input
                   type='date'
-                  className={`w-full p-3 text-contrast-slateGray500 rounded-md text-xl bg-contrast-slateGray300`}
+                  className={`w-full p-3 text-contrast-slateGray500 rounded-md text-xl
+                    sm:w-44 bg-contrast-slateGray300`}
                   {...register('birthDate', {
                     required: {
                       value: true,
@@ -149,7 +151,7 @@ const ProfessionalRegister = () => {
               name='about'
               id='about'
               placeholder='Cuéntanos sobre ti'
-              className={`w-full p-3 text-contrast-slateGray500 rounded-md text-xl bg-contrast-slateGray300`}
+              className={`w-full p-3 text-contrast-slateGray500 rounded-md text-xl bg-contrast-slateGray300 sm:w-52`}
               rows='5'
               maxLength='200'
               {...register('about', {

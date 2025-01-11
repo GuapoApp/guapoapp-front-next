@@ -20,11 +20,13 @@ const FileInput = (props) => {
     'px-2': true,
     'py-3': true,
     'rounded-md': true,
-    'text-xl': true,
+    'lg:text-xl': true,
     'font-semibold': true,
     'shadow-2xl': true,
+    'sm:w-44':true,
+    'sm:text-sm':true,
     
-    flex: true,
+     flex: true,
     'justify-center': true
   })
 

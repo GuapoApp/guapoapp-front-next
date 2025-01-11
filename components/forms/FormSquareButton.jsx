@@ -20,9 +20,11 @@ const FormSquareButton = (props) => {
     'px-2': true,
     'py-3': true,
     'rounded-md': true,
-    'text-xl': true,
+    'lg:text-xl': true,
     'font-semibold': true,
-    'shadow-xl': true
+    'shadow-xl': true,
+    'sm:w-44':true,
+    'sm:text-sm':true,
   })
 
   return (

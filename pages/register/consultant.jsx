@@ -68,32 +68,43 @@ const ConsultantRegister = () => {
   }
 
   return (
+    <main className=''>
+    
     <MainDashboardFrame footerColor='bg-primary-brownPod600'>
       {/*Seccion Principal */}
-      <div className='flex flex-col  w-[70%] h-[70%] shadow-2xl'>
-        <div className='h-1/4 lg:flex hidden justify-center sm:hidden'>
+      
+      <div className='w-[70%] h-[70%] shadow-2xl items-center justify-center '>
+        <div className='h-1/4 lg:flex hidden justify-center items-center  sm:hidden'>
           <Image
+            className=''
             src='/assets/logos/logo-naranja.png'
             width={160}
             height={100}
             alt=''
           />
         </div>
+
+        {/*Formulario de registro*/}
         <form
-          className='w-full h-3/4 bg-primary-brownPod900 flex flex-row px-12 py-10'
+          className='w-full h-3/4 bg-primary-brownPod900 lg:flex flex-row  px-12 py-10'
           onSubmit={handleSubmit(onSubmit)}
         >
-          <div className='w-1/3 h-full flex flex-col items-center justify-center gap-5'>
+         
+         {/*Foto de perfil */}
+          <div className='lg:w-1/3 h-full flex flex-col items-center justify-center sm:items-center 
+                          sm:justify-center gap-5'>
             <Image
+              className='lg:ml-0 '
               alt=''
               src='/assets/images/profile-pic.jpg'
               width={220}
               height={220}
             />
-            <div className='flex flex-col gap-4'>
+            <div className='flex flex-col gap-4 '>
               <Header6
                 textColor='text-contrast-slateGray50'
                 text='Sube una foto de perfil'
+                textAlign='text-center'
               />
               <FileInput
                 accept='image/*'
@@ -101,30 +112,33 @@ const ConsultantRegister = () => {
                 textColor='text-contrast-slateGray50'
                 id='profilePicture'
                 name='profilePicture'
-                text='Selecciona un archivo'
-                
+                text='Selecciona un archivo'                
               />
             </div>
           </div>
 
-{/* */}
+     {/*  columna de bievenida*/}
 
           <div className='w-1/3 h-full flex flex-col px-20 justify-center gap-4'>
             <div className='flex flex-col gap-3'>
               <Header4
                 text='BIENVENIDO'
                 textColor='text-contrast-slateGray50'
+                textAlign='text-center'
               />
               <Header5
-                text='Completa tus datos,'
+                text='Completar datos,'
                 textColor='text-contrast-slateGray50'
+                textAlign='text-center'
               />
+
             </div>
-            <div className='flex flex-col gap-3'>
+            <div className='flex flex-col gap-3 '>
               <label htmlFor='cv' className='w-full'>
                 <Header6
                   textColor='text-contrast-slateGray50'
-                  text='Sube tu CV'
+                  text='Ajunta CV'
+                  textAlign='text-center'
                 />
               </label>
               <FileInput
@@ -147,7 +161,8 @@ const ConsultantRegister = () => {
               </label>
               <input
                 type='date'
-                className={`w-full p-3 text-contrast-slateGray500 rounded-md text-xl bg-contrast-slateGray300`}
+                className={`w-full p-3 text-contrast-slateGray500
+                    sm:w-44 rounded-md text-xl bg-contrast-slateGray300`}
                 {...register('birthDate', {
                   required: {
                     value: true,
@@ -161,6 +176,8 @@ const ConsultantRegister = () => {
                 displayLoginError(errors.birthDate.message)}
             </div>
           </div>
+
+          {/*Experiencia profesional*/}
           <div className='w-1/3 h-full flex flex-col px-20 justify-center gap-4'>
             <label htmlFor='professionalExperience'>
               <Header6
@@ -172,7 +189,8 @@ const ConsultantRegister = () => {
               name='professionalExperiencia'
               id='professionalExperience'
               placeholder='Escribe aquí tu experiencia'
-              className={`w-full p-3 text-contrast-slateGray500 rounded-md text-xl bg-contrast-slateGray300`}
+              className={`w-full p-3 text-contrast-slateGray500 rounded-md text-xl 
+                sm:w-44 bg-contrast-slateGray300`}
               rows='5'
               maxLength='200'
               {...register('professionalExperience', {
@@ -184,8 +202,9 @@ const ConsultantRegister = () => {
             ></textarea>
             <label htmlFor='socialMedia'>
               <Header6
-                text='Agrega al menos una red social profesional'
+                text='Red Social'
                 textColor='text-contrast-slateGray50'
+                textAlign='text-center'
               />
             </label>
             <input
@@ -193,7 +212,8 @@ const ConsultantRegister = () => {
               name='socialMedia'
               id='socialMedia'
               placeholder='Escribe el link'
-              className={`w-full p-3 text-contrast-slateGray500 rounded-md text-xl bg-contrast-slateGray300`}
+              className={`w-full p-3 text-contrast-slateGray500 rounded-md 
+                text-xl bg-contrast-slateGray300 sm:w-44 mr-10`}
               {...register('socialMedia', {
                 required: true,
                 message: 'La red social es requerida'
@@ -210,9 +230,12 @@ const ConsultantRegister = () => {
               />
             </div>
           </div>
+        
         </form>
       </div>
+      
     </MainDashboardFrame>
+    </main>
   )
 }
 
