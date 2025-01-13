@@ -19,10 +19,18 @@ const DashboardMenu = (props) => {
   if (props.role === 'PROFESSIONAL') {
     return (
       <>
-
-      <div className='flex flex-col bg-primary-brownPod700 
+            <div className="  " onClick={OpenMenu}>
+              <Image
+                className=''
+                src='/assets/images/menu.png'
+                alt='GuapoApp Logo'
+                width={30}
+                height={30}
+            />
+            </div>
+      <div id='menu' className='flex flex-col bg-primary-brownPod700 
                       gap-7 p-7 mt-auto mb-auto h-[80%]
-                     text-primary-brownPod500 font-semibold z-20 text-xl'>       
+                     text-primary-brownPod500 font-semibold z-20 text-xl  '>       
        
         <Link href='/profesional/perfil'>MI PERFIL</Link>
         <Link href='/profesional/asesores'>MIS ASESORES</Link>
@@ -33,6 +41,7 @@ const DashboardMenu = (props) => {
           Cerrar Sesión
         </Link>
       </div>
+      
       </>
     )
   }

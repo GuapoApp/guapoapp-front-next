@@ -41,7 +41,7 @@ const ConsultantDashboard = () => {
         />
         <Welcome userName={userName} />
       </div>
-      <div className='flex w-4/6 flex-col pt-5 gap-8'>
+      <div className='lg:flex w-4/6 flex-col pt-5 gap-8'>
         {/* Banner superior */}
         <div>
           <Header3
@@ -50,12 +50,12 @@ const ConsultantDashboard = () => {
           />
         </div>
         {/* Próximas sesiones */}
-        <div className='flex flex-col gap-1 pt-5 w-5/6'>
+        <div className='ml-20 flex flex-col gap-1 pt-5 lg:w-5/6'>
           <Header5
             text='Próximas sesiones'
             textColor='text-primary-brownPod900'
           />
-          <div className='flex flex-col gap-3 p-2'>
+          <div className=' flex flex-col gap-3 p-2'>
             <SessionCard
               dayName='LUNES'
               hour='9:00 AM a 10:00 AM'

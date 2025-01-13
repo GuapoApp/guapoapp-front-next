@@ -26,7 +26,7 @@ const SessionCard = (props) => {
       sideColor='bg-primary-brownPod800'
     >
       {/* Day || Hour */}
-      <div className='flex flex-col items-center w-2/6 gap-2'>
+      <div className='flex flex-col items-center lg:w-2/6 gap-2'>
         <Header6 text={props.dayName} textColor='text-contrast-slateGray50' />
         <Paragraph text={props.hour} textColor='text-contrast-slateGray50' />
       </div>
@@ -45,7 +45,7 @@ const SessionCard = (props) => {
           color='bg-primary-brownPod950'
           textColor='text-contrast-slateGray50'
           text='Iniciar'
-          width='w-4/6'
+          //width='lg:w-4/6'
           onClick={() => beginSession(props.sessionId)}
         />
       </div>

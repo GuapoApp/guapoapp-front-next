@@ -15,13 +15,14 @@ const ProfilePicture = (props) => {
 
       <Image
         alt=''
-        className='p-2 rounded-tr-[70px] border-2 border-primary-brownPod700 relative right-3 top-2 z-10'
+        className='lg:flex hidden p-2 rounded-tr-[70px] border-2 border-primary-brownPod700
+         relative right-3 top-2 z-10 sm:hidden'
         src={props.profilePicture}
         width={380}
         height={380}
       />
 
-      <div className='bg-primary-brownPod700 w-48 h-14 absolute -right-2 bottom-2'></div>
+      <div className='lg:flex hidden bg-primary-brownPod700 w-48 h-14 absolute -right-2 bottom-2 sm:hidden'></div>
     </div>
   )
 }
