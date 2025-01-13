@@ -23,11 +23,13 @@ const SquareLink = (props) => {
     'px-2': true,
     'py-3': true,
     'rounded-md': true,
-    'text-xl': true,
+    'lg:text-xl': true,
     'font-semibold': true,
     'shadow-xl': true,
     'text-center': true,
-    'cursor-pointer': true
+    'cursor-pointer': true,
+    'sm:text-sm': true
+
   })
 
   return (

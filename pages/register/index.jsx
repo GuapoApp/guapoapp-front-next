@@ -57,13 +57,13 @@ const Register = () => {
         </div>
         {/* Form */}
         <form
-          className='w-1/2 h-full flex flex-col justify-center px-24 gap-5 py-10'
+          className='lg:w-1/2 h-full flex flex-col justify-center px-24 gap-5 py-10'
           onSubmit={handleSubmit(onSubmit)}
         >
-          <div className='ml-20'>
+          <div className=''>
           <Header4 text='REGÍSTRATE,' textColor='text-primary-brownPod800' />
           </div>
-          <div className='flex flex-row gap-5 '>
+          <div className='w-full flex flex-row gap-5 '>
             <input
               className={``}
               type='radio'
@@ -94,7 +94,7 @@ const Register = () => {
             </label>
             <input
               className={`w-full p-3 text-contrast-slateGray500 
-                rounded-md text-xl bg-contrast-slateGray300 sm:w-80`}
+                rounded-md text-xl bg-contrast-slateGray300 sm:w-64`}
               placeholder='Escribe tu nombre'
               type='text'
               name='name'
@@ -111,7 +111,7 @@ const Register = () => {
             </label>
             <input
               className={`w-full p-3 text-contrast-slateGray500 rounded-md text-xl
-                 bg-contrast-slateGray300 sm:w-80`}
+                 bg-contrast-slateGray300 sm:w-64`}
               placeholder='Escribe tu email'
               type='email'
               name='email'
@@ -128,7 +128,7 @@ const Register = () => {
             </label>
             <input
               className={`w-full p-3 text-contrast-slateGray500
-                 rounded-md text-xl bg-contrast-slateGray300 sm:w-80 `}
+                 rounded-md text-xl bg-contrast-slateGray300 sm:w-64 `}
               placeholder='Escribe tu contraseña'
               type='password'
               name='password'
@@ -145,7 +145,7 @@ const Register = () => {
               text='Crea tu cuenta'
               color='bg-primary-brownPod600'
               textColor='text-contrast-slateGray50'
-              width='w-2/4 sm:w-44 ml-16 sm:text-sm'
+              width='w-2/4'
             />
           </div>
         </form>

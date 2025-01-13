@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-
+import Image from 'next/image'
+import OpenMenu from '../OpenMenu'
 /**
  * PROPS:
  @param: role ==> The role of the user
@@ -17,7 +18,12 @@ const DashboardMenu = (props) => {
 
   if (props.role === 'PROFESSIONAL') {
     return (
-      <div className='flex flex-col bg-primary-brownPod700 gap-7 p-7 mt-auto mb-auto h-[80%] text-primary-brownPod500 font-semibold z-20 text-xl'>
+      <>
+
+      <div className='flex flex-col bg-primary-brownPod700 
+                      gap-7 p-7 mt-auto mb-auto h-[80%]
+                     text-primary-brownPod500 font-semibold z-20 text-xl'>       
+       
         <Link href='/profesional/perfil'>MI PERFIL</Link>
         <Link href='/profesional/asesores'>MIS ASESORES</Link>
         <Link href='/profesional/expediente'>MI EXPEDIENTE</Link>
@@ -27,6 +33,7 @@ const DashboardMenu = (props) => {
           Cerrar Sesión
         </Link>
       </div>
+      </>
     )
   }
 

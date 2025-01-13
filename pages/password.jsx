@@ -57,7 +57,8 @@ const Password = () => {
       <div className='flex flex-row w-[70%] h-[70%] shadow-2xl'>
         {/* Logo */}
         {/* Logo */}
-        <div className='w-1/2 bg-[url("/assets/images/background-2.jpg")] bg-cover flex justify-center items-end'>
+        <div className='w-1/2 bg-[url("/assets/images/background-2.jpg")] bg-cover 
+        lg:flex hidden justify-center items-end sm:hidden'>
           <Image
             className='pb-10'
             src='/assets/logos/logo-blanco.png'
@@ -68,7 +69,7 @@ const Password = () => {
         </div>
         {/* Form */}
         <form
-          className='w-1/2 h-full flex flex-col justify-center px-24 gap-8 py-10'
+          className='lg:w-1/2 h-full flex flex-col justify-center px-24 gap-8 py-10'
           onSubmit={handleSubmit(onSubmit)}
         >
           <Header4
@@ -80,7 +81,8 @@ const Password = () => {
               <Header6 text='Nueva Contraseña' />
             </label>
             <input
-              className={`w-full p-3 text-contrast-slateGray500 rounded-md text-xl bg-contrast-slateGray300`}
+              className={`w-full p-3 text-contrast-slateGray500 rounded-md text-xl
+                   sm:w-64 bg-contrast-slateGray300`}
               placeholder='Escribe tu contraseña'
               type='password'
               name='password'
@@ -97,7 +99,8 @@ const Password = () => {
               <Header6 text='Confirmar Contraseña' />
             </label>
             <input
-              className={`w-full p-3 text-contrast-slateGray500 rounded-md text-xl bg-contrast-slateGray300`}
+              className={`w-full p-3 text-contrast-slateGray500 rounded-md text-xl
+                sm:w-64 bg-contrast-slateGray300`}
               placeholder='Escribe tu contraseña'
               type='updatedPassword'
               name='updatedPassword'
@@ -109,7 +112,7 @@ const Password = () => {
             {errors?.updatedPassword?.message &&
               displayLoginError(errors.updatedPassword.message)}
           </div>
-          <div className='flex flex-col gap-5'>
+          <div className='flex flex-row gap-5 items-center justify-center'>
             <FormSquareButton
               text='Aceptar'
               color='bg-primary-brownPod600'
