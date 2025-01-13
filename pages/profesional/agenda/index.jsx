@@ -24,7 +24,7 @@ const ProfessionalAgenda = () => {
   } = useForm()
 
   const [role, setRole] = useState('')
-  const [type, setType] = useState('Complete')
+  const [type, setType] = useState('Integral')
 
   const {
     session,
@@ -111,11 +111,7 @@ const ProfessionalAgenda = () => {
   }
 
   const onSubmit = async (data) => {
-    // console.log('Data:', data)
     setSession(data)
-    // console.log('Session:', session)
-    // console.log('Session Date:', sessionDate)
-    // console.log('Session Time:', sessionTime)
     router.push('/profesional/agenda/asesor')
   }
 
@@ -167,38 +163,6 @@ const ProfessionalAgenda = () => {
             className='flex flex-col gap-7 w-full'
             onSubmit={handleSubmit(onSubmit)}
           >
-            {/* Consultancy Type */}
-            {/* <div className='flex flex-row gap-5'>
-              <input
-                className={``}
-                type='radio'
-                name='consultancyType'
-                // id='role'
-                value='Integral'
-                {...register('consultancyType')}
-                defaultChecked
-              />
-              <label className='w-full' htmlFor='Integral'>
-                <Header6
-                  text='Asesoría Integral'
-                  textColor='text-contrast-slateGray500'
-                />
-              </label>
-              <input
-                className={``}
-                type='radio'
-                name='consultancyType'
-                // id='role'
-                value='Event'
-                {...register('consultancyType')}
-              />
-              <label className='w-full' htmlFor='Event'>
-                <Header6
-                  text='Asesoría para un evento'
-                  textColor='text-contrast-slateGray500'
-                />
-              </label>
-            </div> */}
             {/* Event Type */}
             <div className='flex flex-col gap-5 items-center'>
               <label htmlFor='EventType'>
@@ -211,9 +175,10 @@ const ProfessionalAgenda = () => {
                 <select
                   name='eventType'
                   className='bg-contrast-slateGray50'
+                  {...register('consultancyType')}
                   onChange={(e) => setType(e.target.value)}
                 >
-                  <option value='Complete'>Asesoría Integral</option>
+                  <option value='Integral'>Asesoría Integral</option>
                   <option value='Event'>Asesoría para un evento</option>
                 </select>
               </div>
@@ -224,55 +189,6 @@ const ProfessionalAgenda = () => {
               {type === 'Event'
                 ? displayEventDetail()
                 : displayIntegralDetail()}
-              {/* <div className='flex flex-col gap-3 w-1/2'>
-                <div>
-                  <Header6
-                    text='Cuéntanos sobre tu evento'
-                    textColor='text-contrast-slateGray500'
-                  />
-                </div>
-                <div>
-                  <textarea
-                    name='eventDescription'
-                    id='eventDescription'
-                    placeholder='Escribe aquí sobre tu evento'
-                    className={`w-full p-3 text-contrast-slateGray500 rounded-md text-xl bg-contrast-slateGray300`}
-                    rows='5'
-                    maxLength='200'
-                    {...register('eventDescription', {
-                      // required: {
-                      //   value: true,
-                      //   message: 'La experiencia profesional es requerida'
-                      // }
-                    })}
-                  ></textarea>
-                </div>
-              </div> */}
-              {/* Complete */}
-              {/* <div className='flex flex-col gap-3 w-1/2'>
-                <div>
-                  <Header6
-                    text='Cuéntanos qué quieres obtener en tu asesoría'
-                    textColor='text-contrast-slateGray500'
-                  />
-                </div>
-                <div>
-                  <textarea
-                    name='consultancyDescription'
-                    id='consultancyDescription'
-                    placeholder='Escribe aquí lo que quieres obtener'
-                    className={`w-full p-3 text-contrast-slateGray500 rounded-md text-xl bg-contrast-slateGray300`}
-                    rows='5'
-                    maxLength='200'
-                    {...register('consultancyDescription', {
-                      // required: {
-                      //   value: true,
-                      //   message: 'La experiencia profesional es requerida'
-                      // }
-                    })}
-                  ></textarea>
-                </div>
-              </div> */}
             </div>
             {/* Submit and Back Buttons */}
             <div className='flex flex-row gap-5'>

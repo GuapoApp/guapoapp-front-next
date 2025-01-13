@@ -1,10 +1,12 @@
 import Header4 from '@/components/Header4'
 import Header5 from '@/components/Header5'
 import Header6 from '@/components/Header6'
+import Paragraph from '@/components/Paragraph'
 import ProfilePicture from '@/components/dashboards/ProfilePicture'
 import FormSquareButton from '@/components/forms/FormSquareButton'
 import SquareLink from '@/components/SquareLink'
 import MainDashboardFrame from '@/components/dashboards/MainDashboardFrame'
+import AlertModal from '@/components/AlertModal'
 
 import { useUserContext } from '../../context/UserContext'
 
@@ -12,7 +14,8 @@ import { useForm } from 'react-hook-form'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import { jwtDecode } from 'jwt-decode'
-import { format, addDays } from 'date-fns'
+import { format, addDays, set } from 'date-fns'
+import { convertFieldResponseIntoMuiTextFieldProps } from '@mui/x-date-pickers/internals'
 
 const ProfessionalProfile = () => {
   const [userName, setUserName] = useState('')
@@ -20,10 +23,13 @@ const ProfessionalProfile = () => {
   const [professionalInfo, setProfessionalInfo] = useState({})
   const [birthDate, setBirthDate] = useState('')
   const [profilePicture, setProfilePicture] = useState('')
+  const [updated, setUpdated] = useState(false)
+  const [isModalVisible, setIsModalVisible] = useState(false)
 
   const {
     register,
     handleSubmit,
+    setValue,
     setError,
     formState: { errors }
   } = useForm()
@@ -67,6 +73,7 @@ const ProfessionalProfile = () => {
             timezone: 'America/Mexico_City'
           })
         )
+        // setValue('birthDate', birthDate)
       })
       .catch((error) => {
         console.log('Error:', error)
@@ -85,44 +92,49 @@ const ProfessionalProfile = () => {
     router.push('/profesional')
   }
 
+  const handleOpenModal = () => {
+    setIsModalVisible(true)
+  }
+
+  const handleCloseModal = () => {
+    setIsModalVisible(false)
+  }
+
   const onSubmit = async (data) => {
     try {
-      console.log('Data', data)
-      // const response = await fetch(
-      //   `${process.env.NEXT_PUBLIC_GUAPOAPP_URI}session`,
-      //   {
-      //     method: 'POST',
-      //     headers: {
-      //       'Content-Type': 'application/json'
-      //     },
-      //     body: JSON.stringify({
-      //       Date: new Date(sessionDate),
-      //       Transcript: '',
-      //       Status: 'Scheduled',
-      //       Paid: false,
-      //       Professional: sessionProfesionalId,
-      //       Consultant: sessionConsultantId,
-      //       Consultancy_Type: session.consultancyType,
-      //       About:
-      //         session.consultancyType === 'Event'
-      //           ? session.eventDescription
-      //           : session.consultancyDescription
-      //     })
-      //   }
-      // )
-      // const json = await response.json()
-      // if (response.status === 201) {
-      //   // console.log('JSON: ', json)
-      //   alert('Sesión registrada correctamente')
-      //   return
-      // }
-      // if (response.status === 400) {
-      //   alert(`${json.error.error_message.message}`)
-      //   return
-      // }
+      console.log('Data On Submit', data)
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_GUAPOAPP_URI}professional/${professionalId}`,
+        {
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`
+          },
+          body: JSON.stringify({
+            About: data.about,
+            Birth_Date: data.birthDate
+          })
+        }
+      )
+      const json = await response.json()
+      if (response.status === 200) {
+        console.log('JSON: ', json)
+        // setUpdated(!updated)
+        setIsModalVisible(true)
+        return
+      }
+      if (response.status === 400) {
+        alert(`${json.error.error_message.message}`)
+        return
+      }
     } catch (error) {
       console.log('Error when updating professional:', error)
     }
+  }
+
+  const displayLoginError = (message) => {
+    return <Paragraph text={message} textColor='text-red-600' />
   }
 
   return (
@@ -172,6 +184,8 @@ const ProfessionalProfile = () => {
                 name='birthDate'
                 defaultValue={birthDate}
               />
+              {errors?.birthDate?.message &&
+                displayLoginError(errors.birthDate.message)}
             </div>
             {/* <Paragraph text={birthDate} /> */}
             <div className=' flex flex-col gap-3'>
@@ -189,13 +203,19 @@ const ProfessionalProfile = () => {
                 rows='5'
                 maxLength='200'
                 {...register('about', {
-                  required: {
-                    value: true,
-                    message: 'Es necesario que nos cuentes sobre ti'
+                  // required: {
+                  //   value: true,
+                  //   message: 'Es necesario que nos cuentes sobre ti'
+                  // }
+                  validate: (value) => {
+                    value.trim().length > 0 ||
+                      'Es necesario que nos cuentes sobre ti'
                   }
                 })}
                 defaultValue={professionalInfo.About}
               ></textarea>
+              {errors?.about?.message &&
+                displayLoginError(errors.about.message)}
               {/* Buttons */}
               <div className='flex flex-row justify-around gap-10'>
                 {/* Aceptar || Cancelar */}
@@ -226,6 +246,13 @@ const ProfessionalProfile = () => {
           </form>
         </div>
       </div>
+      <AlertModal
+        isVisible={isModalVisible}
+        onClose={handleCloseModal}
+        title='Usuario Actualizado'
+        text='El usuario fue actualizado correctamente'
+        button1='Aceptar'
+      />
     </MainDashboardFrame>
   )
 }
