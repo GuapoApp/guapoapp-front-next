@@ -4,7 +4,6 @@ import Header3 from "@/components/Header3";
 import Header6 from "@/components/Header6";
 import Paragraph from "@/components/Paragraph";
 import Image from "next/image";
-import grayBox from "@/components/modalEmail"
 export default function Test(){
     return(
 <> 

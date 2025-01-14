@@ -1,4 +1,4 @@
-// import ModalBox from '@/components/modalBox'
+
 import AlertModal from '@/components/AlertModal'
 
 export default function Mision() {
