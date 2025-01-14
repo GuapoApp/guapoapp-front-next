@@ -1,6 +1,108 @@
-import Header1 from '@/components/Header1'
+import Header3 from '@/components/Header3'
+import Header5 from '@/components/Header5'
+import Header6 from '@/components/Header6'
+import Welcome from '@/components/dashboards/Welcome'
+import ProfilePicture from '@/components/dashboards/ProfilePicture'
+import SessionCard from '@/components/dashboards/SessionCard'
+import SquareLink from '@/components/SquareLink'
+import ConsultantBanner from '@/components/dashboards/ConsultantBanner'
+import MainDashboardFrame from '@/components/dashboards/MainDashboardFrame'
+
+import { jwtDecode } from 'jwt-decode'
+
+import { useEffect, useState } from 'react'
 
 const ConsultantDashboard = () => {
-  return <Header1 text='Asesor' />
+  const [userName, setUserName] = useState('')
+  const [role, setRole] = useState('')
+
+  useEffect(() => {
+    const decoded = jwtDecode(localStorage.token)
+    if (decoded) {
+      setUserName(decoded.Name)
+      setRole(decoded.Role)
+    }
+  }, [])
+
+  const withdraw = (e) => {
+    e.preventDefault()
+    console.log('Withdraw')
+  }
+
+  return (
+    <MainDashboardFrame footerColor='bg-primary-brownPod700'>
+      <div className='flex flex-col gap-10 w-2/6 align-middle justify-start'>
+        {/**
+         * TODO: Add profilePicture as Dynamic prop
+         */}
+        <ProfilePicture
+          role={role}
+          profilePicture='/assets/images/stock-image-9.jpg'
+        />
+        <Welcome userName={userName} />
+      </div>
+      <div className='flex w-4/6 flex-col pt-5 gap-8'>
+        {/* Banner superior */}
+        <div>
+          <Header3
+            text='Asesoría de imágen para profesionistas modernos'
+            textColor='text-primary-brownPod900'
+          />
+        </div>
+        {/* Próximas sesiones */}
+        <div className='flex flex-col gap-1 pt-5 w-5/6'>
+          <Header5
+            text='Próximas sesiones'
+            textColor='text-primary-brownPod900'
+          />
+          <div className='flex flex-col gap-3 p-2'>
+            <SessionCard
+              dayName='LUNES'
+              hour='9:00 AM a 10:00 AM'
+              user='JORGE GÓMEZ'
+              sessionName='Asesoría para Boda'
+              // day='10/01'
+              // sideColor='bg-primary-brownPod600'
+            />
+            <SessionCard
+              dayName='MIERCOLES'
+              hour='10:00 AM a 11:00 AM'
+              user='JESÚS SOTO'
+              sessionName='Asesoría Integral'
+              // day='10/01'
+              // sideColor='bg-primary-brownPod600'
+            />
+          </div>
+        </div>
+        {/* Banner Experiencia y Calificación */}
+        <div className='relative'>
+          <ConsultantBanner
+            experienceYears='12'
+            sessionsCount='50'
+            averageRating='4.5/5'
+          />
+        </div>
+        {/* Saldo Pendiente de Retiro */}
+        <div className='flex flex-col gap-3 bg-contrast-slateGray300 rounded-md p-5 w-2/5'>
+          <Header5
+            text='Saldo Pendiente de Retiro'
+            textColor='text-primary-brownPod900'
+            textAlign='text-center'
+          />
+          <div className='flex flex-row gap-5 justify-center items-center font-bold'>
+            <Header6 text='$2,500.00' textColor='text-primary-brownPod900' />
+
+            <SquareLink
+              color='bg-primary-brownPod500'
+              textColor='text-contrast-slateGray50'
+              text='Retirar'
+              width='w-3/6'
+              onClick={withdraw}
+            />
+          </div>
+        </div>
+      </div>
+    </MainDashboardFrame>
+  )
 }
 export default ConsultantDashboard
