@@ -39,7 +39,7 @@ const ProfessionalRegister = () => {
             Name: user.name,
             Role: user.role,
             Profile_Picture: '/profilePicture',
-            Birth_Date: data.birthDate,
+            Birth_Date: new Date(data.birthDate),
             About: data.about
           })
         }

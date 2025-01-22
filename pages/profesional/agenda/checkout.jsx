@@ -172,8 +172,9 @@ const AgendaCheckout = () => {
             <CheckoutCard
               cardColor='bg-primary-brownPod700'
               profilePicture={sessionConsultantPhoto}
-              sessionDate={getLargeDate(sessionDate)}
-              sessionSchedule={formatSchedule(sessionTime)}
+              sessionDate={sessionDate}
+              // sessionDate={getLargeDate(new Date(sessionDate))}
+              sessionSchedule={sessionTime}
             />
           </div>
           {/* Checkout Form */}

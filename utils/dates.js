@@ -51,20 +51,38 @@ const formatSchedule = (hour) => {
     .padStart(2, '0')}:${minutes}`
 }
 
+// const getLargeDate = (date) => {
+//   console.log('Date Received in getLargeDate: ', date)
+//   console.log('Type Of Date Received in getLargeDate: ', typeof date)
+
+//   const day = formatDate(new Date(date), 'es')
+//   // const dayNumber = format(new Date(date), 'dd')
+
+//   const largeDate = `${day} ${format(new Date(date), 'dd')} de ${format(
+//     new Date(date),
+//     'MMMM',
+//     {
+//       locale: es
+//     }
+//   )} de ${format(new Date(date), 'yyyy')}`
+
+//   return largeDate
+// }
+
 const getLargeDate = (date) => {
-  console.log('Date: ', date)
+  console.log('Date Received in getLargeDate: ', date)
+  console.log('Type Of Date Received in getLargeDate: ', typeof date)
+  const formattedDate = new Date(date)
 
-  const day = formatDate(new Date(date), 'es')
-  const dayNumber = format(new Date(date), 'dd')
+  if (isNaN(formattedDate)) {
+    throw new Error('Invalid date')
+  }
 
-  const largeDate = `${day} ${format(new Date(date), 'dd')} de ${format(
-    new Date(date),
-    'MMMM',
-    {
-      locale: es
-    }
-  )} de ${format(new Date(date), 'yyyy')}`
-
+  const day = format(formattedDate, 'EEEE', { locale: es })
+  const dayNumber = format(formattedDate, 'dd')
+  const month = format(formattedDate, 'MMMM', { locale: es })
+  const year = format(formattedDate, 'yyyy')
+  const largeDate = `${day} ${dayNumber} de ${month} de ${year}`
   return largeDate
 }
 
